@@ -22,8 +22,30 @@ const userSchema = new Schema({
     type: Schema.ObjectId, 
     ref: 'Videos'
   }],
-  
-
+  city: String,
+  country: String,
+  fav_exercise: String,
+  professional: {
+    type: Boolean,
+    default: false
+  },
+  career_date: {
+    type: Date,
+    required: function() { return this.professional === true; } // Only required if professional is true
+  },
+  certifications: {
+    type: [String],
+    required: function() { return this.professional === true; } // Only required if professional is true
+  },
+  website: String,
+  about: {
+    type: String,
+    required: function() { return this.professional === true; } // Only required if professional is true
+  },
+  admin: {
+    type: Boolean,
+    default: false
+  }
 }, 
 {
   timestamps: true

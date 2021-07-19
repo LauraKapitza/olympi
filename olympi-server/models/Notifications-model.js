@@ -3,7 +3,22 @@ const Schema   = mongoose.Schema;
 
 const notificationSchema = new Schema({
   user_id: {type: Schema.ObjectId, ref: 'Users' },
-  password: String
+  creation_date: {
+    type: Date,
+    required: true
+  },
+  text: {
+    type: String,
+    required: true
+  },
+  read: {
+    type: Boolean,
+    default: false
+  },
+  replied: {
+    type: Boolean,
+    default: false
+  }
 }, 
 {
   timestamps: true
