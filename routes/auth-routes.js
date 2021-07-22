@@ -8,41 +8,50 @@ const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
 router.post("/login", (req, res, next) => {
-  passport.authenticate("local", (err, theUser, failureDetails) => {
-    if (err) {
-      res.status(500).json({message: 'Something went wrong authenticating user'});
-      return;
-    }
-  
-    if (!theUser) {
-      res.status(401).json(failureDetails); // `failureDetails` contains the error messages from our logic in "LocalStrategy" {message: '…'}.
-      return;
-    }
+  const {email, password} = req.body;
 
-    // save user in session
-    req.login(theUser, (err) => {
-      if (err) {
-        res.status(500).json({message: 'Session save went bad.'});
+  if (!email || !password) {
+    res.status(400).json({message: "Please type email and password"});
+    return;
+  }
+
+  User.findOne({email})
+  .then(theUser => {
+    if (theUser === null) {
+      res.status(400).json({ message: "No account for this email." });
+      return;
+    }
+    console.log('the user', theUser)
+
+    //compareSync
+    if (bcrypt.compareSync(password, theUser.password) !== true) {
+        res.status(400).json({message: 'Wrong credentials'})
         return;
-      }
-
-      // We are now logged in (thats why we can also send req.user)
-      res.status(200).json(theUser);
-    });
-  })(req, res, next);
+    } 
+    
+    req.session.currentUser = theUser;
+    res.status(200).json(theUser);
+    
+  })
+  .catch(err => {
+    res.status(500).json({message: "Something went wrong authenticating user"});
+  })
 });
 
 router.post("/signup", (req, res, next) => {
   const {professional, username, password, email, city, fav_exercise, certifications, website, about} = req.body;
+  let career_date;
   if (professional && !req.body.career_date) {
     res.status(400).json({message: "Please indicate the date when you start your career"});
     return;
-  } else {
-    const career_date = new Date(req.body.career_date)
+  }
+  
+  if (professional && req.body.career_date){
+    career_date = new Date(req.body.career_date)
   }
 
   if (!email || !username || !password) {
-    res.status(400).json({message: "Please ndicate username, email and password"});
+    res.status(400).json({message: "Please indicate username, email and password"});
     return;
   }
 

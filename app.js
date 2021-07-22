@@ -10,11 +10,8 @@ const logger       = require('morgan');
 const path         = require('path');
 
 
-// WHEN INTRODUCING USERS DO THIS:
-// INSTALL THESE DEPENDENCIES: passport-local, passport, bcryptjs, express-session
-// AND UN-COMMENT OUT FOLLOWING LINES:
-
-// const session       = require('express-session');
+const session       = require('express-session');
+const MongoStore = require('connect-mongo');
 // const passport      = require('passport');
 
 // require('./configs/passport');
@@ -56,7 +53,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // ADD SESSION SETTINGS HERE:
-
+app.use(session({
+  secret: `${app_name}-shhhhhhht`,
+  resave: true,
+  saveUninitialized: true,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+  })
+}))
 
 // USE passport.initialize() and passport.session() HERE:
 
@@ -76,6 +80,9 @@ app.use('/', index);
 
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
+
+const videosRoutes = require('./routes/videos-routes');
+app.use('/videos', videosRoutes);
 
 
 module.exports = app;
