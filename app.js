@@ -14,9 +14,6 @@ const session       = require('express-session');
 const MongoStore = require('connect-mongo');
 // const passport      = require('passport');
 
-// require('./configs/passport');
-
-// IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
 mongoose
   .connect('mongodb://localhost/olympi-server', {useNewUrlParser: true})
