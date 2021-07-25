@@ -13,6 +13,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: 'Olympi',
+    resource_type: 'video',
     allowedFormats:['webm', 'mp4', 'ogv'],
     public_id: (req, file) => file.originalname
   }

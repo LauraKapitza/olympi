@@ -1,5 +1,8 @@
+//TODO add real tag names under "tag"
+
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
+
 
 const videoSchema = new Schema({
   creator_id: {type: Schema.Types.ObjectId, ref: 'Users' },
@@ -38,15 +41,17 @@ const videoSchema = new Schema({
   category: {
     type: String,
     enum: {
-      values: ['trending', 'fail', 'learning'],
+      values: ['trending', 'fail', 'learn'],
       message:'{VALUE} is not supported'
     },
     default: 'trending'
   },
   comments: [{type: Schema.Types.ObjectId, ref: 'Comments'}],
   tags: {
-    type: Map,
-    of: String
+    //properties need to be changes by the real tag names, see also constants.js
+    One: [{type: Schema.Types.ObjectId, ref: 'Users' }],
+    Two: [{type: Schema.Types.ObjectId, ref: 'Users' }],
+    Three: [{type: Schema.Types.ObjectId, ref: 'Users' }]
   }
 },
 {

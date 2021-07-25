@@ -1,13 +1,17 @@
-const express = require("express");
+const express = require('express');
 const passport = require('passport');
 const router = express.Router();
-const User = require("../models/Users-model.js");
+const User = require('../models/Users-model.js');
 
 // Bcrypt to encrypt passwords
-const bcrypt = require("bcryptjs");
+const bcrypt = require('bcryptjs');
 const bcryptSalt = 10;
 
-router.post("/login", (req, res, next) => {
+////////////////////////////////////////////////////////////////////////
+///////////////////////////// LOGIN ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+router.post('/login', (req, res, next) => {
   const {email, password} = req.body;
 
   if (!email || !password) {
@@ -38,7 +42,11 @@ router.post("/login", (req, res, next) => {
   })
 });
 
-router.post("/signup", (req, res, next) => {
+////////////////////////////////////////////////////////////////////////
+///////////////////////////// SIGNUP //////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+router.post('/signup', (req, res, next) => {
   const {professional, username, password, email, city, fav_exercise, certifications, website, about} = req.body;
   let career_date;
   if (professional && !req.body.career_date) {
@@ -88,15 +96,8 @@ router.post("/signup", (req, res, next) => {
     });
 
     newUser.save()
-    .then(() => {
-      req.login(newUser, (err) => {
-        if (err) {
-          res.status(500).json({message: 'Login after signup went bad.'});
-          return;
-        }
-    
-        res.status(201).json(newUser);
-      });
+    .then((response) => {
+      res.status(201).json(response);
     })
     .catch(err => {
       res.status(500).json({message: "Something went wrong"});
@@ -104,80 +105,72 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.get("/logout", (req, res) => {
+////////////////////////////////////////////////////////////////////////
+///////////////////////////// LOGOUT ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+router.get('/logout', (req, res) => {
   req.logout();
   res.status(204).send();
 });
 
+////////////////////////////////////////////////////////////////////////
+///////////////////////////// USERPROFILE //////////////////////////////
+////////////////////////////////////////////////////////////////////////
 
-router.post("/edit", (req, res, next) => {
-  // Check user is logged in
-  if (!req.user) {
+router.get('/user', (req, res, next)=> {
+  if (!req.session.currentUser) {
     res.status(401).json({message: "You need to be logged in to edit your profile"});
     return;
   }
 
-  // Updating `req.user` with each `req.body` field (excluding some internal fields `cannotUpdateFields`)
-  const cannotUpdateFields = ['_id', 'password'];
-  Object.keys(req.body).filter(key => cannotUpdateFields.indexOf(key) === -1).forEach(key => {
-    req.user[key] = req.body[key];
-  });
-
-  // Validating user with its new values (see: https://mongoosejs.com/docs/validation.html#async-custom-validators)
-  req.user.validate(function (error) {
-    if (error) {
-      // see: https://mongoosejs.com/docs/validation.html#validation-errors
-      res.status(400).json({message: error.errors});
-      return;
-    }
-
-    // Validation ok, let save it
-    req.user.save(function (err) {
-      if (err) {
-        res.status(500).json({message: 'Error while saving user into DB.'});
-        return;
-      }
-
-      res.status(200).json(req.user);
-    })
-  });
-});
-
-// const uploader = require('../cloudinary.js');
-// router.post("/upload", uploader.single("photo"), (req, res, next) => {
-//   // Check user is logged in
-//   if (!req.user) {
-//     res.status(401).json({message: "You need to be logged in to upload your avatar"});
-//     return;
-//   }
-
-//   // Check a file has been provided
-//   if (!req.file) {
-//     res.status(400).json({message: "No file uploaded!"});
-//     return;
-//   }
-
-//   // Updating user's `image`
-//   req.user.image = req.file.secure_url;
-
-//   // Validating user before saving
-//   req.user.validate(function (error) {
-//     if (error) {
-//       res.status(400).json({message: error.errors});
-//       return;
-//     }
-
-//     // Validation ok, let save it
-//     req.user.save(function (err) {
-//       if (err) {
-//         res.status(500).json({message: 'Error while saving user into DB.'});
-//         return;
-//       }
-
-//       res.status(200).json(req.user);
-//     })
-//   });
+  console.log('session', req.session.currentUser)
   
-// });
+  User.findById(req.session.currentUser._id)
+  .then(userFromDB => {
+    res.status(201).json(userFromDB)
+  })
+  .catch(err => {
+    res.status(500).json({message: "Something went wrong when enterin the user's profile"});
+  })
+})
+
+
+router.post('/user', (req, res, next) => {
+  // Check user is logged in
+  if (!req.session.currentUser) {
+    res.status(401).json({message: "You need to be logged in to edit your profile"});
+    return;
+  };
+
+  const password = req.body.password;
+
+  bcrypt
+    .genSalt(bcryptSalt)
+    .then(salt => bcrypt.hash(password, salt))
+    .then(hashedPassword => {
+      return User.findByIdAndUpdate(
+        req.session.currentUser._id,
+        {
+          username: req.body.username,
+          password: hashedPassword,
+          email: req.body.email,
+          city: req.body.city,
+          fav_exercise: req.body.fav_exercise,
+          career_date: req.body.career_date,
+          certifications: req.body.certifications,
+          website: req.body.website,
+          about: req.body.about
+        },
+        { new: true });
+    })
+    .then(userFromDB => {
+      res.status(201).json(userFromDB)
+    })
+    .catch(error => {
+      res.status(500).json({message: 'Error while saving user into DB.'})
+    });
+
+});
 
 module.exports = router;
