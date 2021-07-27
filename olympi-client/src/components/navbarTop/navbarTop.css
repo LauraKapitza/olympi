@@ -1,0 +1,42 @@
+.navbarContainer {
+height: 70px;
+width: 100%;
+background-color: #FDEFEF;
+display: flex;
+align-items: center;
+position: sticky;
+top: 0;
+
+}
+
+
+
+
+.navbarLeft {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.navbarCenter {
+  flex: 5;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.navbarRight {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.logo {
+  max-height: 70px;
+  margin-left: 10%;
+  cursor: pointer;
+
+}

@@ -1,0 +1,78 @@
+.navbarFeedContainer {
+  height: 70px;
+  width: 100%;
+  background-color: #FDEFEF;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  
+  }
+  
+    
+  .navbarFeedCenter {
+    flex: 5;
+    min-height: 70px;
+    display: flex;    
+    align-items: flex-end;
+    justify-content: space-evenly;
+    color: #E41E1E;
+
+  }
+
+ .addIcon {
+   cursor: pointer;
+   display: flex;
+
+ }
+  
+  .navbarFeedLeft {
+    flex: 3;
+    display: flex;
+    align-items: center;
+  }
+
+  .NavbarLinks {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+    color: #E41E1E;
+
+  }
+  
+
+
+  
+
+
+  .navbarFeedRight {
+    flex: 4;
+    color: #E41E1E;
+
+  }
+
+  .NavbarIcons {
+    display: flex;
+    align-items: center;
+    color: #E41E1E;
+    justify-content: space-around;
+  }
+
+  .NavbarIcon {
+    margin-right: 15px;
+    cursor:pointer;
+  }
+
+
+  .Iconbadge {
+    width:15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+  }
+    
+    
+    
+    
+    
+    
