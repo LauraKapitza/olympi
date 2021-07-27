@@ -5,7 +5,7 @@ const uploader = require('../configs/cloudinary.config.js');
 
 const Comments = require('../models/Comments-model.js');
 const Videos = require('../models/Videos-model.js');
-const TAGS = require('../constants.js')
+const {FORM, OVERHEADPRESS, DEADLIFT, SQUAT, BENCHPRESS} = require('../constants.js')
 
 
 // POST route => to create a new video
