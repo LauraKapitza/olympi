@@ -5,35 +5,46 @@ const uploader = require('../configs/cloudinary.config.js');
 
 const Comments = require('../models/Comments-model.js');
 const Videos = require('../models/Videos-model.js');
-const {FORM, OVERHEADPRESS, DEADLIFT, SQUAT, BENCHPRESS} = require('../constants.js')
+const {EXERCISES, FORM, OVERHEADPRESS, DEADLIFT, SQUAT, BENCHPRESS} = require('../constants.js')
 
 
 // POST route => to create a new video
 videosRouter.post('/', uploader.single('file'), (req, res, next) => {
-  console.log('req', req.file)
+  const {exercise, description, category, weight, weight_metric, reps, rounds} = req.body;
   
   // Check user is logged in
   if (!req.session.currentUser) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
-  }
+  };
 
   // Check a file has been provided
   if (!req.file) {
     res.status(400).json({message: "No file uploaded!"});
     return;
-  }
+  };
+  
+  if(!EXERCISES.includes(exercise)) { //check if exercise spelling is correct
+    res.status(400).json({message: "Exercise does not exist. Please select one of the exercises provided."})
+    return;
+  };
+
+  if(!weight_metric==='kg' && !weight_metric==='lb') { //check if exercise spelling is correct
+    res.status(400).json({message: "Metric does not exist. Please select one of the metrics provided."})
+    return;
+  };
+  
 
   Videos.create({
     creator_id: req.session.currentUser._id,
     videoUrl: req.file.path,
-    exercise: req.body.exercise,
-    description: req.body.description,
-    category: req.body.category,
-    weight: req.body.weight,
-    weight_metric: req.body.weight_metric,
-    reps:req.body.reps,
-    rounds: req.body.rounds
+    exercise,
+    description,
+    category,
+    weight,
+    weight_metric,
+    reps,
+    rounds
   })
     .then(response => {
       res.status(201).json(response);
@@ -66,22 +77,10 @@ videosRouter.get('/', (req, res, next) => {
 
 //POST /videos/:id/tags
 videosRouter.post('/:videoId/tags', (req, res, next)=>{
-  const tagsByUser = req.body.tags; // ["One", "Two"]
+  const {tags, exercise} = req.body;
   const user = req.session.currentUser;
-  // console.log("req", req.body.tags)
+  let formTagExist = false;
   
-  if (!tagsByUser) {
-    res.status(400).json({message: "No tag selected!"});
-    return;
-  };
-  
-  tagsByUser.map(tag => { //check if tags of user exist
-    if(!TAGS.includes(tag)) {
-      res.status(400).json({message: "One of the tags does not exist. Please select only the tags provided."})
-      return;
-    };
-  });
-
   if(!mongoose.Types.ObjectId.isValid(req.params.videoId)) { //check if video ID exists
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
@@ -92,9 +91,34 @@ videosRouter.post('/:videoId/tags', (req, res, next)=>{
     return;
   };
 
+  if (!tags) {
+    res.status(400).json({message: "No tag selected!"});
+    return;
+  };
+
+  tags.forEach(tag => {
+    if (!FORM.includes(tag)) formTagExist = true;
+  });
+
+  if(!EXERCISES.includes(exercise)) { //check if exercise spelling is correct
+    res.status(400).json({message: "Exercise does not exist. Please select one of the exercises provided."})
+    return;
+  };
+  
+  tags.map(tag => { //check if tags of user exist 
+    if(!FORM.includes(tag) && 
+      !OVERHEADPRESS.includes(tag) && 
+      !DEADLIFT.includes(tag) && 
+      !SQUAT.includes(tag) &&
+      !BENCHPRESS.includes(tag)) { //check if form scoring tag is correct
+      res.status(400).json({message: "One of the tags does not exist. Please select only the tags provided."})
+      return;
+    };
+  });
+
   Videos.findById(req.params.videoId)
     .then(videoFromDB => { //add userId to each tag which they chose
-      tagsByUser.forEach(item => {
+      tags.forEach(item => {
         if(!videoFromDB.tags[item].includes(user._id)){
           videoFromDB.tags[item].push(user)
         }
@@ -105,6 +129,7 @@ videosRouter.post('/:videoId/tags', (req, res, next)=>{
           res.status(201).json(response)
         })
         .catch(err => {
+          console.log(err)
           res.status(500).json({message: 'Error while saving the updated video into DB.'});
         })
     })

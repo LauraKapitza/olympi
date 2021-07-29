@@ -1,3 +1,10 @@
+const EXERCISES = [
+  'Overhead press',
+  'Deadlift',
+  'Squat',
+  'Bench press'
+]
+
 const FORM = [
   'Perfect',
   'Very good',
@@ -58,4 +65,4 @@ const BENCHPRESS = [
   'Other'
 ];
   
-module.exports = {FORM, OVERHEADPRESS, DEADLIFT, SQUAT, BENCHPRESS};
+module.exports = {EXERCISES, FORM, OVERHEADPRESS, DEADLIFT, SQUAT, BENCHPRESS};
