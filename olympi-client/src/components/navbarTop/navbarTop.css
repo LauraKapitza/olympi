@@ -6,6 +6,8 @@ display: flex;
 align-items: center;
 position: sticky;
 top: 0;
+color: #E41E1E;
+font-weight: bolder;
 
 }
 
@@ -39,4 +41,18 @@ top: 0;
   margin-left: 10%;
   cursor: pointer;
 
+}
+
+.button {
+  border-style: solid;
+  Border-color: #E41E1E;
+  border-radius:15%;
+  border-width: 2px;
+  font-weight: normal;
+  padding: 3px 25px;
+}
+
+.signup  {
+  background-color: #E41E1E;
+  color: #FDEFEF;
 }

@@ -21,8 +21,8 @@ export default function NavbarTop () {
 </div>
 
       <div className="navbarRight">
-      <span>Sign Up</span>
-      <span>Log In</span>
+      <span className="signup button"> Sign Up </span>
+      <span className="button"> Log In </span>
       </div>
 
 

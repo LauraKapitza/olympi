@@ -18,13 +18,17 @@
     justify-content: space-evenly;
     color: #E41E1E;
 
+
   }
 
  .addIcon {
    cursor: pointer;
    display: flex;
-
- }
+   display: inline-block;
+   height: 28px;
+   position: relative;
+   width: 50px;
+   }
   
   .navbarFeedLeft {
     flex: 3;
@@ -54,22 +58,35 @@
   .NavbarIcons {
     display: flex;
     align-items: center;
-    color: #E41E1E;
     justify-content: space-around;
+    margin-right: 15px;
   }
 
   .NavbarIcon {
-    margin-right: 15px;
+    display: flex;
     cursor:pointer;
+    align-items: flex-end;
+    position: relative;
   }
 
 
   .Iconbadge {
     width:15px;
-    height: 15px;
-    background-color: red;
-    border-radius: 50%;
-  }
+    height:15px;
+    color: white;
+    background-color: #b188ea;
+    border-radius:50%;
+    text-align: center; 
+    position: absolute;
+    top: -4px;
+    right:-9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+
+
+}
     
     
     

@@ -5,7 +5,13 @@ import AddBoxRoundedIcon from '@material-ui/icons/AddBoxRounded';
 import NotificationsRoundedIcon from '@material-ui/icons/NotificationsRounded';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 
+
+
+
 export default function NavbarFeed() {
+
+
+
   return (
     <div className="navbarFeedContainer">
       <div className="navbarFeedLeft">
@@ -17,7 +23,7 @@ export default function NavbarFeed() {
       </div>
 
       <div className="navbarFeedCenter">
-      <div className="addIcon"><AddBoxRoundedIcon/></div>
+      <div className="addIcon"><AddBoxRoundedIcon style={{ fontSize: 55 }} /></div>
       </div>
 
 
