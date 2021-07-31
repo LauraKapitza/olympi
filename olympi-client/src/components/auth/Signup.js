@@ -79,17 +79,20 @@ export default class extends React.Component {
         <>
           <h1>Sign up</h1>
 
-          <h2>Choose your profile</h2>
+          <div className="signup-profile">
+            <h2>Choose your profile</h2>
 
-          {/* this.state.professional=false */}
-          <button onClick={() => {this.setState({professional:false})}}>I am a normal user</button> 
+            {/* this.state.professional=false */}
+            <button onClick={() => {this.setState({professional:false})}}>I am a normal user</button> 
 
-          {/* this.state.professional=true */}
-          <button professional={true} onClick={() => {this.setState({professional:true})}}>I am a professional</button>
+            {/* this.state.professional=true */}
+            <button professional={true} onClick={() => {this.setState({professional:true})}}>I am a professional</button>
+          </div>
+
           
           {this.state.professional !== 0 && (
             
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="signup-form">
 
               {/* for an error */}
               {this.state.error && (
