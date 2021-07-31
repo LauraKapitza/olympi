@@ -1,7 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './navbarTop.css';
 
-import {Link} from 'react-router-dom';
 
 export default function NavbarTop () {
   return (

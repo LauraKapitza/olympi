@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-
-<<<<<<< HEAD
 import {Switch, Route} from 'react-router-dom';
-=======
-import Homepage from './components/home/Homepage';
-import NavbarFeed from './components/navbarFeed/NavbarFeed.js';
->>>>>>> 6ee166490c345f0a87d44572de49091254bd58cd
 
-import Homepage from './components/Homepage/Homepage.js';
+import Homepage from './components/home/Homepage';
 import Signup from './components/auth/Signup.js';
 import Login from './components/auth/Login.js';
-
 import authService from './components/auth/auth-service.js';
 
 class App extends Component {

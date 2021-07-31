@@ -84,5 +84,15 @@ app.use('/videos', videosRoutes);
 const notifRoutes = require('./routes/notif-routes');
 app.use('/notifications', notifRoutes);
 
+// Serve static files from client/build folder
+app.use(express.static('olympi-client/build'));
+
+// For any other routes: serve client/build/index.html SPA
+app.use((req, res, next) => {
+  res.sendFile(`${__dirname}/olympi-client/build/index.html`, err => {
+    if (err) next(err)
+  })
+});
+
 
 module.exports = app;
