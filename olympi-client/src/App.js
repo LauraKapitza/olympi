@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import Homepage from './pages/home/Homepage';
+import Homepage from './components/home/Homepage';
 import NavbarFeed from './components/navbarFeed/NavbarFeed.js';
 
 function App(){

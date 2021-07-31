@@ -1,6 +1,5 @@
 import React from 'react';
 import './navbarTop.css';
-import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
 
 

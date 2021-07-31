@@ -4,7 +4,7 @@ width: 100%;
 background-color: #FDEFEF;
 display: flex;
 align-items: center;
-position: sticky;
+position: fixed;
 top: 0;
 color: #E41E1E;
 font-weight: bolder;
@@ -29,7 +29,7 @@ font-weight: bolder;
 
 
 .navbarRight {
-  flex: 2;
+  flex: 3;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -47,9 +47,11 @@ font-weight: bolder;
   border-style: solid;
   Border-color: #E41E1E;
   border-radius:15%;
-  border-width: 2px;
+  border-width: 2.5px;
   font-weight: normal;
-  padding: 3px 25px;
+  padding: 1vw 2vw;
+  font-size: max(2vw,16px);
+  
 }
 
 .signup  {
