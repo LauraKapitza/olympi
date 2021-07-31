@@ -1,15 +1,14 @@
 import React from 'react';
 import './navbarTop.css';
-import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
-
+import {Link} from 'react-router-dom';
 
 export default function NavbarTop () {
   return (
     <div className="navbarContainer">
       <div className="navbarLeft"> 
       <img src="/assets/logos/logo_transparent_background.png" alt="" className="logo"/> 
-</div>
+      </div>
 
 
       <div className="navbarCenter"> 
@@ -18,11 +17,11 @@ export default function NavbarTop () {
       <span></span>
       <span></span>
       <span></span>
-</div>
+      </div>
 
       <div className="navbarRight">
-      <span className="signup button"> Sign Up </span>
-      <span className="button"> Log In </span>
+        <Link className="signup button" to="/signup">Sign up</Link>
+        <Link className="button" to="/login">Log in</Link>
       </div>
 
 

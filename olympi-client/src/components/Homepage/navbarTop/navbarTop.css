@@ -8,11 +8,7 @@ position: sticky;
 top: 0;
 color: #E41E1E;
 font-weight: bolder;
-
 }
-
-
-
 
 .navbarLeft {
   flex: 1;
@@ -50,6 +46,10 @@ font-weight: bolder;
   border-width: 2px;
   font-weight: normal;
   padding: 3px 25px;
+}
+
+.button a {
+  text-decoration: none;
 }
 
 .signup  {

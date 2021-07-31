@@ -1,10 +1,8 @@
 import React from 'react';
-
 import {Link} from 'react-router-dom';
-
 import authService from './auth-service.js';
 
-export default class extends React.Component {
+class Signup extends React.Component {
   state = {
     professional: 0,
     username: "",
@@ -177,4 +175,6 @@ export default class extends React.Component {
         </>
     );
   }
-}
+};
+
+export default Signup;
