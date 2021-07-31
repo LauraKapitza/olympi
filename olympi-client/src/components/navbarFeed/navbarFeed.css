@@ -1,0 +1,95 @@
+.navbarFeedContainer {
+  height: 70px;
+  width: 100%;
+  background-color: #FDEFEF;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  
+  }
+  
+    
+  .navbarFeedCenter {
+    flex: 5;
+    min-height: 70px;
+    display: flex;    
+    align-items: flex-end;
+    justify-content: space-evenly;
+    color: #E41E1E;
+
+
+  }
+
+ .addIcon {
+   cursor: pointer;
+   display: flex;
+   display: inline-block;
+   height: 28px;
+   position: relative;
+   width: 50px;
+   }
+  
+  .navbarFeedLeft {
+    flex: 3;
+    display: flex;
+    align-items: center;
+  }
+
+  .NavbarLinks {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+    color: #E41E1E;
+
+  }
+  
+
+
+  
+
+
+  .navbarFeedRight {
+    flex: 4;
+    color: #E41E1E;
+
+  }
+
+  .NavbarIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 15px;
+  }
+
+  .NavbarIcon {
+    display: flex;
+    cursor:pointer;
+    align-items: flex-end;
+    position: relative;
+  }
+
+
+  .Iconbadge {
+    width:15px;
+    height:15px;
+    color: white;
+    background-color: #b188ea;
+    border-radius:50%;
+    text-align: center; 
+    position: absolute;
+    top: -4px;
+    right:-9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+
+
+}
+    
+    
+    
+    
+    
+    

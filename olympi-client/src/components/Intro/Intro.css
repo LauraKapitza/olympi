@@ -1,0 +1,20 @@
+.IntroContainer{
+  width:100%;
+  display: flex;
+  color: #E41E1E;
+  background-color: orange;
+  margin: 0%;
+}
+
+.description {
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneImg{
+  background-color: olive;
+  flex:5;
+  display: flex;
+  justify-content: center;
+  transform: scale(.55);
+}

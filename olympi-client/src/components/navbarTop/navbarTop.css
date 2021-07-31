@@ -1,0 +1,58 @@
+.navbarContainer {
+height: 70px;
+width: 100%;
+background-color: #FDEFEF;
+display: flex;
+align-items: center;
+position: sticky;
+top: 0;
+color: #E41E1E;
+font-weight: bolder;
+
+}
+
+
+
+
+.navbarLeft {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.navbarCenter {
+  flex: 5;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.navbarRight {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.logo {
+  max-height: 70px;
+  margin-left: 10%;
+  cursor: pointer;
+
+}
+
+.button {
+  border-style: solid;
+  Border-color: #E41E1E;
+  border-radius:15%;
+  border-width: 2px;
+  font-weight: normal;
+  padding: 3px 25px;
+}
+
+.signup  {
+  background-color: #E41E1E;
+  color: #FDEFEF;
+}

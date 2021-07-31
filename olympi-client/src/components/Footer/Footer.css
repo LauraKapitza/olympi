@@ -1,0 +1,5 @@
+.FooterContainer{
+  background-color:blue;
+  width:100%;
+  display: flex;
+}
