@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import authService from './auth-service.js';
+import './auth.css';
+
 
 class Signup extends React.Component {
   state = {
@@ -19,9 +21,6 @@ class Signup extends React.Component {
     error: ""
   }
 
-  toggle = () => {
-    this.setState({open: !this.state.open})
-  }
 
   changeProfessional = (props) => {
     this.setState({professional: props})
@@ -69,110 +68,101 @@ class Signup extends React.Component {
 
   handleChange = (event) => {
     const {name, value} = event.target;
+    console.log()
     this.setState({[name]: value});
   } 
 
   render() {
+    const currentDate = new Date();
+
     return (
-        <>
-          <h1>Sign up</h1>
-
-          <div className="signup-profile">
-            <h2>Choose your profile</h2>
-
-            {/* this.state.professional=false */}
-            <button onClick={() => {this.setState({professional:false})}}>I am a normal user</button> 
-
-            {/* this.state.professional=true */}
-            <button professional={true} onClick={() => {this.setState({professional:true})}}>I am a professional</button>
+        <div className='signup'>
+          <div className="bkg-circle">
+            <Link className="back-btn" to="/"><img src="/assets/logos/OlympiLogoSVG.svg" alt='Olympi logo in red'/></Link>
           </div>
+
+          <h1>Sign up</h1> 
+
+          {this.state.professional === 0 && (
+            <div className="signup-profile">
+              <h2>Choose your profile</h2>
+
+              {/* this.state.professional=false */}
+              <button onClick={() => {this.setState({professional:false})}}>Normal User</button> 
+
+              {/* this.state.professional=true */}
+              <button professional={true} onClick={() => {this.setState({professional:true})}}>Professional</button>
+            </div>
+          )
+          }
 
           
           {this.state.professional !== 0 && (
-            
-            <form onSubmit={this.handleSubmit} className="signup-form">
+            <>
+              <button className="back-btn back-to-profile" onClick={() => {this.setState({professional:0})}}>Back</button>
+              <form onSubmit={this.handleSubmit} className="signup-form">
 
-              {/* for an error */}
-              {this.state.error && (
-                <p className="error">{this.state.error}</p>
-              )}
+                {/* for an error */}
+                {this.state.error && (
+                  <p className="error">{this.state.error}</p>
+                )}
 
-              <p>
-                <label>
-                  <em>Username</em>
-                  <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-                </label>
-              </p>
+                <div>
 
-              <p>
-                <label>
-                  <em>Email</em>
-                  <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
-                </label>
-              </p>
+                  <p>
+                    <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Username" />
+                  </p>
 
-              <p>
-                <label>
-                  <em>Password</em>
-                  <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                </label>
-              </p>
+                  <p>
+                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email" />
+                  </p>
 
-              <p>
-                <label>
-                  <em>City</em>
-                  <input type="text" name="city" value={this.state.city} onChange={this.handleChange} />
-                </label>
-              </p>
+                  <p>
+                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
+                  </p>
 
-              <p>
-                <label>
-                  <em>Favorite Exercise</em>
-                  <input type="text" name="fav_exercise" value={this.state.fav_exercise} onChange={this.handleChange} />
-                </label>
-              </p>
+                  <p>
+                    <input type="text" name="city" value={this.state.city} onChange={this.handleChange} placeholder="City" />
+                  </p>
+
+                  <p>
+                    <input type="text" name="fav_exercise" value={this.state.fav_exercise} onChange={this.handleChange} placeholder="Favorite Exercise" />
+                  </p>
+                </div>
+
+                {/* for professional user */}
+                {this.state.professional === true && (
+                  <div>
+                    <p>
+                      <label id="career-start">
+                        <p>Career Start</p>
+                        <input id="career-start-input" type="month" name="career_date" value={this.state.career_date} onChange={this.handleChange} />
+                      </label>
+                    </p>
+
+                    <p>
+                      <input type="text" name="certifications" value={this.state.certifications} onChange={this.handleChange} placeholder="Certifications" />
+                    </p>
+
+                    <p>
+                      <input type="text" name="website" value={this.state.website} onChange={this.handleChange} placeholder="Website (optional)" />
+                    </p>
+
+                    <p>
+                      <input type="text" name="about" value={this.state.about} onChange={this.handleChange} placeholder="About you" />
+                    </p> 
+                  </div>
+                )}
+                <p>
+                  <input type="submit" value="Submit" />
+                </p>
               
-              {/* for professional user */}
-              {this.state.professional === true && (
-                <>
-                  <p>
-                    <label>
-                      <em>Career Start</em>
-                      <input type="month" name="career_date" value={this.state.career_date} onChange={this.handleChange} />
-                    </label>
-                  </p>
-
-                  <p>
-                    <label>
-                      <em>Certifications</em>
-                      <input type="text" name="certifications" value={this.state.certifications} onChange={this.handleChange} />
-                    </label>
-                  </p>
-
-                  <p>
-                    <label>
-                      <em>Website (optional)</em>
-                      <input type="text" name="website" value={this.state.website} onChange={this.handleChange} />
-                    </label>
-                  </p>
-
-                  <p>
-                    <label>
-                      <em>About you</em>
-                      <input type="text" name="about" value={this.state.about} onChange={this.handleChange} />
-                    </label>
-                  </p>
-                </>
-            )}
-            </form>
+              </form>
+              <p className="switch-form-btn">If you already have an account, you can login from <Link to="/login">here</Link>.</p>
+            </>
 
           )}
-
-          <p>
-            <small>If you already have an account, you can login from <Link to="/login">here</Link></small>
-          </p>
-
-        </>
+        </div>
     );
   }
 };

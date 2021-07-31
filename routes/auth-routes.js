@@ -55,7 +55,7 @@ router.post('/signup', (req, res, next) => {
   }
   
   if (professional && req.body.career_date){
-    career_date = new Date(req.body.career_date)
+    career_date = new Date(req.body.career_date.toString())
   }
 
   if (!email || !username || !password) {

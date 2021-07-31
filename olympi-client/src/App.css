@@ -3,6 +3,14 @@
 * {box-sizing:border-box;}
 
 body {
-  margin: 0;
+  background-color: #FAFAFA;
   font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+button{
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }

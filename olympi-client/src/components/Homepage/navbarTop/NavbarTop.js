@@ -20,7 +20,7 @@ export default function NavbarTop () {
       </div>
 
       <div className="navbarRight">
-        <Link className="signup button" to="/signup">Sign up</Link>
+        <Link className="signup-btn button" to="/signup">Sign up</Link>
         <Link className="button" to="/login">Log in</Link>
       </div>
 

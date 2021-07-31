@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import authService from './auth-service.js';
+import './auth.css';
 
 class Login extends React.Component {
   state = {
@@ -31,7 +32,10 @@ class Login extends React.Component {
 
   render() {
     return (
-        <>
+        <div className='login'>
+          <div className="bkg-circle">
+            <Link className="back-btn" to="/"><img src="/assets/logos/OlympiLogoSVG.svg" alt='Olympi logo in red'/></Link> 
+          </div>
           <h1>Log in</h1>
           
           <form onSubmit={this.handleSubmit}>
@@ -41,25 +45,23 @@ class Login extends React.Component {
             )}
 
             <p>
-              <label>
-                <em>Email</em>
-                <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
-              </label>
+              <input type="text" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email"/>
             </p>
 
             <p>
-              <label>
-                <em>Password</em>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-              </label>
+              <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password"/>
+            </p>
+
+            <p>
+              <input type="submit" value="Log in" />
             </p>
 
           </form>
 
-          <p>
-            <small>If you don't have an account yet, you can create your account <Link to="/signup">here</Link></small>
+          <p className="switch-form-btn">
+            If you don't have an account yet, you can create your account <Link to="/signup">here</Link>.
           </p>
-        </>
+        </div>
     );
   }
 }
