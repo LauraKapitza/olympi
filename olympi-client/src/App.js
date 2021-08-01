@@ -5,6 +5,7 @@ import {Switch, Route} from 'react-router-dom';
 import Homepage from './components/home/Homepage';
 import Signup from './components/auth/Signup.js';
 import Login from './components/auth/Login.js';
+import Feed from './components/feed/Feed.js';
 import authService from './components/auth/auth-service.js';
 
 class App extends Component {
@@ -17,6 +18,8 @@ class App extends Component {
       authService.loggedin()
         .then(data => {
           this.setState({user: data})
+          console.log("user: ", this.state.user);
+
         })
         .catch(err => this.setState({user: false}))
       ;
@@ -49,6 +52,10 @@ class App extends Component {
 
             <Route exact path="/login" render={(props) => (
               <Login updateUser={this.updateUser} history={props.history} />
+            )} />
+
+            <Route exact path="/videos" render={(props) => (
+              <Feed user={this.state.user} updateUser={this.updateUser} history={props.history} />
             )} />
 
             {/* last route, ie: 404 */}

@@ -5,18 +5,15 @@ import HowItWorks from "./HowItWorks/HowItWorks"
 import Footer from "./Footer/Footer"
 
 export default function Homepage (props) {
-  console.log("user --->", props.user)
   return (
     <>
-    
-    <NavbarTop/>
-    <div className="homeContainer">
-    <Intro/>
-    <Features/>
-    <HowItWorks/>
-    <Footer/>
-    </div>
-
+      <NavbarTop/>
+      <div className="homeContainer">
+        <Intro/>
+        <Features/>
+        <HowItWorks/>
+        <Footer/>
+      </div>
     </>
   )
 }

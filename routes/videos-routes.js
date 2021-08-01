@@ -13,7 +13,7 @@ videosRouter.post('/', uploader.single('file'), (req, res, next) => {
   const {exercise, description, category, weight, weight_metric, reps, rounds} = req.body;
   
   // Check user is logged in
-  if (!req.session.currentUser) {
+  if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   };
@@ -36,7 +36,7 @@ videosRouter.post('/', uploader.single('file'), (req, res, next) => {
   
 
   Videos.create({
-    creator_id: req.session.currentUser._id,
+    creator_id: req.user._id,
     videoUrl: req.file.path,
     exercise,
     description,
@@ -58,10 +58,12 @@ videosRouter.post('/', uploader.single('file'), (req, res, next) => {
 
 // GET route ==> getting videos
 videosRouter.get('/', (req, res, next) => {
-  if (!req.session.currentUser) {
+  console.log("okkk")
+  if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   }
+
 
   Videos.find({category: 'trending'})
     .populate('creator_id')
@@ -78,7 +80,7 @@ videosRouter.get('/', (req, res, next) => {
 //POST /videos/:id/tags
 videosRouter.post('/:videoId/tags', (req, res, next)=>{
   const {tags, exercise} = req.body;
-  const user = req.session.currentUser;
+  const user = req.user;
   let formTagExist = false;
   
   if(!mongoose.Types.ObjectId.isValid(req.params.videoId)) { //check if video ID exists
@@ -139,7 +141,7 @@ videosRouter.post('/:videoId/tags', (req, res, next)=>{
 
 //  GET /videos/explore
 videosRouter.get('/explore', (req, res, next) => {
-  if (!req.session.currentUser) {
+  if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   }
@@ -183,14 +185,14 @@ videosRouter.post('/:videoId/ask', (req, res, next)=>{
     return;
   };
 
-  if (!req.session.currentUser) { //check if user is logged-in
+  if (!req.user) { //check if user is logged-in
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   };
 
   let newComment;
   Comments.create({
-    author_id: req.session.currentUser._id,
+    author_id: req.user._id,
     question,
     to_id
   })
@@ -228,7 +230,7 @@ videosRouter.delete('/:videoId', (req, res, next)=>{
     return;
   }
 
-  if (!req.session.currentUser) {
+  if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   }
@@ -244,7 +246,7 @@ videosRouter.delete('/:videoId', (req, res, next)=>{
 
 // GET route => to retrieve a specific video
 videosRouter.get('/:videoId', (req, res, next) => {
-  if (!req.session.currentUser) {
+  if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   }
