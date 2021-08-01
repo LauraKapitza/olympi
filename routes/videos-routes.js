@@ -125,11 +125,9 @@ videosRouter.post('/:videoId/tags', (req, res, next)=>{
       })
       videoFromDB.save()
         .then(response => {
-          console.log('updated video', response)
           res.status(201).json(response)
         })
         .catch(err => {
-          console.log(err)
           res.status(500).json({message: 'Error while saving the updated video into DB.'});
         })
     })

@@ -30,30 +30,12 @@ class Signup extends React.Component {
     event.preventDefault();
 
     // 1. Signup
-    authService.signup(
-      this.state.username,
-      this.state.email, 
-      this.state.password,
-      this.state.city,
-      this.state.fav_exercise,
-      this.state.career_date,
-      this.state.certifications,
-      this.state.website,
-      this.state.about)
+    authService.signup(this.state)
       .then(() => {
         this.setState({error: ""});
 
         // 2. then, update with user infos
-        authService.edit(
-          this.state.username,
-          this.state.email, 
-          this.state.password,
-          this.state.city,
-          this.state.fav_exercise,
-          this.state.career_date,
-          this.state.certifications,
-          this.state.website,
-          this.state.about)
+        authService.edit(this.state)
           .then(response => {
             this.setState({error: ""});
             
@@ -68,13 +50,10 @@ class Signup extends React.Component {
 
   handleChange = (event) => {
     const {name, value} = event.target;
-    console.log()
     this.setState({[name]: value});
   } 
 
   render() {
-    const currentDate = new Date();
-
     return (
         <div className='signup'>
           <div className="bkg-circle">
@@ -91,7 +70,7 @@ class Signup extends React.Component {
               <button onClick={() => {this.setState({professional:false})}}>Normal User</button> 
 
               {/* this.state.professional=true */}
-              <button professional={true} onClick={() => {this.setState({professional:true})}}>Professional</button>
+              <button  onClick={() => {this.setState({professional:true})}}>Professional</button>
             </div>
           )
           }
@@ -135,7 +114,7 @@ class Signup extends React.Component {
                   <div>
                     <p>
                       <label id="career-start">
-                        <p>Career Start</p>
+                        <span>Career Start</span>
                         <input id="career-start-input" type="month" name="career_date" value={this.state.career_date} onChange={this.handleChange} />
                       </label>
                     </p>

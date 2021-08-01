@@ -12,7 +12,8 @@ export default {
       .then(response => response.data)
   },
 
-  signup(professional, username, email, password, city, fav_exercise, career_date, certifications, website, about) {
+  signup(data) {
+    const {professional, username, email, password, city, fav_exercise, career_date, certifications, website, about} = data;
     return this.service.post('/signup', {
       professional,
       username,
@@ -38,7 +39,8 @@ export default {
       .then(response => response.data)
   },
 
-  edit(username, email, city, fav_exercise, career_date, certifications, website, about) {
+  edit(data) {
+    const {username, email, city, fav_exercise, career_date, certifications, website, about} = data;
     return this.service.post('/edit', {
       username,
       email,

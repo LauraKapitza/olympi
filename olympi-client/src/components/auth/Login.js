@@ -17,7 +17,6 @@ class Login extends React.Component {
     authService.login(this.state.email, this.state.password)
       .then(response => {
         this.setState({error: ""});
-
         this.props.updateUser(response);
         this.props.history.push('/');
       })

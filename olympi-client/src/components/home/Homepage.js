@@ -4,9 +4,11 @@ import Intro from "./Intro/Intro"
 import HowItWorks from "./HowItWorks/HowItWorks"
 import Footer from "./Footer/Footer"
 
-export default function Homepage () {
+export default function Homepage (props) {
+  console.log("user --->", props.user)
   return (
     <>
+    
     <NavbarTop/>
     <div className="homeContainer">
     <Intro/>

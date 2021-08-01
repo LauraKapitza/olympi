@@ -15,7 +15,9 @@ class App extends Component {
   fetchUser = () => {
     if (!this.state.user._id) {
       authService.loggedin()
-        .then(data => this.setState({user: data}))
+        .then(data => {
+          this.setState({user: data})
+        })
         .catch(err => this.setState({user: false}))
       ;
     } else {

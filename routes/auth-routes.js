@@ -11,35 +11,29 @@ const bcryptSalt = 10;
 ///////////////////////////// LOGIN ////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
-router.post('/login', (req, res, next) => {
-  const {email, password} = req.body;
-
-  if (!email || !password) {
-    res.status(400).json({message: "Please type email and password"});
-    return;
-  }
-
-  User.findOne({email})
-  .then(theUser => {
-    if (theUser === null) {
-      res.status(400).json({ message: "No account for this email." });
+router.post("/login", (req, res, next) => {
+  passport.authenticate("local", (err, theUser, failureDetails) => {
+    if (err) {
+      res.status(500).json({message: 'Something went wrong authenticating user'});
       return;
     }
-    console.log('the user', theUser)
+  
+    if (!theUser) {
+      res.status(401).json(failureDetails); // `failureDetails` contains the error messages from our logic in "LocalStrategy" {message: '…'}.
+      return;
+    }
 
-    //compareSync
-    if (bcrypt.compareSync(password, theUser.password) !== true) {
-        res.status(400).json({message: 'Wrong credentials'})
+    // save user in session
+    req.login(theUser, (err) => {
+      if (err) {
+        res.status(500).json({message: 'Session save went bad.'});
         return;
-    } 
-    
-    req.session.currentUser = theUser;
-    res.status(200).json(theUser);
-    
-  })
-  .catch(err => {
-    res.status(500).json({message: "Something went wrong authenticating user"});
-  })
+      }
+
+      // We are now logged in (thats why we can also send req.user)
+      res.status(200).json(theUser);
+    });
+  })(req, res, next);
 });
 
 ////////////////////////////////////////////////////////////////////////
@@ -96,8 +90,15 @@ router.post('/signup', (req, res, next) => {
     });
 
     newUser.save()
-    .then((response) => {
-      res.status(201).json(response);
+    .then(() => {
+      req.login(newUser, (err) => {
+        if (err) {
+          res.status(500).json({message: 'Login after signup went bad.'});
+          return;
+        }
+    
+        res.status(201).json(newUser);
+      });
     })
     .catch(err => {
       res.status(500).json({message: "Something went wrong"});
@@ -106,12 +107,25 @@ router.post('/signup', (req, res, next) => {
 });
 
 ////////////////////////////////////////////////////////////////////////
-///////////////////////////// LOGOUT ////////////////////////////////////
+///////////////////////////// LOGOUT ///////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
 router.get('/logout', (req, res) => {
   req.logout();
   res.status(204).send();
+});
+
+////////////////////////////////////////////////////////////////////////
+///////////////////////////// loggedin /////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+router.get("/loggedin", (req, res, next) => {
+  if (req.user) {
+    res.status(200).json(req.user);
+    return;
+  }
+
+  res.status(403).json({message: 'Unauthorized'});
 });
 
 ////////////////////////////////////////////////////////////////////////
@@ -123,8 +137,6 @@ router.get('/user', (req, res, next)=> {
     res.status(401).json({message: "You need to be logged in to edit your profile"});
     return;
   }
-
-  console.log('session', req.session.currentUser)
   
   User.findById(req.session.currentUser._id)
   .then(userFromDB => {
