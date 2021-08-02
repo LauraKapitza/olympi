@@ -1,5 +1,67 @@
 .HowItWorksContainer{
-  background-color: yellow;
+  background-color: #FAFAFA;
   width:100%;
   display: flex;
+  flex-direction: column;
+}
+
+
+ .custom-shape-divider-top-1627919333 {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1627919333 svg {
+  position: relative;
+  display: block;
+  width: calc(115% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider-top-1627919333 .shape-fill {
+  fill: #E41E1E;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-top-1627919333 svg {
+      width: calc(100% + 1.3px);
+      height: 80px;
+  }
+} 
+
+.titleHowitWorks{
+  padding-top: 100px;
+  padding-bottom: 20px;
+  font-size: 6vw;
+  text-align: center;
+}
+
+.StepsList {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+
+
+}
+
+
+
+
+.StepTitle{
+  font-size: 5vw;
+  padding: 30px;
+color: #E41E1E;}
+
+.arrowIcon{
+  padding-top: 20px;
+
+}
+
+.stepPhoto img{
+width: 45%;
 }

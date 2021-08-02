@@ -2,7 +2,7 @@
   width:100%;
   display: flex;
   color: #E41E1E;
-  background-color: orange;
+  background-color: white;
   flex-direction: column;
 }
 
@@ -31,20 +31,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: orchid;
   width: 100%;
   
 }
 
 .Tagline {
-padding-top: -50px;
-background-color: palegreen;
+text-align: center;
+padding-right: 15px;
+padding-left: 15px;
+padding-bottom: 20px;
+color: #250505;
 }
 
-img {
+.phonepic {
   max-height: 60%;
-  max-width: 80%;
-  background-color: orangered;
+  max-width: 60%;
+  background-color: white;
+  padding-bottom: 15px;
 
 }
 

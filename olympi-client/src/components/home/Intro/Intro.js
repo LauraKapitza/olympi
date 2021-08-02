@@ -14,7 +14,7 @@ function Intro() {
 </div>
 
 
-      <div className="phoneImg"> <img src="/assets/photos/olympiphone.png" className="phonepic" alt="olympiapp"></img> <h2 className="Tagline">Olympi tagline here </h2> </div>
+      <div className="phoneImg"> <img src="/assets/photos/olympiphone.png" className="phonepic" alt="olympiapp"></img> <h3 className="Tagline">"Olympi tagline here""Olympi tagline here" "Olympi tagline here"  </h3> </div>
 
 
 

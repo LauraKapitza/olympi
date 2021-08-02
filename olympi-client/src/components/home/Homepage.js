@@ -3,6 +3,7 @@ import Features from "./Features/Features"
 import Intro from "./Intro/Intro"
 import HowItWorks from "./HowItWorks/HowItWorks"
 import Footer from "./Footer/Footer"
+import Reviews from "./Reviews/Reviews"
 
 export default function Homepage (props) {
   return (
@@ -12,6 +13,7 @@ export default function Homepage (props) {
         <Intro/>
         <Features/>
         <HowItWorks/>
+        <Reviews/>
         <Footer/>
       </div>
     </>

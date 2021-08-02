@@ -32,25 +32,36 @@
 }
 
 .title {
-  padding-top: 100px;
-  font-size: 4vw;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  font-size: 6vw;
   color: #ffffff;
 text-align: center;
 }
 
 .FeaturesList{
-  padding: top 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   text-align: center;
   justify-content: space-around;
-  background-color: blueviolet;
+
 }
 
 .feature{
-  font-size: 12px;
-  background-color: blue;
-  color: #ffffff;
+  
+  padding: 30px;
 
 }
+
+.featureTitle{
+  font-size: 5vw;
+  color: #ffffff;
+  padding: 30px;
+}
+
+.featureDesc{
+  color: rgb(242, 232, 232);
+
+
+}
+
