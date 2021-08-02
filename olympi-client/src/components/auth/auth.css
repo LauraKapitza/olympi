@@ -1,0 +1,152 @@
+
+/* -------------------- */
+/* ----HEADER ---- */
+/* -------------------- */
+
+.signup,
+.login {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+}
+
+.signup h1,
+.login h1 {
+  margin: 54px auto 0;
+  font-weight: 400;
+}
+
+.login h1 {
+  margin-bottom: 19px;;
+}
+
+.signup .bkg-circle,
+.login .bkg-circle {
+  background-color: #FDEFEF;
+  border-bottom-right-radius: 200% 110%;
+  border-bottom-left-radius: 200% 110%;
+  display: flex; justify-content: center;
+  width: 100%;
+}
+
+.signup img,
+.login img {
+  margin: 57px auto 10px;
+  width: 128px; height: auto;
+}
+
+/* --------------------- */
+/* ----- BACK BTN ----- */
+/* --------------------- */
+
+.signup .back-btn,
+.login .back-btn {cursor: pointer;}
+
+.signup .back-to-profile {
+  color: #E41E1E;
+  font-weight: 500;
+  background: none;
+  margin: 0 0 19px;
+}
+
+
+/* --------------------- */
+/* ----- FORM ----- */
+/* --------------------- */
+
+.signup form,
+.login form {
+  width: 300px;
+}
+
+
+.signup input:not(#career-start-input),
+.login input {
+  border:1px solid #E1E1E1;
+  border-radius: 5px;
+  margin: 0 0 18px;
+  padding: 14px 20px;
+  width: 100%;
+}
+
+.signup input:focus,
+.login input:focus {
+  border-color: #E41E1E;
+  outline: none;
+}
+
+.signup input[type=submit],
+.login input[type=submit] {
+  background-color: #E41E1E;
+  border-radius: 10px;
+  color: #FDEFEF;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#career-start {
+  background-color: white;
+  border:1px solid #E1E1E1;
+  border-radius: 5px;
+  display: block;
+  font: 400 13.3333px Arial;
+  margin: 0 0 18px;
+  padding: 14px 20px;
+  width: 100%;
+}
+
+#career-start span {
+  color: #757575;
+}
+
+#career-start-input {
+  border: none;
+  background-color: white;
+  margin: 0 auto;
+  padding-left: 20%;
+  width: 80%;
+}
+
+/* --------------------- */
+/* ----- PARAGRAPH ----- */
+/* --------------------- */
+
+.signup .switch-form-btn,
+.login .switch-form-btn {
+  font-size: 12px;
+  padding: 0 50px;
+  margin: 0 auto; 
+}
+
+.signup .switch-form-btn a,
+.login .switch-form-btn a {color: #E41E1E;}
+
+
+/* --------------------- */
+/* ----- SIGNUP ----- */
+/* --------------------- */
+
+.signup h2 {
+  font-size: 16px;
+  font-weight: 200;
+  margin: 0 auto 10px;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.signup button {
+  background-color: #E41E1E;
+  border: none;
+  border-radius: 10px;
+  color: #FDEFEF;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 10px 5px 40px;
+  padding: 5px 15px;
+}
+
+
+
+
+

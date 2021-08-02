@@ -8,11 +8,11 @@ position: fixed;
 top: 0;
 color: #E41E1E;
 font-weight: bolder;
+<<<<<<< HEAD
 z-index: 999;
+=======
+>>>>>>> afba12c99437936677737da660fbbd7ce2c7c45b
 }
-
-
-
 
 .navbarLeft {
   flex: 1;
@@ -54,7 +54,11 @@ z-index: 999;
   
 }
 
-.signup  {
+.button a {
+  text-decoration: none;
+}
+
+.signup-btn  {
   background-color: #E41E1E;
   color: #FDEFEF;
 }

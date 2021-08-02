@@ -4,17 +4,16 @@ import Intro from "./Intro/Intro"
 import HowItWorks from "./HowItWorks/HowItWorks"
 import Footer from "./Footer/Footer"
 
-export default function Homepage () {
+export default function Homepage (props) {
   return (
     <>
-    <NavbarTop/>
-    <div className="homeContainer">
-    <Intro/>
-    <Features/>
-    <HowItWorks/>
-    <Footer/>
-    </div>
-
+      <NavbarTop/>
+      <div className="homeContainer">
+        <Intro/>
+        <Features/>
+        <HowItWorks/>
+        <Footer/>
+      </div>
     </>
   )
 }

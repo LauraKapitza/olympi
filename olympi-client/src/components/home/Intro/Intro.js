@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 import "./Intro.css"
 
 function Intro() {
@@ -7,8 +8,8 @@ function Intro() {
     <div className="description">
       <h1>Level up your exercise routine with your weighlifting community</h1>
       <div className="buttonsHomepage">
-      <span className="signup button"> Sign Up </span>
-      <span className="button"> Log In </span>
+      <Link className="signup-btn button" to="/signup">Sign up</Link>
+        <Link className="button" to="/login">Log in</Link>
       </div>
 </div>
 
