@@ -1,5 +1,66 @@
 .FooterContainer{
-  background-color:blue;
+  background-color: #FDEFEF;
   width:100%;
   display: flex;
+  flex-direction: column;
+  align-items:center;
+  
 }
+
+.FooterLeft {
+  padding-top: 30px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+  
+    
+  .FooterCenterLeft{
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+ 
+  
+  .FooterCenterRight{
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .FooterRight {
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2vh;
+   
+
+  }
+
+  .FooterContainer h3{
+    color: #E41E1E;
+  }
+
+.Instagram a{
+  color: #E41E1E;
+}
+
+  a {
+    color: black;
+  }
+  a:hover {
+     color: #E41E1E;
+  }
+
+    
+    
+    
