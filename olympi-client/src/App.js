@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 
 import Homepage from './components/home/Homepage';
 import Signup from './components/auth/Signup.js';
@@ -42,9 +42,9 @@ class App extends Component {
         <div className="App" data-route={props.location.pathname}> {/* data-route="/" allow us to style pages */}
 
           <Switch>
-            <Route exact path="/" render={(props) => (
-              <Homepage user={this.state.user} />
-            )} />
+            <Route exact path="/">
+              {this.state.user ? <Redirect to="/videos" user={this.state.user} /> : <Homepage user={this.state.user} />}
+            </Route>
 
             <Route exact path="/signup" render={(props) => (
               <Signup updateUser={this.updateUser} history={props.history} />
@@ -55,7 +55,7 @@ class App extends Component {
             )} />
 
             <Route exact path="/videos" render={(props) => (
-              <Feed user={this.state.user} updateUser={this.updateUser} history={props.history} />
+              <Feed user={this.state.user} history={props.history} />
             )} />
 
             {/* last route, ie: 404 */}
