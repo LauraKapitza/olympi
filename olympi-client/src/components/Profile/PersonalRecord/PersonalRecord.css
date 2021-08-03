@@ -1,8 +1,52 @@
 .PersonalRecordContainer{
-  background-color: cornflowerblue;
 }
 
 .RecordTableContainer{
   background-color: #FDEFEF;
-  width: 446.04px;
+  margin-right: 27px;
+  margin-left: 27px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+ 
+}
+
+
+.PRtitle{
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.EditPr {
+  color: #E51B23;
+  font-size: 13px;
+}
+
+.RecordTableContainer thead {
+  font-size: 13px;
+  font-weight: 500;
+
+  
+}
+
+.RecordTableContainer td {
+  color: #E51B23;
+  font-size: 11px;
+  text-align: center;
+  margin-right: 40px;
+  border-bottom: 1px solid #70707010;
+
+}
+
+table {
+  border-spacing: 0rem .6rem ;
+
+  width: 90%;
+  font-weight: 500;
+  margin-left: 10px;
 }
