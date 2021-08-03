@@ -1,0 +1,42 @@
+
+
+.SettingsBarContainer{
+  display: flex;
+  background-color: #ffffff;
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  
+    box-shadow: 0 2px 2px rgb(0 0 0 / 0.1);
+ 
+}
+
+
+.Settingstitle{
+  display: flex;
+  color: #E51B23;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Wheel {
+  display: flex;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: 6px solid #E51B2313;
+  align-items: center;
+  color: #E51B23;
+  background-color: #E51B2313;
+  
+}
+
+
+  
+

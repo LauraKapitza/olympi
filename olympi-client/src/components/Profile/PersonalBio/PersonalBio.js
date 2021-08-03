@@ -7,7 +7,7 @@ function PersonalBio() {
 
 <div className="BioTitle"> <span>Profile</span> </div>
 
-<div className="editImage"><img src="/assets/icons/editbutton.svg"></img> </div>
+<div className="editImage"><img src="/assets/icons/editbutton.svg"></img>Edit </div>
 
 
 

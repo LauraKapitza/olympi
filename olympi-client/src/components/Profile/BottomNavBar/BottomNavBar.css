@@ -4,6 +4,9 @@
   background-color: #fafafa;
   bottom: 0px;
   position: sticky;
+
+  box-shadow: 0 -5px 3px -3px #ccc, 0 0;
+
 }
 
 

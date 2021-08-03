@@ -1,3 +1,27 @@
 .ProfileVideosContainer{
-  background-color: darkorchid;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.VideosTitle{
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.EditPr {
+  color: #E51B23;
+  font-size: 13px;
+}
+
+.VideosSection{
+margin-left: 35px;
+
 }
