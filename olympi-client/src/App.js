@@ -7,6 +7,9 @@ import Signup from './components/auth/Signup.js';
 import Login from './components/auth/Login.js';
 import Feed from './components/feed/Feed.js';
 import authService from './components/auth/auth-service.js';
+import ProProfile from './components/Profile/ProProfile.js';
+import UserProfile from './components/Profile/UserProfile.js';
+
 
 class App extends Component {
   state = {
@@ -57,10 +60,26 @@ class App extends Component {
             <Route exact path="/videos" render={(props) => (
               <Feed user={this.state.user} updateUser={this.updateUser} history={props.history} />
             )} />
+ 
+            {/* go back an check this Karina */}
+            <Route exact path="/proprofile" render={(props) => (
+              <ProProfile user={this.state.user} />
+            )} />
+
+            {/* go back an check this Karina */}
+            <Route exact path="/userprofile" render={(props) => (
+              <UserProfile user={this.state.user} />
+            )} />
+
+
 
             {/* last route, ie: 404 */}
             <Route render={() => (<h1>Not Found</h1>)} />
           </Switch>
+
+
+
+          
         </div>
       )} />
     );

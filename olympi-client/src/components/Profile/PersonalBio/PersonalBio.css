@@ -1,0 +1,55 @@
+.PersonalBioContainer{
+  background-color: #fAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Container2{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: ce;
+
+}
+
+.BioTitle{
+font-size: 20px;
+margin-top: 10px;
+}
+
+.editImage{
+display: flex;
+flex-direction: row-reverse;
+width: 100%;
+margin-top: -20px;
+margin-bottom: 15px;
+margin-right: 20px;
+}
+
+
+.PersonalBioContainer img {
+max-width: 30%;
+
+}
+
+.UsersName{
+  color: #E51B23;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+
+.UsersCity{
+  font-weight:500;
+  font-size: 14px;
+  margin-bottom: 10px;
+
+}
+
+.ShortBio{
+font-size: 12px;
+font-weight:500;
+margin-bottom: 10px;
+}

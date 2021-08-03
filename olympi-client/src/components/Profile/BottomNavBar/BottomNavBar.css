@@ -1,0 +1,50 @@
+.BottomNavBarContainer{
+  display: flex;
+  height: 70px;
+  background-color: #fafafa;
+  bottom: 0px;
+}
+
+
+.ExploreNavButton{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  color:#C7C7C7;
+background-color: fafafa;
+align-items: center;
+justify-content: center;
+}
+
+.FeedNavButton{
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  height: 100%;
+  color:#C7C7C7;
+  background-color: #fafafa;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.ProfileNavButton{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: #e41b23;
+  background-color: #fafafa;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+
+
+}
+
+
+
+.FeedNavButton img{
+  margin-bottom: -11px;
+  margin-top: -11px;
+}
