@@ -1,7 +1,7 @@
 .FiltersContainer {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   padding-top: 5px;
   background-color: #ffffff;
 
