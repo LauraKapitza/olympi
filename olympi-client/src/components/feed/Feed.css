@@ -1,0 +1,48 @@
+/* --------------------- */
+/* ---- FEEDHEADER ----- */
+/* --------------------- */
+.Feed-header {
+  background: red; /* #FAFAFA */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50vh;
+}
+
+.Feed-header span {color: #E41E1E;}
+
+
+
+
+/* --------------------- */
+/* ------- FEED -------- */
+/* --------------------- */
+
+.Feed {
+  margin: 0 auto;
+}
+
+.Feed li {
+  list-style-type: none;
+}
+
+.Feed video {
+  width:320px; max-height: 400px;
+  display: block;
+}
+
+.Feed .play-btn {
+  opacity: 1;
+  background-size: 271px 149px;
+  background-position: 0 0;
+  background-image: url(../../assets/playBtn.png);
+  display: block;
+  position: absolute;
+  height: 135px;
+  left: 50%;
+  margin-left: -67px;
+  margin-top: -67px;
+  top: 50%;
+  width: 135px;
+
+}

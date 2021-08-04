@@ -34,6 +34,7 @@ videosRouter.post('/', uploader.single('file'), (req, res, next) => {
     return;
   };
   
+  console.log(req.file)
 
   Videos.create({
     creator_id: req.user._id,

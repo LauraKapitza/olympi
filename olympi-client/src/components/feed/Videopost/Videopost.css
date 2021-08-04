@@ -1,0 +1,6 @@
+.Video-post {
+  background: white;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}

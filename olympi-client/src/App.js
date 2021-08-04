@@ -54,9 +54,9 @@ class App extends Component {
               <Login updateUser={this.updateUser} history={props.history} />
             )} />
 
-            <Route exact path="/videos" render={(props) => (
-              <Feed user={this.state.user} history={props.history} />
-            )} />
+            <Route exact path="/videos">
+              {this.state.user ? <Feed user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
+            </Route>
 
             {/* last route, ie: 404 */}
             <Route render={() => (<h1>Not Found</h1>)} />
