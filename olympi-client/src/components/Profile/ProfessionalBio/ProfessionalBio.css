@@ -1,0 +1,87 @@
+.ProBioContainer{
+  background-color: #fAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+
+
+.ProBioTitle{
+font-size: 20px;
+margin-top: 10px;
+}
+
+.ProeditImage{
+display: flex;
+flex-direction: row-reverse;
+width: 100%;
+margin-top: -20px;
+margin-bottom: 15px;
+margin-right: 20px;
+color: #E51B23;
+font-size: 13px;
+font-weight: 500;
+}
+
+
+.ProBioContainer img {
+max-width: 30%;
+
+}
+
+.ProUsersName{
+  color: #E51B23;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #E51B2310;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.ProUsersName i {
+  display: flex;
+  background-color: #E51B23;
+  color: #fAFAFA;
+  border-radius: 40px;
+  margin-left: 5px;
+
+
+}
+
+.ProUsersCity{
+  font-weight:500;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+.ProShortBio{
+font-size: 12px;
+font-weight:500;
+margin-bottom: 10px;
+margin-left: 20px;
+margin-right: 20px;
+text-align: center;
+}
+
+.askFeedback {
+  background-color: #E51B23;
+  border:#E51B23;
+  border-radius: 10px;
+  color: #FDEFEF;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+  
+
+
+}
