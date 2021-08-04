@@ -10,6 +10,14 @@ import authService from './components/auth/auth-service.js';
 import ProProfile from './components/Profile/ProProfile.js';
 import UserProfile from './components/Profile/UserProfile.js';
 import Trending from './components/Explore/Trending.js';
+import Terms from './components/OtherPages/Terms/Terms';
+import Team from './components/OtherPages/Team/Team';
+import TagDefinitions from './components/OtherPages/TagDefinitions/TagDefinitions';
+import ForProfessionals from './components/OtherPages/ForProfessionals/ForProfessionals';
+import FAQ from './components/OtherPages/FAQ/FAQ';
+import Blog from './components/OtherPages/Blog/Blog';
+import About from './components/OtherPages/About/About';
+import Settings from './components/Settings/Settings';
 
 
 class App extends Component {
@@ -75,6 +83,40 @@ class App extends Component {
             {/* go back an check this Karina */}
             <Route exact path="/explore" render={(props) => (
               <Trending user={this.state.user} />
+            )} />
+
+            {/* go back an check this Karina */}
+
+            <Route exact path="/settings" render={(props) => (
+              <Settings user={this.state.user} />
+            )} />
+
+
+
+
+            {/* STATIC PAGES AT END OF HOMEPAGEgo back an check this Karina */}
+            
+            <Route exact path="/faq" render={(props) => (
+              <FAQ user={this.state.user} />
+            )} />
+
+            <Route exact path="/about" render={(props) => (
+              <About user={this.state.user} />
+            )} />
+            <Route exact path="/blog" render={(props) => (
+              <Blog user={this.state.user} />
+            )} />
+            <Route exact path="/professionals" render={(props) => (
+              <ForProfessionals user={this.state.user} />
+            )} />
+            <Route exact path="/definitions" render={(props) => (
+              <TagDefinitions user={this.state.user} />
+            )} />
+            <Route exact path="/team" render={(props) => (
+              <Team user={this.state.user} />
+            )} />
+            <Route exact path="/terms" render={(props) => (
+              <Terms user={this.state.user} />
             )} />
 
 

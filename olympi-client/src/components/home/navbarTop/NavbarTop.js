@@ -1,27 +1,33 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './navbarTop.css';
+import Burger from './Burger';
 
 
 export default function NavbarTop () {
   return (
     <div className="navbarContainer">
       <div className="navbarLeft"> 
-      <img src="/assets/logos/logo_transparent_background.png" alt="" className="logo"/> 
+      
+
+      <div><img src="/assets/logos/olympifigure.png" alt="" className="logo"/></div> 
+      <div> <img src="/assets/logos/olympiword.png" alt="" className="logo olympiword"/> </div>
+
+
+
       </div>
+
+
 
 
       <div className="navbarCenter"> 
-      <span>How it works</span>
-      <span>Features</span>
+      
       <span></span>
-      <span></span>
-      <span></span>
+      <Burger/>
       </div>
 
       <div className="navbarRight">
-        <Link className="signup-btn button" to="/signup">Sign up</Link>
-        <Link className="button" to="/login">Log in</Link>
+        
       </div>
 
 
