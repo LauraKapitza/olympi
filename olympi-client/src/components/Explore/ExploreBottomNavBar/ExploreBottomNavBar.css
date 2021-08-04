@@ -1,4 +1,4 @@
-.BottomNavBarContainer{
+.ExploreBottomNavBarContainer{
   display: flex;
   height: 70px;
   background-color: #fafafa;
@@ -10,7 +10,7 @@
 }
 
 
-.ExploreNavButton{
+.ExploreExploreNavButton{
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -21,7 +21,7 @@ align-items: center;
 justify-content: center;
 }
 
-.FeedNavButton{
+.ExploreFeedNavButton{
   display: flex;
   flex-direction: column;
   flex:1;
@@ -33,7 +33,7 @@ justify-content: center;
 
 }
 
-.ProfileNavButton{
+.ExploreProfileNavButton{
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -48,7 +48,7 @@ justify-content: center;
 
 
 
-.FeedNavButton img{
+.ExploreFeedNavButton img{
   margin-bottom: -11px;
   margin-top: -11px;
 }
