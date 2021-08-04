@@ -9,6 +9,7 @@ import Feed from './components/feed/Feed.js';
 import authService from './components/auth/auth-service.js';
 import ProProfile from './components/Profile/ProProfile.js';
 import UserProfile from './components/Profile/UserProfile.js';
+import Trending from './components/Explore/Trending.js';
 
 
 class App extends Component {
@@ -70,6 +71,12 @@ class App extends Component {
             <Route exact path="/userprofile" render={(props) => (
               <UserProfile user={this.state.user} />
             )} />
+
+            {/* go back an check this Karina */}
+            <Route exact path="/explore" render={(props) => (
+              <Trending user={this.state.user} />
+            )} />
+
 
 
 
