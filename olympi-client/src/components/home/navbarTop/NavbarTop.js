@@ -10,8 +10,8 @@ export default function NavbarTop () {
       <div className="navbarLeft"> 
       
 
-      <div><img src="/assets/logos/olympifigure.png" alt="" className="logo"/></div> 
-      <div> <img src="/assets/logos/olympiword.png" alt="" className="logo olympiword"/> </div>
+      <div><Link to="/"><img src="/assets/logos/olympifigure.png" alt="" className="logo"/></Link></div> 
+      <div><Link to="/"> <img src="/assets/logos/olympiword.png" alt="" className="logo olympiword"/></Link></div>
 
 
 
