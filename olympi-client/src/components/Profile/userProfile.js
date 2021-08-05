@@ -4,7 +4,7 @@ import PersonalBio from './PersonalBio/PersonalBio'
 import PersonalRecord from './PersonalRecord/PersonalRecord'
 import ProfileVideos from './ProfileVideos/ProfileVideos'
 import SettingsBar from './SettingsBar/SettingsBar'
-import "./UserProfile.css"
+import "./userProfile.css"
 
 function UserProfile() {
   return (
