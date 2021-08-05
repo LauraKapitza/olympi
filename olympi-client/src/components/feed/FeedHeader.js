@@ -1,23 +1,46 @@
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import authService from '../auth/auth-service.js';
 import React from 'react';
 import './Feed.css';
 
-function FunctionHeader(props) {
-  return(
-    <div className="Feed-header">
-    <header>
-      <h2>Hi <span>{props.user.username}</span>!</h2>
-      <p>Which exercise are you sharing today?</p>
-    </header>
+export default class FeedHeader extends React.Component {
+  logout = (event) => {
+    authService.logout()
+      .then(response => {
+        console.log('this', this.props)
+        this.props.updateUser(false);
+      })
+    ;
+  }
 
-    <nav>
-      <Link to="/">N</Link>
-      <Link to='/logout'>Logout</Link>
-      <button><img src="/assets/icons/upload.svg" alt="Upload Icon" /></button>
-    </nav>
+  // handleUpload = (event) => {
+  //   let formData = new FormData();
+  //   formData.append('photo', event.target.files[0]);
 
-    </div>
-  )
-};
+  //   authService.upload(formData)
+  //     .then(response => {
+  //       this.props.updateUser(response);
+  //     })
+  //   ;
+  // } 
 
-export default FunctionHeader;
+  render() {
+    if (this.props.user === false) return <Redirect to="/" />
+    return(
+      <div className="Feed-header">
+      <header>
+        <h2>Hi <span>{this.props.user.username}</span>!</h2>
+        <p>Which exercise are you sharing today?</p>
+      </header>
+
+      <nav>
+        
+        <div className="">
+              <button className="" onClick={this.logout}>Logout</button>
+        </div>
+      </nav>
+
+      </div>
+    )
+  }
+}

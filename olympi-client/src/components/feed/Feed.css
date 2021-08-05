@@ -2,11 +2,11 @@
 /* ---- FEEDHEADER ----- */
 /* --------------------- */
 .Feed-header {
-  background: red; /* #FAFAFA */
+  background: #FAFAFA; /* #FAFAFA */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50vh;
+  height: 20vh;
 }
 
 .Feed-header span {color: #E41E1E;}
