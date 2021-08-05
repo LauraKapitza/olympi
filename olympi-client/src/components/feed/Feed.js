@@ -3,6 +3,7 @@ import './Feed.css';
 
 import feedService from './feed-service.js';
 import FeedHeader from './FeedHeader.js';
+import FeedFooter from './FeedFooter.js';
 import VideoPost from './Videopost/VideoPost.js';
 
 
@@ -23,14 +24,16 @@ class Feed extends React.Component {
   
   render() {
     return(
-      <div>
-        <FeedHeader />
+      <div className="Feed">
+        <FeedHeader user={this.props.user} />
 
         {this.state.videos.map((video, index) => (
           <li key={video._id}>
             <VideoPost video={video}/>
           </li>
         ))}
+
+        <FeedFooter user={this.props.user} />
       </div>
     )
   }

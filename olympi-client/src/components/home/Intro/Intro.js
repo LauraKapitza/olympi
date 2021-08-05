@@ -8,7 +8,7 @@ function Intro() {
     <div className="description">
       <h1>Level up your exercise routine with your weighlifting community</h1>
       <div className="buttonsHomepage">
-      <Link className="signup-btn button" to="/signup">Sign up</Link>
+        <Link className="signup-btn button" to="/signup">Sign up</Link>
         <Link className="button" to="/login">Log in</Link>
       </div>
 </div>

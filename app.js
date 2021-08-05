@@ -65,9 +65,6 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 // ROUTES MIDDLEWARE STARTS HERE:
 
-const index = require('./routes/index');
-app.use('/', index);
-
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 
