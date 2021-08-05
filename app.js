@@ -1,5 +1,6 @@
-require('dotenv').config();
 const MONGODB_URI = process.env.MONGODB_URI
+
+require('dotenv').config();
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
