@@ -7,7 +7,7 @@ import Signup from './components/auth/Signup.js';
 import Login from './components/auth/Login.js';
 import Feed from './components/feed/Feed.js';
 import authService from './components/auth/auth-service.js';
-import ProProfile from './components/Profile/ProProfile.js';
+import ProProfile from './components/Profile/proProfile.js';
 import UserProfile from './components/Profile/UserProfile.js';
 import Trending from './components/Explore/Trending.js';
 import Terms from './components/OtherPages/Terms/Terms';
