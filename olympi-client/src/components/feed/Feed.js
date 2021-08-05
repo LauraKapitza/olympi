@@ -26,7 +26,7 @@ class Feed extends React.Component {
     console.log(this.state.user)
     return(
       <div className="Feed">
-        <FeedHeader user={this.props.user} />
+        <FeedHeader updateUser={this.props.updateUser} user={this.props.user} />
 
         {this.state.videos.map((video, index) => (
           <li key={video._id}>

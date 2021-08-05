@@ -36,7 +36,6 @@ export default {
   },
 
   logout() {
-    console.log("logout boggy")
     return this.service.get('/logout', {})
       .then(response => response.data)
   },

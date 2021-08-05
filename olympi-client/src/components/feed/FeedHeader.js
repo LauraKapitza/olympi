@@ -7,6 +7,7 @@ export default class FeedHeader extends React.Component {
   logout = (event) => {
     authService.logout()
       .then(response => {
+        console.log('this', this.props)
         this.props.updateUser(false);
       })
     ;
@@ -28,7 +29,7 @@ export default class FeedHeader extends React.Component {
     return(
       <div className="Feed-header">
       <header>
-        <h2>Hi <span>{props.user.username}</span>!</h2>
+        <h2>Hi <span>{this.props.user.username}</span>!</h2>
         <p>Which exercise are you sharing today?</p>
       </header>
 

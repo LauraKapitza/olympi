@@ -67,7 +67,7 @@ class App extends Component {
             )} />
 
             <Route exact path="/videos">
-              {this.state.user ? <Feed user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
+              {this.state.user ? <Feed updateUser={this.updateUser} user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
             </Route>
  
             {/* go back an check this Karina */}
