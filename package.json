@@ -28,6 +28,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "password": "^0.1.1",
+    "react-dark-mode-toggle": "^0.2.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
