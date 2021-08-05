@@ -1,5 +1,6 @@
-require('dotenv').config();
+const MONGODB_URI = process.env.MONGODB_URI
 
+require('dotenv').config();
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
@@ -16,7 +17,7 @@ const MongoStore = require('connect-mongo');
 const app_name = require('./package.json').name;
 
 mongoose
-  .connect('mongodb://localhost/olympi-server', {useNewUrlParser: true})
+  .connect(MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
