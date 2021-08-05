@@ -65,6 +65,10 @@ class App extends Component {
             <Route exact path="/login" render={(props) => (
               <Login updateUser={this.updateUser} history={props.history} />
             )} />
+
+            <Route exact path="/videos">
+              {this.state.user ? <Feed user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
+            </Route>
  
             {/* go back an check this Karina */}
             <Route exact path="/proprofile" render={(props) => (
@@ -114,12 +118,6 @@ class App extends Component {
             <Route exact path="/terms" render={(props) => (
               <Terms user={this.state.user} />
             )} />
-
-
-
-            <Route exact path="/videos">
-              {this.state.user ? <Feed user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
-            </Route>
 
             {/* last route, ie: 404 */}
             <Route render={() => (<h1>Not Found</h1>)} />

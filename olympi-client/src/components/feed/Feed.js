@@ -23,6 +23,7 @@ class Feed extends React.Component {
   }
   
   render() {
+    console.log(this.state.user)
     return(
       <div className="Feed">
         <FeedHeader user={this.props.user} />

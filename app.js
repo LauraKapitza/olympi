@@ -15,7 +15,7 @@ const session       = require('express-session');
 const MongoStore = require('connect-mongo');
 
 const app_name = require('./package.json').name;
-
+console.log('conf: ', process.env)
 mongoose
   .connect(MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
