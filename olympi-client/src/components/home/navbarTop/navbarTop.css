@@ -42,6 +42,7 @@ z-index: 999;
 .olympiword {
   padding-top: 15px;
   width: 100px;
+  margin-left: -6px;
 }
 
 .button {

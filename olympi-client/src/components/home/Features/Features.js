@@ -5,7 +5,7 @@ import "./Features.css";
 
 export default function Features() {
   return (
-    <div className= "FeaturesContainer">
+    <div id= "Features">
     
     <div className="custom-shape-divider-top-1627737931">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

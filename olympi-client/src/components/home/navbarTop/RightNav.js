@@ -1,7 +1,7 @@
-import "./RightNav.css"
 import React from 'react'
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 const Ul = styled.ul`
   list-style: none;
@@ -41,15 +41,18 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>How it Works</li>
-      <li>Features</li>
-      <li><Link  to="/signup">FAQ</Link></li>
-      <li><Link to="/definitions">Tag Definitions</Link></li>
-      <li><Link to="/professionals">For Professionals</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/team">Team</Link></li>
       <li><Link  to="/signup">Sign up</Link></li>
       <li><Link to="/login">Log in</Link></li>
+      <li><Link to ="/#Features">Features</Link></li>
+      <li><Link to ="/#HowItWorks">How it works</Link></li>
+      <li><Link to ="/#Reviews">Reviews</Link></li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/professionals">For Professionals</Link></li>
+      <li><Link to="/definitions">Tag Definitions</Link></li>
+      <li><Link to="/team">Team</Link></li>
+      <li><Link  to="/faq">FAQ</Link></li>
+      <li><Link to ="/#ContactUs">Contact Us</Link></li>
+      
       
       
 

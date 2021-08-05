@@ -4,7 +4,7 @@ import "./Reviews.css";
 
 function Reviews() {
   return (
-    <div className= "ReviewsContainer">
+    <div id= "Reviews">
 
 <div class="custom-shape-divider-top-1627932661">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

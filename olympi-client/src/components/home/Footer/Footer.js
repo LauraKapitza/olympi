@@ -28,7 +28,7 @@ function Footer() {
       </div>
 
 
-      <div className="FooterRight">
+      <div id="ContactUs">
       <h3>Contact Us</h3>
       <span>+33 07 66 33 78 48 </span>
       <span>olympi.app@gmail.com</span>

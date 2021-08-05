@@ -11,7 +11,7 @@ import ReplayRoundedIcon from '@material-ui/icons/ReplayRounded';
 
 function HowItWorks() {
   return (
-    <div className="HowItWorksContainer">
+    <div id="HowItWorks">
 
 
 <div class="custom-shape-divider-top-1627919333">

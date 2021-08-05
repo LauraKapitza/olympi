@@ -36,7 +36,7 @@ justify-content: center;
 
   }
 
-  .FooterRight {
+  #ContactUs {
     padding-top: 2vh;
     display: flex;
     flex-direction: column;
