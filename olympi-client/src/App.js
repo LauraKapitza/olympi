@@ -10,13 +10,13 @@ import authService from './components/auth/auth-service.js';
 import ProProfile from './components/Profile/proProfile.js';
 import UserProfile from './components/Profile/userProfile.js';
 import Trending from './components/Explore/Trending.js';
-import Terms from './components/OtherPages/Terms/Terms';
-import Team from './components/OtherPages/Team/Team';
-import TagDefinitions from './components/OtherPages/TagDefinitions/TagDefinitions';
-import ForProfessionals from './components/OtherPages/ForProfessionals/ForProfessionals';
-import FAQ from './components/OtherPages/FAQ/FAQ';
-import Blog from './components/OtherPages/Blog/Blog';
-import About from './components/OtherPages/About/About';
+import Terms from './components/home/OtherPages/Terms/Terms';
+import Team from './components/home/OtherPages/Team/Team';
+import TagDefinitions from './components/home/OtherPages/TagDefinitions/TagDefinitions';
+import ForProfessionals from './components/home/OtherPages/ForProfessionals/ForProfessionals';
+import FAQ from './components/home/OtherPages/FAQ/FAQ';
+import Blog from './components/home/OtherPages/Blog/Blog';
+import About from './components/home/OtherPages/About/About';
 import Settings from './components/Settings/Settings';
 
 
