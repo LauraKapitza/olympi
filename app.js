@@ -1,4 +1,4 @@
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/olympi-server';
 
 require('dotenv').config();
 const bodyParser   = require('body-parser');

@@ -2,6 +2,8 @@ import {Link} from 'react-router-dom';
 import React from 'react';
 import './Feed.css';
 
+import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
+
 function FunctionFooter(props) {
   return(
     <div className="ExploreBottomNavBarContainer">
