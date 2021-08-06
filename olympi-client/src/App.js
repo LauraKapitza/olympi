@@ -33,11 +33,14 @@ class App extends Component {
           console.log("user: ", this.state.user);
 
         })
-        .catch(err => this.setState({user: false}))
-      ;
+        .catch(err => {
+          this.setState({user: false})
+          console.log(this.state.user)
+        });
     } else {
       console.log('user already in the state')
     }
+
   };
 
   updateUser = (data) => {

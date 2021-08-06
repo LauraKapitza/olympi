@@ -7,7 +7,7 @@ function SearchBar() {
   return (
     <div className="SearchBarContainer">
 
-<div className="ExploreTitle">Explore <div className="ExploreIcons"><img src="/assets/icons/notificationsicon.svg"></img><img src="/assets/icons/addicon.svg"></img></div></div>
+<div className="ExploreTitle">Explore <div className="ExploreIcons"><img src="/assets/icons/notificationsicon.svg" alt=""></img><img src="/assets/icons/addicon.svg" alt=""></img></div></div>
 <div className="SearchBoxContainer"><SearchRoundedIcon/>Search...</div>
 <div className="PagesContainer">
 <div className="Fails">Fails</div>

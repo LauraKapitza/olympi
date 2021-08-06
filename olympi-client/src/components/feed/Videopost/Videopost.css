@@ -1,6 +1,41 @@
+/* --------------------- */
+/* ---- VIDEOPOST ----- */
+/* --------------------- */
+
 .Video-post {
   background: white;
   display: flex;
   flex-flow: column;
   justify-content: center;
+}
+
+
+/* --------------------- */
+/* ---- VIDEOUPLOAD ----- */
+/* --------------------- */
+
+.Video-upload {
+  position:absolute;left:50%;top:50%; transform:translate(-50%,-50%); z-index:1;
+  
+  width:25em;
+  
+  padding:1.5em;
+  
+  box-shadow:0 0 1em rgba(0,0,0,.35);
+  
+  animation:appear .3s;
+}
+
+.Video-upload >a {
+  position:absolute;
+  left:100%;
+  top:0; transform:translate(-50%,-50%);
+  border:2px solid; border-radius:100%;
+  background:white url("https://fonts.gstatic.com/s/i/materialiconsoutlined/close/v17/24px.svg") center; background-size:contain;
+  width:1.5em; height:1.5em; text-align:center;
+}
+
+@keyframes appear {
+  0% {opacity:0; transform:translate(-50%,-50%) translateY(3em);}
+  100% {opacity:1; transform:translate(-50%,-50%) translateY(0em);}
 }

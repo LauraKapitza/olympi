@@ -13,12 +13,12 @@ function BottomNavBar() {
 </div>
 
 <div className="FeedNavButton"> 
-<img src="/assets/icons/greydumbell.svg"></img>
+<img src="/assets/icons/greydumbell.svg" alt=""></img>
 <span>Feed</span>
 </div>
 
 <div className="ProfileNavButton"> 
-<img src="/assets/icons/user(27).svg"></img>
+<img src="/assets/icons/user(27).svg" alt=""></img>
 <span>Profile</span>
 </div>
 

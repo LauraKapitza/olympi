@@ -27,7 +27,7 @@ function LogoutBar() {
 
       <div className="LogoutTitle">
       Logout
-      <div className="Setbtn Door"><img src="/assets/icons/logoutbtn.svg"></img></div>
+      <div className="Setbtn Door"><img src="/assets/icons/logoutbtn.svg" alt=""></img></div>
 
       </div>
 

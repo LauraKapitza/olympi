@@ -1,12 +1,17 @@
 import React from 'react';
-// import {Video, CloudinaryContext, Transformation} from 'cloudinary-react';
 import './../Feed.css';
 
+import Tags from './Tags.js';
+
 class VideoPost extends React.Component {
-state = {
-  video: this.props.video,
-  publicId: ""
-}
+  state = {
+    video: this.props.video,
+    tagsOpen: false
+  }
+
+  toggle = () => {
+    this.setState({tagsOpen: !this.state.tagsOpen})
+  }
   
   render() {
     console.log('VideoPost state', this.state)
@@ -19,9 +24,10 @@ state = {
           <p>Placeholder for a professional</p>
         </header>
 
+
         {/* <Video cloudName="lorbeercloud" version="1628015224"  publicId="Olympi/test_h7xnas" >
         </Video> */}
-        <div classname="play-btn" role="button" tabIndex="0">
+        <div className="play-btn" role="button" tabIndex="0">
           <video muted autoPlay sequence="0" viewmode="feed" loop controls>
             <source src={this.state.video.videoUrl} type="video/mp4"/>
           </video>
@@ -33,6 +39,9 @@ state = {
         <footer>
           <h4>{this.state.video.exercise}</h4>
           <p>{this.state.video.description}</p>
+
+          {this.state.uploadOpen && <Tags toggle={this.toggle} />}
+          <button onClick={this.toggle}>Add feedback</button>
         </footer>
   
       </article>

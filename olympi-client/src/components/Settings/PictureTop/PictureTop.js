@@ -7,7 +7,7 @@ function PictureTop() {
   return (
     <div className="PictureTopContainer">
     <div className="arrow"><ArrowBackRoundedIcon/></div><div className="PictureTopTitle">  Settings</div>
-    <img src="/assets/icons/noprofilephoto.svg"></img>
+    <img src="/assets/icons/noprofilephoto.svg" alt=""></img>
     <div className="UsersName">Karina Gonzalez</div>
     <div className="UsersCity">Paris, France 🇫🇷</div>
       

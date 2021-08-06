@@ -1,30 +1,28 @@
-import {Link, Redirect} from 'react-router-dom';
-import authService from '../auth/auth-service.js';
+import {Redirect} from 'react-router-dom';
 import React from 'react';
 import './Feed.css';
 
+import authService from '../auth/auth-service.js';
+import VideoUpload from './Videopost/VideoUpload.js';
 export default class FeedHeader extends React.Component {
+  state = {
+    uploadOpen: false
+  }
+  
   logout = (event) => {
     authService.logout()
       .then(response => {
-        console.log('this', this.props)
         this.props.updateUser(false);
       })
     ;
   }
 
-  // handleUpload = (event) => {
-  //   let formData = new FormData();
-  //   formData.append('photo', event.target.files[0]);
-
-  //   authService.upload(formData)
-  //     .then(response => {
-  //       this.props.updateUser(response);
-  //     })
-  //   ;
-  // } 
+  toggle = () => {
+    this.setState({uploadOpen: !this.state.uploadOpen})
+  } 
 
   render() {
+    
     if (this.props.user === false) return <Redirect to="/" />
     return(
       <div className="Feed-header">
@@ -34,10 +32,9 @@ export default class FeedHeader extends React.Component {
       </header>
 
       <nav>
-        
-        <div className="">
-              <button className="" onClick={this.logout}>Logout</button>
-        </div>
+        {this.state.uploadOpen && <VideoUpload toggle={this.toggle} />}
+        <button onClick={this.toggle}>Upload</button>
+        <button className="" onClick={this.logout}>Logout</button>
       </nav>
 
       </div>

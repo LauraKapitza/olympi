@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import './navbarTop.css';
 import Burger from './Burger';
 

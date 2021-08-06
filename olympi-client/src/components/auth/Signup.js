@@ -31,15 +31,17 @@ class Signup extends React.Component {
 
     // 1. Signup
     authService.signup(this.state)
-      .then(() => {
+      .then((newUser) => {
         this.setState({error: ""});
 
+        //TODO: check wtf is edit going on here
         // 2. then, update with user infos
         authService.edit(this.state)
           .then(response => {
             this.setState({error: ""});
-            
-            this.props.updateUser(response);
+
+
+            this.props.updateUser(newUser);
             this.props.history.push('/');
           })
           .catch(err => this.setState({error: err.response.data.message}))

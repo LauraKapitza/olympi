@@ -5,20 +5,20 @@ function ProfileVideos() {
     <div className="ProfileVideosContainer">
 
     <div className="VideosTitle">Videos
-    <div className="EditPr">Edit<img src="/assets/icons/editbutton.svg"></img></div></div>
+    <div className="EditPr">Edit<img src="/assets/icons/editbutton.svg" alt=""></img></div></div>
 
 
 <div className="VideosSection">
 
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
-<img src="https://via.placeholder.com/100"></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
+<img src="https://via.placeholder.com/100" alt=""></img>
 
 
 </div>

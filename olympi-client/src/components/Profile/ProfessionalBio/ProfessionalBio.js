@@ -8,11 +8,11 @@ function ProfessionalBio() {
 
 <div className="ProBioTitle"> <span>Professional Profile</span> </div>
 
-<div className="ProeditImage"><img src="/assets/icons/editbutton.svg"></img>Edit </div>
+<div className="ProeditImage"><img src="/assets/icons/editbutton.svg" alt=""></img>Edit </div>
 
 
 
-<img src="/assets/icons/noprofilephoto.svg"></img>
+<img src="/assets/icons/noprofilephoto.svg" alt=""></img>
 <div className="ProUsersName">Professional Trainer <i><SportsIcon/></i></div>
 <div className="ProUsersCity">Paris, France 🇫🇷</div>
 <div className="ProShortBio">I am a professional trainer! Ask me a question and I can help</div>

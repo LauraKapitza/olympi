@@ -7,7 +7,7 @@ function PersonalRecord() {
       
       <div className="PRtitle">Personal Record
 
-      <div className="EditPr">Edit<img src="/assets/icons/editbutton.svg"></img>
+      <div className="EditPr">Edit<img src="/assets/icons/editbutton.svg" alt=""></img>
 
       </div></div>
 

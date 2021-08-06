@@ -15,9 +15,14 @@ const session       = require('express-session');
 const MongoStore = require('connect-mongo');
 
 const app_name = require('./package.json').name;
-console.log('conf: ', process.env)
+
+console.log(MONGODB_URI)
 mongoose
-  .connect(MONGODB_URI, {useNewUrlParser: true})
+.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -48,7 +53,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   store: MongoStore.create({
-    mongoUrl: process.env.MONGODB_URI,
+    mongoUrl: MONGODB_URI,
   })
 }))
 require('./passport')(app);

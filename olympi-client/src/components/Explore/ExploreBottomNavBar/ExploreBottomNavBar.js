@@ -13,12 +13,12 @@ function ExploreBottomNavBar() {
 </div>
 
 <div className="ExploreFeedNavButton"> 
-<img src="/assets/icons/greydumbell.svg"></img>
+<img src="/assets/icons/greydumbell.svg" alt=""></img>
 <span>Feed</span>
 </div>
 
 <div className="ExploreProfileNavButton"> 
-<img src="/assets/icons/greyuser.svg"></img>
+<img src="/assets/icons/greyuser.svg" alt=""></img>
 <span>Profile</span>
 </div>
 
