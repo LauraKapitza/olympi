@@ -18,7 +18,7 @@ import FAQ from './components/home/OtherPages/FAQ/FAQ';
 import Blog from './components/home/OtherPages/Blog/Blog';
 import About from './components/home/OtherPages/About/About';
 import Settings from './components/Settings/Settings';
-
+import Notifications from './components/Notifications/Notifications';
 
 class App extends Component {
   state = {
@@ -93,6 +93,13 @@ class App extends Component {
             <Route exact path="/settings" render={(props) => (
               <Settings user={this.state.user} />
             )} />
+
+            {/* go back an check this Karina */}
+
+            <Route exact path="/notifications" render={(props) => (
+              <Notifications user={this.state.user} />
+            )} />
+
 
 
 
