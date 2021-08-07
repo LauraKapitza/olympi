@@ -1,0 +1,208 @@
+/* ---- Tags ----- */
+footer .tags-wrapper{
+  display: flex;
+  margin-bottom: 10px;
+	flex-wrap: wrap;
+}
+
+footer .tag{
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin-right: 5px;
+	margin-top: 5px;
+}
+
+
+/* ---- Tags feedback form ----- */
+
+.add-tag-button{
+	background-color: #E41B23;
+  height: 36px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+	border: none;
+	padding: 5px 35px;
+	margin-top: 15px;;
+}
+
+.tags-feedback {
+  position:fixed;
+  height: 80vh;
+  top: 20vh;
+  left: 0;
+  z-index:1;
+  overflow-y: scroll;
+  
+  padding:1.5em;
+  
+  box-shadow:0 0 1em rgba(0,0,0,.35);
+  
+  animation:appear .3s;
+  background-color: white;
+  width: 100%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+}
+
+@keyframes appear {
+  0% {opacity:0; transform:translateY(100vh);}
+  100% {opacity:1; transform:translateY(0em);}
+}
+
+.tags-feedback .error{
+  color: red;
+
+}
+
+.tags-feedback > a {
+  position:absolute;
+  right:20px;
+  top:20px;
+}
+
+.tags-feedback h2{
+  text-align: center;
+  font-size: 20px;
+  font-weight: medium;
+  margin-bottom: 25px;
+}
+
+.tags-form{
+  position: relative;
+}
+
+.tags-form .tags-checkbox-wrapper{
+	display: flex;
+	justify-content:flex-start;
+	flex-wrap: wrap;
+}
+
+.tags-form .tags-checkbox-wrapper label{
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 5px 15px;
+	font-size: 14px;
+}
+
+.tags-form .tags-checkbox-wrapper input{
+	margin-left: 10px;
+}
+
+.tags-form .form-submit{
+	display: flex;
+	justify-content: center;
+}
+
+.tags-form .form-submit input[type="submit"]{
+	background-color: #E41B23;
+  height: 36px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+	border: none;
+	padding: 5px 35px;
+	margin-top: 25px;
+}
+
+
+
+
+
+/* ---- Tags Color ----- */
+
+
+.tag[data-tag="arms-forward"]{
+	background-color: #FD498A;
+}
+.tag[data-tag="arms-too-narrow"]{
+	background-color: #008BF8;
+}
+.tag[data-tag="arms-too-wide"]{
+	background-color: #FFC15E;
+}
+.tag[data-tag="bar-far-from-leg"]{
+	background-color: #00f7ff;
+}
+.tag[data-tag="bar-placement-wrong"]{
+	background-color: #007991;
+}
+.tag[data-tag="benched"]{
+	background-color: #FF7D82;
+}
+.tag[data-tag="butt-off-bench"]{
+	background-color: #FDE74C;
+}
+.tag[data-tag="butt-wink"]{
+	background-color: #61E8E1;
+}
+.tag[data-tag="control-descent"]{
+	background-color: #61E8E1;
+}
+.tag[data-tag="curved-back"]{
+	background-color: #E0C1B3;
+}
+.tag[data-tag="fair"]{
+	background-color: #080357;
+  color: white;
+}
+.tag[data-tag="foot-off-floor"]{
+	background-color: #4cf3c9;
+}
+.tag[data-tag="good"]{
+	background-color: #7692FF;
+  color: white;
+}
+.tag[data-tag="head-back"]{
+	background-color: #ff0000;
+}
+.tag[data-tag="hips-shoot-up"]{
+	background-color: #ff0000;
+}
+.tag[data-tag="knee-path"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="legs-bent"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="lets-improve-it!"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="loose-lats"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="neck-angle"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="no-arch"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="no-chest-touch"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="no-leg-drive"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="no-lockout"]{
+	background-color: #f7a766;
+}
+.tag[data-tag="not-parallel"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="other"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="perfect"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="poor-bracing"]{
+	background-color: #FF0000;
+}
+.tag[data-tag="very-good"]{
+	background-color: #FF0000;
+}
+

@@ -12,7 +12,7 @@ function Notifications() {
     
     <div className="PictureTopContainer">
     <div className="arrow"><ArrowBackRoundedIcon/></div><div className="PictureTopTitle">  Settings</div>
-    <img src="/assets/icons/noprofilephoto.svg"></img>
+    <img src="/assets/icons/noprofilephoto.svg" alt="no profile"></img>
     <div className="UsersName">Karina Gonzalez</div>
     <div className="UsersCity">Paris, France 🇫🇷</div>
       
@@ -41,7 +41,7 @@ function Notifications() {
       
             <div className="LogoutTitle">
             Logout
-            <div className="Setbtn Door"><img src="/assets/icons/logoutbtn.svg"></img></div>
+            <div className="Setbtn Door"><img src="/assets/icons/logoutbtn.svg" alt="logout"></img></div>
       
             </div>
       

@@ -9,5 +9,33 @@ export default {
   getVideos() {
     return this.service.get('/')
       .then(response => response.data)
-  }
+  },
+
+  uploadVideo(data) {
+    //because we send a formData we dont need to separate the values.
+
+    //const {file, exercise, weight, weight_metric, rounds, reps, category, description} = data;
+    // return this.service.post('/', {
+    //   file,
+    //   exercise,
+    //   description,
+    //   category,
+    //   weight,
+    //   weight_metric,
+    //   reps,
+    //   rounds,
+    // })
+    return this.service.post('/', data)
+      .then(response => response.data)
+  },
+
+  addTagsVideo(data){
+    const {video_id, exercise, tags} = data;
+    console.log(data)
+    return this.service.post(`/${video_id}/tags`, {
+      exercise,
+      tags
+    })
+      .then(response => response.data)
+  },
 }

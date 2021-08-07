@@ -1,0 +1,27 @@
+/* ---- Comments ----- */
+
+.comments-wrapper{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.comments-wrapper .comment{
+  background-color: #FDEFEF;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.comments-wrapper .comment h4{
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.37);
+}
+.comments-wrapper .comment p{
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.603);
+  display: inline;
+}
+.comments-wrapper .comment h5{
+  color: #0000ff79;
+  display: inline;
+  margin-right: 3px;
+}

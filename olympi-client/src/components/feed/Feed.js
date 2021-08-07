@@ -21,18 +21,24 @@ class Feed extends React.Component {
   componentDidMount() {
     this.fetchVideos();
   }
+
+  addVideo = (video) => {
+    this.setState(prevState => ({
+      videos: [...prevState.videos, video]
+    }))
+    console.log("state feed", this.state)
+  }
   
   render() {
-    console.log(this.state.user)
     return(
       <div className="Feed">
-        <FeedHeader updateUser={this.props.updateUser} user={this.props.user} />
-
-        {this.state.videos.map((video, index) => (
-          <li key={video._id}>
-            <VideoPost video={video}/>
-          </li>
-        ))}
+        <FeedHeader updateUser={this.props.updateUser} user={this.props.user} addVideo={this.addVideo} />
+        
+        <div className="Feed-list-container">
+          {this.state.videos.map((video, index) => (
+              <VideoPost key={index} video={video}/>
+          ))}
+        </div>
 
         <FeedFooter user={this.props.user} />
       </div>

@@ -92,13 +92,10 @@ router.post('/signup', (req, res, next) => {
     newUser.save()
     .then(() => {
       req.login(newUser, (err) => {
-        console.log(1)
         if (err) {
-          console.log(err)
           res.status(500).json({message: 'Login after signup went bad.'});
           return;
         }
-        console.log(newUser)
         res.status(201).json(newUser);
       });
     })

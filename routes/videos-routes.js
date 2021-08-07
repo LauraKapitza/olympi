@@ -5,13 +5,14 @@ const uploader = require('../configs/cloudinary.config.js');
 
 const Comments = require('../models/Comments-model.js');
 const Videos = require('../models/Videos-model.js');
+const User = require('../models/Users-model.js');
 const {EXERCISES, FORM, OVERHEADPRESS, DEADLIFT, SQUAT, BENCHPRESS} = require('../constants.js')
 
 
 // POST route => to create a new video
-videosRouter.post('/', uploader.single('file'), (req, res, next) => {
+videosRouter.post('/', uploader.single('file'), async (req, res, next) => {
   const {exercise, description, category, weight, weight_metric, reps, rounds} = req.body;
-  
+
   // Check user is logged in
   if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
@@ -33,39 +34,37 @@ videosRouter.post('/', uploader.single('file'), (req, res, next) => {
     res.status(400).json({message: "Metric does not exist. Please select one of the metrics provided."})
     return;
   };
-  
-  console.log(req.file)
-
-  Videos.create({
-    creator_id: req.user._id,
-    videoUrl: req.file.path,
-    exercise,
-    description,
-    category,
-    weight,
-    weight_metric,
-    reps,
-    rounds
-  })
-    .then(response => {
-      res.status(201).json(response);
+  try {
+    let newVideo = await Videos.create({
+      creator_id: req.user._id,
+      videoUrl: req.file.path,
+      exercise,
+      description,
+      category,
+      weight,
+      weight_metric,
+      reps,
+      rounds
     })
-    .catch(err => {
-      res.status(500).json(err);
-    }) 
+    newVideo = await newVideo.populate('creator_id').execPopulate();
+    newVideo = await newVideo.populate('comments').execPopulate();
+
+    res.status(201).json(newVideo);
+  } catch (e){
+    res.status(500).json(err);
+  }
 
 });
 
 
 // GET route ==> getting videos
 videosRouter.get('/', (req, res, next) => {
-  console.log("okkk")
   if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   }
 
-
+  //TODO: populate the to_id and author_id for each comments
   Videos.find({category: 'trending'})
     .populate('creator_id')
     .populate('comments')
@@ -209,7 +208,6 @@ videosRouter.post('/:videoId/ask', (req, res, next)=>{
     .populate('comments')
     .populate('creator_id')
     .then(video => {
-      console.log(video)
       res.status(201).json(video);
     })
     .catch(err => {

@@ -16,7 +16,6 @@ const MongoStore = require('connect-mongo');
 
 const app_name = require('./package.json').name;
 
-console.log(MONGODB_URI)
 mongoose
 .connect(MONGODB_URI, {
   useNewUrlParser: true,
