@@ -74,12 +74,12 @@ class App extends Component {
  
             {/* go back an check this Karina */}
             <Route exact path="/proprofile" render={(props) => (
-              <ProProfile user={this.state.user} />
+              <ProProfile user={this.state.user} updateUser={this.updateUser} />
             )} />
 
             {/* go back an check this Karina */}
             <Route exact path="/userprofile" render={(props) => (
-              <UserProfile user={this.state.user} />
+              <UserProfile user={this.state.user} updateUser={this.updateUser} />
             )} />
 
             {/* go back an check this Karina */}
@@ -87,10 +87,10 @@ class App extends Component {
               <Trending user={this.state.user} />
             )} />
 
-            {/* go back an check this Karina */}
+            {/* SETTINGS*/}
 
             <Route exact path="/settings" render={(props) => (
-              <Settings user={this.state.user} />
+              <Settings user={this.state.user} updateUser={this.updateUser}/>
             )} />
 
             {/* go back an check this Karina */}

@@ -9,9 +9,9 @@ import SettingsBar from './SettingsBar/SettingsBar'
 export default function ProProfile(){
   return (
     <div>
-    <ProfessionalBio/>
-      <PersonalRecord/>
-      <ProfileVideos/>
+    <ProfessionalBio user={this.state.user} updateUser={this.updateUser}/>
+      <PersonalRecord user={this.state.user} updateUser={this.updateUser}/>
+      <ProfileVideos user={this.state.user} updateUser={this.updateUser}/>
       <SettingsBar/>
       <BottomNavBar/>
 

@@ -6,18 +6,20 @@ import ProfileVideos from './ProfileVideos/ProfileVideos'
 import SettingsBar from './SettingsBar/SettingsBar'
 import "./userProfile.css"
 
-function UserProfile() {
+export default class UserProfile extends React.Component {
+
+  render () {
   return (
     <div>
-      <PersonalBio/>
-      <PersonalRecord/>
-      <ProfileVideos/>
-      <SettingsBar/>
+      <PersonalBio user={this.props.user} updateUser={this.props.updateUser}/>
+      <PersonalRecord user={this.props.user} updateUser={this.props.updateUser}/>
+      <ProfileVideos user={this.props.user} updateUser={this.props.updateUser}/>
+      <SettingsBar />
       <BottomNavBar/>
 
 
     </div>
   )
+  }
 }
 
-export default UserProfile

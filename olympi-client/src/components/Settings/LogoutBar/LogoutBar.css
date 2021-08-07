@@ -39,7 +39,7 @@
   margin-right: 10px;
 }
 
-.Setbtn {
+ .Setbtn {
   display: flex;
   margin-right: 20px;
   border-radius: 5px;
@@ -48,9 +48,15 @@
   background-color: #fce8e9;
 }
 
-.Door {
- border:  8px solid #fce8e9;
-
+.Door  {
+  display: flex;
+  margin-right: 20px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: #fce8e9;
+  border:  2px solid #fce8e9;
+  border-top: 7px solid #fce8e9;
+  border-bottom: 7px solid #fce8e9;
 }
 
   .DarkModeTitle {

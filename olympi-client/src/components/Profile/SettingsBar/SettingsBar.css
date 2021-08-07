@@ -14,7 +14,7 @@
 }
 
 
-.Settingstitle{
+.Settingstitle a{
   display: flex;
   color: #E51B23;
   align-items: center;
@@ -26,7 +26,7 @@
   margin-right: 10px;
 }
 
-.Wheel {
+.Wheel  {
   display: flex;
   margin-right: 20px;
   border-radius: 5px;

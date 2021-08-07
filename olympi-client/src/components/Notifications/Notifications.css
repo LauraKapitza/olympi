@@ -1,11 +1,11 @@
-.PictureTopContainer {
+.NotifPictureTopContainer {
   background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.arrow{
+.Notifarrow{
   display: flex;
   width: 100%;
   padding-left: 25px;
@@ -13,14 +13,14 @@
   color: #E41B23;
 }
 
-.PictureTopTitle{
+.NotifPictureTopTitle{
   font-weight: 600;
   padding-bottom: 15px;
   margin-top: -10px;
 }
 
 
-.PictureTopContainer img {
+.NotifPictureTopContainer img {
   max-width: 150px;
 }
 
@@ -30,7 +30,7 @@
 
 
 
-.LogoutBarContainer{
+.NotifLogoutBarContainer{
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -44,7 +44,7 @@
 }
 
 
-.LogoutTitle{
+.NotifLogoutTitle{
   justify-content: space-between;
   display: flex;
   color: #E51B23;
@@ -59,7 +59,7 @@
 }
 
 
-.DeleteTitle{
+.NotifDeleteTitle{
   justify-content: space-between;
   display: flex;
   color: #E51B23;
@@ -71,7 +71,7 @@
   margin-right: 10px;
 }
 
-.Setbtn {
+.NotifSetbtn {
   display: flex;
   margin-right: 20px;
   border-radius: 5px;
@@ -80,7 +80,7 @@
   background-color: #fce8e9;
 }
 
-.Door {
+.NotifDoor {
  border:  8px solid #fce8e9;
 
 }
