@@ -4,14 +4,20 @@ import './VideoPost.css';
 import help_icon from './../icons/help-professional-button.svg';
 import Tags from './Tags.js';
 import Comments from './Comments.js';
+import AskProf from './AskProfessional';
 
 class VideoPost extends React.Component {
   state = {
     video: this.props.video,
+    professionals: this.props.professionals,
+    askOpen: false
   }
+
+  toggle = () => {
+    this.setState({askOpen: !this.state.askOpen})
+  } 
   
   render() {
-    console.log('VideoPost state', this.state)
     return(
       <article  className='Video-post'>
   
@@ -30,7 +36,11 @@ class VideoPost extends React.Component {
           {/* <span className='play-btn' role='button'></span> */}
         </div>
         <div className="ask-professional">
-          <p>Ask a professional</p><img src={help_icon} alt="Ask a professional"></img>
+          {this.state.askOpen && <AskProf professionals={this.state.professionals} video={this.state.video} toggle={this.toggle} />}
+          <button className="ask-button" onClick={this.toggle}>
+            <span>Ask a professional</span>
+            <img src={help_icon} alt="Ask a professional"></img>
+          </button>
         </div>
   
         

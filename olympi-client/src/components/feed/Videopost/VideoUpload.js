@@ -63,9 +63,6 @@ class VideoUpload extends React.Component {
 
     feedService.uploadVideo(data)
     .then((newVideo) => {
-      console.log("newVideo ==>", newVideo);
-
-
       this.setState({error: ""});
       
       // call the addVideo from parent to add the video to the feed

@@ -58,23 +58,38 @@ videosRouter.post('/', uploader.single('file'), async (req, res, next) => {
 
 
 // GET route ==> getting videos
-videosRouter.get('/', (req, res, next) => {
+videosRouter.get('/', async (req, res, next) => {
   if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   }
 
   //TODO: populate the to_id and author_id for each comments
-  Videos.find({category: 'trending'})
-    .populate('creator_id')
-    .populate('comments')
-    .then(videosFromDB => {
-      const sortedVideos = videosFromDB.sort((a, b) => b.createdAt - a.createdAt)
-      res.status(200).json(sortedVideos);
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    })
+  try {
+    let videos = await Videos.find({category: 'trending'}); //find all trending videos
+    
+    await Promise.all(videos.map(async video => {
+      // video = await video.populate('creator_id').execPopulate(); //populate video creator
+      video = await video.populate(
+        {
+          path:'comments',
+          populate:[{
+            path:'to_id',
+            model: User
+          },
+          {
+            path:'author_id',
+            model: User
+          }]
+        }
+        ).execPopulate(); //populate comments of the videos
+    }));
+    
+    videos = videos.sort((a, b) => b.createdAt - a.createdAt) //sort videos by date created
+    res.status(200).json(videos);
+  } catch (err) {
+    res.status(500).json(err)
+  };   
 });
 
 

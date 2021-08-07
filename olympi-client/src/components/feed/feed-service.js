@@ -8,8 +8,7 @@ export default {
 
   getVideos() {
     return this.service.get('/')
-      .then(response => response.data)
-  },
+      .then(response => response.data)},
 
   uploadVideo(data) {
     //because we send a formData we dont need to separate the values.
@@ -29,7 +28,7 @@ export default {
       .then(response => response.data)
   },
 
-  addTagsVideo(data){
+  addTagsVideo(data) {
     const {video_id, exercise, tags} = data;
     console.log(data)
     return this.service.post(`/${video_id}/tags`, {
@@ -38,4 +37,15 @@ export default {
     })
       .then(response => response.data)
   },
+
+  addQuestionVideo(data){
+    console.log(data)
+    const {video_id, chosenProfessional, question} = data;
+    const to_id = chosenProfessional._id;
+    return this.service.post(`/${video_id}/ask`, {
+      to_id,
+      question
+    })
+      .then(response => response.data)
+  }
 }
