@@ -1,6 +1,6 @@
 import React from 'react';
-import './../Feed.css';
-import feedService from './../feed-service.js';
+import './VideoUpload.css';
+import feedService from '../feed-service.js';
 import upload_icon from './../icons/upload-button.svg';
 import close_button from './../icons/close-button.svg';
 

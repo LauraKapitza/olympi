@@ -1,7 +1,7 @@
 import React from 'react';
 import './Tags.css';
 import Slugify from 'slugify';
-import feedService from './../feed-service.js';
+import feedService from '../feed-service.js';
 import close_button from './../icons/close-button.svg';
 
 
