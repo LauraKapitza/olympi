@@ -1,7 +1,7 @@
 import React from 'react';
 import './VideoPost.css';
-import help_icon from './../icons/help-professional-button.svg';
 
+import help_icon from './../icons/help-professional-button.svg';
 import Tags from './Tags.js';
 import Comments from './Comments.js';
 
