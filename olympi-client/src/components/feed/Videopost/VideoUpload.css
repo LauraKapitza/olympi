@@ -109,12 +109,25 @@
 
 .upload-form .form-input-row{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-evenly; */
   margin-bottom: 30px;
 }
 
 .upload-form .form-input-row input{
   max-width: 100px;
+}
+
+@media only screen and (max-width: 425px) {
+  /* For mobile phones: */
+  .upload-form .form-input-row input{
+    max-width: 50px;
+  }
+}
+
+.upload-form .form-input-weight-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
 .upload-form .form-input-row select{
@@ -124,7 +137,6 @@
 }
 
 .upload-form .radio-row{
-  display: flex;
   margin-bottom: 20px;
 }
 .upload-form p{
@@ -137,14 +149,27 @@
 .upload-form .radio-row label{
   background-color: #C7C7C7;
   color: white;
-  padding: 4px 25px;
+  padding: 4px 22px;
   border-radius: 4px;
   margin-right: 10px;
   font-size: 13px;
 }
 
+@media only screen and (min-width: 600px) {
+  /* for tablets and desktop */
+  .upload-form .radio-row label {
+    padding: 4px 25px;
+  }
+}
+
 .upload-form .radio-row input:checked + label {
   background-color:#E41B23;
+}
+
+.upload-form .category-container {
+  display: flex;
+  flex-flow: row;
+  margin-top: 5px;
 }
 
 .upload-form textarea{
@@ -161,7 +186,7 @@
 
 .upload-form .form-submit{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
@@ -172,6 +197,7 @@
   height: 46px;
   text-align: center;
   color: white;
+  cursor: pointer;
   border-radius: 10px;
   font-size: 18px;
 }

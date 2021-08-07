@@ -20,16 +20,19 @@ class Feed extends React.Component {
 
   componentDidMount() {
     this.fetchVideos();
+    console.log("okkk")
   }
 
   addVideo = (video) => {
-    this.setState(prevState => ({
-      videos: [...prevState.videos, video]
-    }))
+    let currentState = [...this.state.videos];
+    currentState = [video, ...currentState];
+    this.setState({videos: currentState})
     console.log("state feed", this.state)
+    this.forceUpdate();
   }
   
   render() {
+    console.log("render is run")
     return(
       <div className="Feed">
         <FeedHeader updateUser={this.props.updateUser} user={this.props.user} addVideo={this.addVideo} />

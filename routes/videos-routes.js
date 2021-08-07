@@ -69,7 +69,8 @@ videosRouter.get('/', (req, res, next) => {
     .populate('creator_id')
     .populate('comments')
     .then(videosFromDB => {
-      res.status(200).json(videosFromDB);
+      const sortedVideos = videosFromDB.sort((a, b) => b.createdAt - a.createdAt)
+      res.status(200).json(sortedVideos);
     })
     .catch(err => {
       res.status(500).json(err);

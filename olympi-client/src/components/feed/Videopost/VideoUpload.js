@@ -74,7 +74,7 @@ class VideoUpload extends React.Component {
       // close the upload form (method from parent)
       this.props.toggle();
     })
-    .catch(err => this.setState({error: err.response.data.message}))
+    // .catch(err => this.setState({error: err.response.data.message}))
     .finally(() => this.setState({file: null, description: "", reps: "", rounds: "", weight: ""}))
   ;
   }
@@ -147,15 +147,17 @@ class VideoUpload extends React.Component {
 
             
             <div className="form-input-row">
-              <p>
-                <input type="number" name="weight" value={this.state.weight} onChange={this.handleChange} placeholder="Weight" />
-              </p>
-              <p className="form-select">
-                <select name="weight_metric" value={this.state.weight_metric} onChange={this.handleChange}>
-                    <option value="kg">kg</option>
-                    <option value="lb">lb</option>
-                  </select>
-              </p>
+              <div className="form-input-weight-container">
+                <p>
+                  <input type="number" name="weight" value={this.state.weight} onChange={this.handleChange} placeholder="Weight" />
+                </p>
+                <p className="form-select">
+                  <select name="weight_metric" value={this.state.weight_metric} onChange={this.handleChange}>
+                      <option value="kg">kg</option>
+                      <option value="lb">lb</option>
+                    </select>
+                </p>
+              </div>
               <p>
                 <input type="number" name="rounds" value={this.state.rounds} onChange={this.handleChange} placeholder="Sets" />
               </p>
@@ -166,21 +168,30 @@ class VideoUpload extends React.Component {
             </div>
 
             <div className="radio-row">
-              <p>Category</p>
-              <div>
-                <input type="radio" id="trending" name="category" value="trending" onChange={this.handleChange} checked={this.state.category === "trending"}/>
-                <label htmlFor="trending">Trending</label>
+
+              <div className="radio-row-container">
+
+                <p>Category</p>
+
+                <div className="category-container">
+                  <div>
+                    <input type="radio" id="trending" name="category" value="trending" onChange={this.handleChange} checked={this.state.category === "trending"}/>
+                    <label htmlFor="trending">Trending</label>
+                  </div>
+
+                  <div>
+                    <input type="radio" id="fail" name="category" value="fail" onChange={this.handleChange} checked={this.state.category === "fail"}/>
+                    <label htmlFor="fail">Fail</label>
+                  </div>
+
+                  <div>
+                    <input type="radio" id="learn" name="category" value="learn" onChange={this.handleChange} checked={this.state.category === "learn"}/>
+                    <label htmlFor="learn">Learn</label>
+                  </div>
+                </div>
+              
               </div>
 
-              <div>
-                <input type="radio" id="fail" name="category" value="fail" onChange={this.handleChange} checked={this.state.category === "fail"}/>
-                <label htmlFor="fail">Fail</label>
-              </div>
-
-              <div>
-                <input type="radio" id="learn" name="category" value="learn" onChange={this.handleChange} checked={this.state.category === "learn"}/>
-                <label htmlFor="learn">Learn</label>
-              </div>
             </div>
 
             <p>
