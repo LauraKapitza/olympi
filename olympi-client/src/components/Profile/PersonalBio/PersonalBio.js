@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import "./PersonalBio.css"
 
-function PersonalBio() {
-  return (
+export default class PersonalBio extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+
+
+
+
+render () {
+  
+  return ( 
+
     <div className="PersonalBioContainer">
 
 <div className="BioTitle"> <span>Profile</span> </div>
@@ -12,13 +24,15 @@ function PersonalBio() {
 
 
 <img src="/assets/icons/noprofilephoto.svg" alt=""></img>
-<div className="UsersName">Karina Gonzalez</div>
-<div className="UsersCity">Paris, France 🇫🇷</div>
+<div className="UsersName">username</div>
+<div className="UsersCity">city</div>
 <div className="ShortBio">I am a positive person and I love to exercise.</div>
 
 
     </div>
   )
 }
+}
+  
+  
 
-export default PersonalBio
