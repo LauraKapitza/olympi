@@ -4,7 +4,7 @@ import './Feed.css';
 import feedService from './feed-service.js';
 import FeedHeader from './FeedHeader.js';
 import FeedFooter from './FeedFooter.js';
-import VideoPost from './VideoPost/VideoPost.js';
+import VideoPost from './Videopost/VideoPost.js';
 
 
 class Feed extends React.Component {

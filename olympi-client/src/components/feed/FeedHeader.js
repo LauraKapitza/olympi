@@ -4,7 +4,7 @@ import './Feed.css';
 import upload_icon from './icons/add-button.svg'
 
 import authService from '../auth/auth-service.js';
-import VideoUpload from './VideoPost/VideoUpload.js';
+import VideoUpload from './Videopost/VideoUpload.js';
 export default class FeedHeader extends React.Component {
   state = {
     uploadOpen: false
