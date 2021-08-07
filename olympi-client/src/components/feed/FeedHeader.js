@@ -34,8 +34,8 @@ export default class FeedHeader extends React.Component {
 
         <nav className="feed-header-actions">
           
-          <button className="upload-button" onClick={this.toggle}><img src={upload_icon} alt="Upload button"></img></button>
-          <button className="" onClick={this.logout}>Logout</button>
+          <button className="upload-button" onClick={this.toggle}><img src={upload_icon} alt="Upload button icon"></img></button>
+          <button className="logout-button" onClick={this.logout}><img src="/assets/icons/logoutbtn.svg" alt="Logout button icon"></img></button>
         </nav>
 
         {this.state.uploadOpen && <VideoUpload toggle={this.toggle} addVideo={this.props.addVideo} />}

@@ -15,7 +15,8 @@
   display: flex;
 }
 
-.Feed-header .upload-button{
+.Feed-header .upload-button,
+.Feed-header .logout-button {
   position: relative;
   background: none;
   border: none;
@@ -23,7 +24,8 @@
   margin-right: 10px;
 }
 
-.Feed-header .upload-button img{
+.Feed-header .upload-button img,
+.Feed-header .logout-button img{
   display: block;
 }
 

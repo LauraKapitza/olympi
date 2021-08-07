@@ -1,5 +1,5 @@
 import React from 'react';
-import './Videopost.css';
+import './VideoPost.css';
 
 import help_icon from './../icons/help-professional-button.svg';
 import Tags from './Tags.js';
