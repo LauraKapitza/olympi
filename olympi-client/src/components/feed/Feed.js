@@ -19,8 +19,15 @@ class Feed extends React.Component {
     .catch(err => this.setState({videos: []}))
   }
 
+  fetchProfessionals() {
+    feedService.getProfessionals()
+    .then(data => this.setState({professionals: data}))
+    .catch(err => this.setState({professionals: []}))
+  }
+
   componentDidMount() {
     this.fetchVideos();
+    this.fetchProfessionals()
   }
 
   addVideo = (video) => {
@@ -33,14 +40,13 @@ class Feed extends React.Component {
   }
   
   render() {
-    console.log("render is run")
     return(
       <div className="Feed">
         <FeedHeader updateUser={this.props.updateUser} user={this.props.user} addVideo={this.addVideo} />
         
         <div className="Feed-list-container">
           {this.state.videos.map((video, index) => (
-              <VideoPost key={index} video={video} />
+              <VideoPost key={index} video={video} professionals={this.state.professionals}/>
           ))}
         </div>
 

@@ -64,7 +64,6 @@ videosRouter.get('/', async (req, res, next) => {
     return;
   }
 
-  //TODO: populate the to_id and author_id for each comments
   try {
     let videos = await Videos.find({category: 'trending'}); //find all trending videos
     
@@ -179,6 +178,27 @@ videosRouter.get('/explore', (req, res, next) => {
     .catch(err => {
       res.status(500).json(err);
     })
+});
+
+
+// GET /videos/ask
+videosRouter.get('/ask', async (req, res, next) => {
+  if (!req.user) {
+    res.status(401).json({message: "You need to be logged in to send a request"});
+    return;
+  }
+
+  try {
+    let professionals = await User.find({professional: true}); //find all professional users
+    
+    //NO NEED TO POPULATE THE LIKES OF EACH PROFESSIONAL USER
+    // await Promise.all(professionals.map(async professional => {
+    //   professional = await professional.populate('likes').execPopulate();; //populate comments of the videos
+    // }));
+    res.status(200).json(professionals);
+  } catch (err) {
+    res.status(500).json(err)
+  };   
 });
 
 

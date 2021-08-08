@@ -10,7 +10,7 @@ class AskProf extends React.Component {
 
     professionals: this.props.professionals,
     query: "",
-    chosenProfessional: "",
+    to_id: "",
     error: ""
   };
 
@@ -53,15 +53,17 @@ class AskProf extends React.Component {
 
             <p>{this.state.video.exercise}</p>
 
-            <div className="professional-searchbar">
-                <label>
-                    <input type='search' name='search' value={this.state.query} onChange={(event) => {this.handleQuery(event.target)}} placeholder="Search professional..."></input>
-                </label>
-                <label>
-                    <input type='text' value={this.state.chosenProfessional} onChange={event => {this.handleQuery(event.target)}}></input>
-                </label>
-
-            </div>
+            <p className="form-select form-select--big">
+              <label>
+                Choose a professional
+                <select name="to_id" value={this.state.chosenProfessional} onChange={this.handleChange}>
+                  <option value=""></option>
+                  {this.state.professionals.map((professional) => (
+                    <option key={professional._id} value={professional.username}>{professional.username}</option>
+                  ))}
+                </select>
+              </label>
+            </p>
 
             <p>
               <label htmlFor="question">
