@@ -2,14 +2,14 @@ import React from 'react';
 import './AskProfessional.css';
 
 import close_button from './../icons/close-button.svg';
+import feedService from '../feed-service.js';
 
 class AskProf extends React.Component {
   state = {
     video: this.props.video,
-    question: "",
+    question: "Your question",
 
     professionals: this.props.professionals,
-    query: "",
     to_id: "",
     error: ""
   };
@@ -26,9 +26,23 @@ class AskProf extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     //TODO add comment to the video
+    const data = {
+      video_id: this.state.video._id, 
+      to_id: this.state.to_id, 
+      question: this.state.question
+    }
+    feedService.addQuestionVideo(data)
+    .then((newComment) => {
+      this.setState({error: ""});
+      console.log('new Comment', newComment)
+      // call the addComment from parent to add the video to the feed
+      this.props.addComment(newComment);
 
-    // close the upload form (method from parent)
-    this.props.toggle();
+      // close the upload form (method from parent)
+      this.props.toggle();
+    })
+    // .catch(err => this.setState({error: err.response.data.message}))
+    .finally(() => this.setState({question: "", to_id: ""}))
   };
 
   handleChange = (event) => {
@@ -56,10 +70,10 @@ class AskProf extends React.Component {
             <p className="form-select form-select--big">
               <label>
                 Choose a professional
-                <select name="to_id" value={this.state.chosenProfessional} onChange={this.handleChange}>
+                <select name="to_id" value={this.state.to_id} onChange={this.handleChange}>
                   <option value=""></option>
                   {this.state.professionals.map((professional) => (
-                    <option key={professional._id} value={professional.username}>{professional.username}</option>
+                    <option key={professional._id} value={professional._id}>{professional.username}</option>
                   ))}
                 </select>
               </label>

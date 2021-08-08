@@ -202,10 +202,10 @@ videosRouter.get('/ask', async (req, res, next) => {
 });
 
 
-// POST /videos/:id/ask
-videosRouter.post('/:videoId/ask', (req, res, next)=>{
+// POST /videos/:videoId/ask
+videosRouter.post('/:videoId/ask', async (req, res, next)=>{
   const {question, to_id} = req.body;
-
+  
   if (!question || !to_id) {
     res.status(400).json({message: "Please indicate the professional and a question!"});
     return;
@@ -225,35 +225,26 @@ videosRouter.post('/:videoId/ask', (req, res, next)=>{
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   };
+  
+  try {
+    let newComment = await Comments.create({
+      author_id: req.user._id,
+      question,
+      to_id,
+    })
+  
+    let video = await Videos.findById(req.params.videoId);
+    video.comments.push(newComment);
+    video = await video.save();
+    
+    newComment = await newComment.populate('author_id').execPopulate();
+    newComment = await newComment.populate('to_id').execPopulate();
+    res.status(201).json(newComment);
 
-  let newComment;
-  Comments.create({
-    author_id: req.user._id,
-    question,
-    to_id
-  })
-  .then(comment => {
-    newComment = comment;
-    return Videos.findById(req.params.videoId) 
-  })
-  .then(video => {
-    video.comments.push(newComment)
-    return video.save()
-  .then(response => {
-    Videos.findById(req.params.videoId)
-    .populate('comments')
-    .populate('creator_id')
-    .then(video => {
-      res.status(201).json(video);
-    })
-    .catch(err => {
-      res.status(500).json({message: 'Something went wrong when searching the video'})
-    })
-  })
-  })
-  .catch(err => {
+  }catch{
     res.status(500).json(err);
-  }) 
+  };  
+  
 })
 
 

@@ -42,8 +42,7 @@ export default {
   },
 
   addQuestionVideo(data){
-    const {video_id, chosenProfessional, question} = data;
-    const to_id = chosenProfessional._id;
+    const {video_id, to_id, question} = data;
     return this.service.post(`/${video_id}/ask`, {
       to_id,
       question
