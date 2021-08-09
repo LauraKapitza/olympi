@@ -68,7 +68,7 @@ videosRouter.get('/', async (req, res, next) => {
     let videos = await Videos.find({category: 'trending'}); //find all trending videos
     
     await Promise.all(videos.map(async video => {
-      // video = await video.populate('creator_id').execPopulate(); //populate video creator
+      video = await video.populate('creator_id').execPopulate(); //populate video creator
       video = await video.populate(
         {
           path:'comments',

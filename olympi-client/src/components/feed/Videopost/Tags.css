@@ -182,25 +182,26 @@ footer .tag{
 	background-color: #FF0000;
 }
 .tag[data-tag="no-chest-touch"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="no-leg-drive"]{
-	background-color: #FF0000;
+	background-color: #007991;
 }
 .tag[data-tag="no-lockout"]{
-	background-color: #f7a766;
+	background-color: #FFC15E;
 }
 .tag[data-tag="not-parallel"]{
-	background-color: #FF0000;
+	background-color: #008BF8;
 }
 .tag[data-tag="other"]{
-	background-color: #FF0000;
+	background-color: black;
+	color: white
 }
 .tag[data-tag="perfect"]{
 	background-color: #FF0000;
 }
 .tag[data-tag="poor-bracing"]{
-	background-color: #FF0000;
+	background-color: #FD498A;
 }
 .tag[data-tag="very-good"]{
 	background-color: #FF0000;

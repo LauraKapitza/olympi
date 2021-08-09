@@ -52,9 +52,13 @@
 .Feed {
   margin: 0 auto;
   padding-bottom: 90px;
+
+  max-width: 960px;
 }
 
 .Feed-list-container{
   background-color: white;
   padding: 20px 20px;
+  box-shadow: 0 0 6px 0px #0000001f;
+  border-radius: 10px;
 }

@@ -4,14 +4,13 @@ import './AskProfessional.css';
 import close_button from './../icons/close-button.svg';
 import feedService from '../feed-service.js';
 
-class AskProf extends React.Component {
+class AskProfessional extends React.Component {
   state = {
-    video: this.props.video,
-    question: "Your question",
+    question: "",
 
-    professionals: this.props.professionals,
     to_id: "",
-    error: ""
+    error: "",
+    isLoading: false
   };
 
   handleQuery = (event) => {
@@ -25,23 +24,28 @@ class AskProf extends React.Component {
   
   handleSubmit = (event) => {
     event.preventDefault();
-    //TODO add comment to the video
+
+    if( this.state.isLoading === true){
+      return;
+    }
+
+    this.setState({isLoading: true});
+
     const data = {
-      video_id: this.state.video._id, 
+      video_id: this.props.video._id, 
       to_id: this.state.to_id, 
       question: this.state.question
     }
     feedService.addQuestionVideo(data)
     .then((newComment) => {
       this.setState({error: ""});
-      console.log('new Comment', newComment)
       // call the addComment from parent to add the video to the feed
       this.props.addComment(newComment);
 
       // close the upload form (method from parent)
       this.props.toggle();
     })
-    // .catch(err => this.setState({error: err.response.data.message}))
+    .catch(err => this.setState({error: err.response.data.message}))
     .finally(() => this.setState({question: "", to_id: ""}))
   };
 
@@ -58,21 +62,22 @@ class AskProf extends React.Component {
 
         <form id="askForm" onSubmit={this.handleSubmit} className="ask-form">
 
-          {/* for an error */}
-          {this.state.error && (
-            <p className="error">{this.state.error}</p>
-          )}
+          
 
           <div>
 
-            <p>{this.state.video.exercise}</p>
+            <h3>{this.props.video.exercise}</h3>
 
+            {/* for an error */}
+          {this.state.error && (
+            <p className="error">{this.state.error}</p>
+          )}
             <p className="form-select form-select--big">
               <label>
                 Choose a professional
                 <select name="to_id" value={this.state.to_id} onChange={this.handleChange}>
-                  <option value=""></option>
-                  {this.state.professionals.map((professional) => (
+                  <option value="placeholder">Choose your professional</option>
+                  {this.props.professionals.map((professional) => (
                     <option key={professional._id} value={professional._id}>{professional.username}</option>
                   ))}
                 </select>
@@ -89,7 +94,7 @@ class AskProf extends React.Component {
           </div>
 
           
-          <p className="form-submit">
+          <p className={`form-submit ${this.state.isUploading ? "is-loading" : ""}`}>
             <input type="submit" value="Send Request" />
           </p>
         
@@ -100,4 +105,4 @@ class AskProf extends React.Component {
   }
 }
 
-export default AskProf;
+export default AskProfessional;

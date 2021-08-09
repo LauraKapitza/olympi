@@ -71,19 +71,14 @@ class App extends Component {
             <Route exact path="/videos">
               {this.state.user ? <Feed updateUser={this.updateUser} user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
             </Route>
- 
-            {/* go back an check this Karina */}
-            <Route exact path="/proprofile" render={(props) => (
-              <ProProfile user={this.state.user} />
-            )} />
 
             {/* go back an check this Karina */}
-            <Route exact path="/userprofile" render={(props) => (
-              <UserProfile user={this.state.user} />
-            )} />
+            <Route exact path="/user">
+              {this.state.user.professional ? <ProProfile user={this.state.user} /> : <UserProfile user={this.state.user} />}
+            </Route>
 
             {/* go back an check this Karina */}
-            <Route exact path="/explore" render={(props) => (
+            <Route exact path="/videos/explore" render={(props) => (
               <Trending user={this.state.user} />
             )} />
 

@@ -32,6 +32,7 @@ class VideoUpload extends React.Component {
     category: "trending", //default value
     description: "Yolo description",
     file: null,
+    isUploading: false
   }
 
   // state = {
@@ -52,6 +53,12 @@ class VideoUpload extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
+    if( this.state.isUploading === true){
+      return;
+    }
+
+    this.setState({isUploading: true});
+
     // we need a formData to send the file (your backend needs this format)
     // so we created an empty one and file it up with the value of the state
     //send we send that to the feedService with axios
@@ -63,7 +70,7 @@ class VideoUpload extends React.Component {
 
     feedService.uploadVideo(data)
     .then((newVideo) => {
-      this.setState({error: ""});
+      this.setState({error: "", file: null, description: "", reps: "", rounds: "", weight: ""});
       
       // call the addVideo from parent to add the video to the feed
       this.props.addVideo(newVideo);
@@ -71,8 +78,6 @@ class VideoUpload extends React.Component {
       // close the upload form (method from parent)
       this.props.toggle();
     })
-    // .catch(err => this.setState({error: err.response.data.message}))
-    .finally(() => this.setState({file: null, description: "", reps: "", rounds: "", weight: ""}))
   ;
   }
 
@@ -199,8 +204,7 @@ class VideoUpload extends React.Component {
             </p>
           </div>
 
-          
-          <p className="form-submit">
+          <p className={`form-submit ${this.state.isUploading ? "is-uploading" : ""}`}>
             <input type="submit" value="Upload Video" />
           </p>
         

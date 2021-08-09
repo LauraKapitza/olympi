@@ -186,7 +186,7 @@
 
 .upload-form .form-submit{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -201,6 +201,12 @@
   border-radius: 10px;
   font-size: 18px;
 }
+
+.upload-form .form-submit.is-uploading input{
+  background-color: #a1a1a1;
+  cursor: progress;
+}
+
 
 @keyframes appear {
   0% {opacity:0; transform:translateY(100vh);}

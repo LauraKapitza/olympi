@@ -1,0 +1,39 @@
+.footer-navigation{
+  display: flex;
+  height: 70px;
+  background-color: #fafafa;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+
+  box-shadow: 0 -5px 3px -3px #ccc, 0 0;
+
+}
+
+
+.footer-link{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  color:#C7C7C7;
+  background-color: #fafafa;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link.active a{
+  color:#E41B23;
+  font-weight: bold;
+}
+
+.footer-link.active svg path{
+  fill:#E41B23;
+}
+
+
+.footer-link:not(.profile) img{
+  margin-bottom: -11px;
+  margin-top: -11px;
+}
+

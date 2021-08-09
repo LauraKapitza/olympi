@@ -21,7 +21,10 @@ class Feed extends React.Component {
 
   fetchProfessionals() {
     feedService.getProfessionals()
-    .then(data => this.setState({professionals: data}))
+    .then(data => {
+      this.setState({professionals: data})
+      console.log("We got prof")
+    })
     .catch(err => this.setState({professionals: []}))
   }
 
@@ -34,24 +37,22 @@ class Feed extends React.Component {
     let currentState = [...this.state.videos];
     currentState = [video, ...currentState];
     this.setState({videos: currentState})
-    //TODO FIX ME (to see the new video the page needs to be reloaded ... not user friendly)
-    console.log("state feed", this.state)
-    this.forceUpdate();
   }
   
   render() {
     return(
+      <>
       <div className="Feed">
         <FeedHeader updateUser={this.props.updateUser} user={this.props.user} addVideo={this.addVideo} />
         
         <div className="Feed-list-container">
-          {this.state.videos.map((video, index) => (
-              <VideoPost key={index} video={video} professionals={this.state.professionals}/>
+          {this.state.videos.map((video) => (
+              <VideoPost key={video._id} video={video} professionals={this.state.professionals}/>
           ))}
         </div>
-
-        <FeedFooter user={this.props.user} />
       </div>
+      <FeedFooter user={this.props.user} activate="feed"/>
+      </>
     )
   }
 };
