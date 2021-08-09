@@ -4,14 +4,30 @@ import './VideoPost.css';
 import help_icon from './../icons/help-professional-button.svg';
 import Tags from './Tags.js';
 import Comments from './Comments.js';
+import AskProf from './AskProfessional';
 
 class VideoPost extends React.Component {
   state = {
     video: this.props.video,
+    professionals: this.props.professionals,
+    askOpen: false
+  }
+
+  toggle = () => {
+    this.setState({askOpen: !this.state.askOpen})
+  }
+  
+  addComment = (comment) => {
+    let currentVideoState = this.state.video;
+    currentVideoState.comments.push(comment)
+    this.setState({videos: currentVideoState})
+    //TODO FIX ME (to see the new video the page needs to be reloaded ... not user friendly)
+    console.log("comment feed", this.state)
+    this.forceUpdate();
   }
   
   render() {
-    console.log('VideoPost state', this.state)
+    console.log(this.state.video.comments)
     return(
       <article  className='Video-post'>
   
@@ -30,7 +46,11 @@ class VideoPost extends React.Component {
           {/* <span className='play-btn' role='button'></span> */}
         </div>
         <div className="ask-professional">
-          <p>Ask a professional</p><img src={help_icon} alt="Ask a professional"></img>
+          {this.state.askOpen && <AskProf professionals={this.state.professionals} video={this.state.video} addComment={this.addComment} toggle={this.toggle} />}
+          <button className="ask-button" onClick={this.toggle}>
+            <span>Ask a professional</span>
+            <img src={help_icon} alt="Ask a professional"></img>
+          </button>
         </div>
   
         

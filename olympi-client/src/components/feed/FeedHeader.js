@@ -27,16 +27,18 @@ export default class FeedHeader extends React.Component {
     if (this.props.user === false) return <Redirect to="/" />
     return(
       <div className="Feed-header">
-        <header>
-          <h2>Hi <span>{this.props.user.username}</span>!</h2>
-          <p>Which exercise are you sharing today?</p>
-        </header>
+        <div className="Feed-header-wrapper">
+          <header>
+            <h2>Hi <span>{this.props.user.username}</span>!</h2>
+          </header>
 
-        <nav className="feed-header-actions">
-          
-          <button className="upload-button" onClick={this.toggle}><img src={upload_icon} alt="Upload button icon"></img></button>
-          <button className="logout-button" onClick={this.logout}><img src="/assets/icons/logoutbtn.svg" alt="Logout button icon"></img></button>
-        </nav>
+          <nav className="feed-header-actions">
+            
+            <button className="upload-button" onClick={this.toggle}><img src={upload_icon} alt="Upload button icon"></img></button>
+            <button className="logout-button" onClick={this.logout}><img src="/assets/icons/logoutbtn.svg" alt="Logout button icon"></img></button>
+          </nav>
+        </div>
+        <p>Which exercise are you sharing today?</p>
 
         {this.state.uploadOpen && <VideoUpload toggle={this.toggle} addVideo={this.props.addVideo} />}
 

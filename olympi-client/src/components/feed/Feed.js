@@ -9,7 +9,8 @@ import VideoPost from './Videopost/VideoPost.js';
 
 class Feed extends React.Component {
   state = {
-    videos: []
+    videos: [],
+    professionals: []
   };
 
   fetchVideos = () => {
@@ -18,15 +19,24 @@ class Feed extends React.Component {
     .catch(err => this.setState({videos: []}))
   }
 
+  fetchProfessionals() {
+    feedService.getProfessionals()
+    .then(data => this.setState({professionals: data}))
+    .catch(err => this.setState({professionals: []}))
+  }
+
   componentDidMount() {
     this.fetchVideos();
+    this.fetchProfessionals()
   }
 
   addVideo = (video) => {
-    this.setState(prevState => ({
-      videos: [...prevState.videos, video]
-    }))
+    let currentState = [...this.state.videos];
+    currentState = [video, ...currentState];
+    this.setState({videos: currentState})
+    //TODO FIX ME (to see the new video the page needs to be reloaded ... not user friendly)
     console.log("state feed", this.state)
+    this.forceUpdate();
   }
   
   render() {
@@ -36,7 +46,7 @@ class Feed extends React.Component {
         
         <div className="Feed-list-container">
           {this.state.videos.map((video, index) => (
-              <VideoPost key={index} video={video}/>
+              <VideoPost key={index} video={video} professionals={this.state.professionals}/>
           ))}
         </div>
 

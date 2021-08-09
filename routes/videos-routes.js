@@ -58,22 +58,37 @@ videosRouter.post('/', uploader.single('file'), async (req, res, next) => {
 
 
 // GET route ==> getting videos
-videosRouter.get('/', (req, res, next) => {
+videosRouter.get('/', async (req, res, next) => {
   if (!req.user) {
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   }
 
-  //TODO: populate the to_id and author_id for each comments
-  Videos.find({category: 'trending'})
-    .populate('creator_id')
-    .populate('comments')
-    .then(videosFromDB => {
-      res.status(200).json(videosFromDB);
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    })
+  try {
+    let videos = await Videos.find({category: 'trending'}); //find all trending videos
+    
+    await Promise.all(videos.map(async video => {
+      // video = await video.populate('creator_id').execPopulate(); //populate video creator
+      video = await video.populate(
+        {
+          path:'comments',
+          populate:[{
+            path:'to_id',
+            model: User
+          },
+          {
+            path:'author_id',
+            model: User
+          }]
+        }
+        ).execPopulate(); //populate comments of the videos
+    }));
+    
+    videos = videos.sort((a, b) => b.createdAt - a.createdAt) //sort videos by date created
+    res.status(200).json(videos);
+  } catch (err) {
+    res.status(500).json(err)
+  };   
 });
 
 
@@ -166,10 +181,31 @@ videosRouter.get('/explore', (req, res, next) => {
 });
 
 
-// POST /videos/:id/ask
-videosRouter.post('/:videoId/ask', (req, res, next)=>{
-  const {question, to_id} = req.body;
+// GET /videos/ask
+videosRouter.get('/ask', async (req, res, next) => {
+  if (!req.user) {
+    res.status(401).json({message: "You need to be logged in to send a request"});
+    return;
+  }
 
+  try {
+    let professionals = await User.find({professional: true}); //find all professional users
+    
+    //NO NEED TO POPULATE THE LIKES OF EACH PROFESSIONAL USER
+    // await Promise.all(professionals.map(async professional => {
+    //   professional = await professional.populate('likes').execPopulate();; //populate comments of the videos
+    // }));
+    res.status(200).json(professionals);
+  } catch (err) {
+    res.status(500).json(err)
+  };   
+});
+
+
+// POST /videos/:videoId/ask
+videosRouter.post('/:videoId/ask', async (req, res, next)=>{
+  const {question, to_id} = req.body;
+  
   if (!question || !to_id) {
     res.status(400).json({message: "Please indicate the professional and a question!"});
     return;
@@ -189,35 +225,26 @@ videosRouter.post('/:videoId/ask', (req, res, next)=>{
     res.status(401).json({message: "You need to be logged in to upload your video"});
     return;
   };
+  
+  try {
+    let newComment = await Comments.create({
+      author_id: req.user._id,
+      question,
+      to_id,
+    })
+  
+    let video = await Videos.findById(req.params.videoId);
+    video.comments.push(newComment);
+    video = await video.save();
+    
+    newComment = await newComment.populate('author_id').execPopulate();
+    newComment = await newComment.populate('to_id').execPopulate();
+    res.status(201).json(newComment);
 
-  let newComment;
-  Comments.create({
-    author_id: req.user._id,
-    question,
-    to_id
-  })
-  .then(comment => {
-    newComment = comment;
-    return Videos.findById(req.params.videoId) 
-  })
-  .then(video => {
-    video.comments.push(newComment)
-    return video.save()
-  .then(response => {
-    Videos.findById(req.params.videoId)
-    .populate('comments')
-    .populate('creator_id')
-    .then(video => {
-      res.status(201).json(video);
-    })
-    .catch(err => {
-      res.status(500).json({message: 'Something went wrong when searching the video'})
-    })
-  })
-  })
-  .catch(err => {
+  }catch{
     res.status(500).json(err);
-  }) 
+  };  
+  
 })
 
 

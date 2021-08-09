@@ -4,9 +4,24 @@
 .Feed-header {
   background: #FAFAFA; /* #FAFAFA */
   display: flex;
+  flex-flow: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
+}
+
+.Feed-header .Feed-header-wrapper {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Feed-header .Feed-header-wrapper + p {
+  font-size: 14px;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .Feed-header span {color: #E41E1E;}
@@ -21,7 +36,6 @@
   background: none;
   border: none;
   padding: 0;
-  margin-right: 10px;
 }
 
 .Feed-header .upload-button img,
@@ -29,7 +43,7 @@
   display: block;
 }
 
-
+.Feed-header .logout-button {margin-left: 20px;}
 
 /* --------------------- */
 /* ------- FEED -------- */
