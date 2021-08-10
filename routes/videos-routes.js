@@ -205,6 +205,7 @@ videosRouter.get('/ask', async (req, res, next) => {
 // POST /videos/:videoId/ask
 videosRouter.post('/:videoId/ask', async (req, res, next)=>{
   const {question, to_id} = req.body;
+  console.log('ask video id', req.params.videoId)
   
   if (!question || !to_id) {
     res.status(400).json({message: "Please indicate the professional and a question!"});
@@ -240,6 +241,49 @@ videosRouter.post('/:videoId/ask', async (req, res, next)=>{
     newComment = await newComment.populate('author_id').execPopulate();
     newComment = await newComment.populate('to_id').execPopulate();
     res.status(201).json(newComment);
+
+  }catch{
+    res.status(500).json(err);
+  };  
+  
+})
+
+// POST /videos/:videoId/reply
+videosRouter.post('/:videoId/reply', async (req, res, next)=>{
+  const {reply, to_id, author_id, question} = req.body;
+  console.log('answer video id', req.params.videoId)
+  
+  if (!reply || !author_id || !question || !to_id) {
+    res.status(400).json({message: "Please indicate your answer, the question and the person asking!"});
+    return;
+  };
+
+  if(!mongoose.Types.ObjectId.isValid(req.params.videoId)) { //check if video ID exists
+    res.status(400).json({ message: 'Specified video id is not valid' });
+    return;
+  };
+
+  if(!mongoose.Types.ObjectId.isValid(author_id)) { //check if professional ID exists
+    res.status(400).json({ message: 'Specified user id is not valid' });
+    return;
+  };
+
+  if(!mongoose.Types.ObjectId.isValid(to_id)) { //check if professional ID exists
+    res.status(400).json({ message: 'Specified professional id is not valid' });
+    return;
+  };
+
+  if (!req.user) { //check if user is logged-in
+    res.status(401).json({message: "You need to be logged in to upload your video"});
+    return;
+  };
+  
+  try {
+    let comment = await Comments.findOneAndUpdate({$and:[{author_id},{question}, {to_id}]}, {reply})
+    
+    comment = await comment.populate('author_id').execPopulate();
+    comment = await comment.populate('to_id').execPopulate();
+    res.status(201).json(comment);
 
   }catch{
     res.status(500).json(err);

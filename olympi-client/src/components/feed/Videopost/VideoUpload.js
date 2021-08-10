@@ -1,8 +1,8 @@
 import React from 'react';
 import './VideoUpload.css';
 import feedService from '../feed-service.js';
-import upload_icon from './../icons/upload-button.svg';
-import close_button from './../icons/close-button.svg';
+import upload_icon from '../../../assets/icons/upload-button.svg';
+import close_button from '../../../assets/icons/close-button.svg';
 
 const EXERCISES = [
   'Overhead press',

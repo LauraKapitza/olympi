@@ -1,7 +1,7 @@
 import {Redirect} from 'react-router-dom';
 import React from 'react';
 import './Feed.css';
-import upload_icon from './icons/add-button.svg'
+import upload_icon from '../../assets/icons/add-button.svg'
 
 import authService from '../auth/auth-service.js';
 import VideoUpload from './Videopost/VideoUpload.js';
@@ -13,7 +13,7 @@ export default class FeedHeader extends React.Component {
   logout = (event) => {
     authService.logout()
       .then(response => {
-        this.props.updateUser(false);
+        this.props.updateUser(null);
       })
     ;
   }

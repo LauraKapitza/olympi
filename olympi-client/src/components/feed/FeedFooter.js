@@ -4,7 +4,7 @@ import './FeedFooter.css';
 import {Link} from 'react-router-dom';
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import UserIcon from '@material-ui/icons/Person';
-import {ReactComponent as Dumbell} from './../feed/icons/greydumbell.svg';
+import {ReactComponent as Dumbell} from '../../assets/icons/greydumbell.svg';
 
 function FunctionFooter(props) {
   

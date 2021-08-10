@@ -23,7 +23,6 @@ class Feed extends React.Component {
     feedService.getProfessionals()
     .then(data => {
       this.setState({professionals: data})
-      console.log("We got prof")
     })
     .catch(err => this.setState({professionals: []}))
   }
@@ -47,7 +46,7 @@ class Feed extends React.Component {
         
         <div className="Feed-list-container">
           {this.state.videos.map((video) => (
-              <VideoPost key={video._id} video={video} professionals={this.state.professionals}/>
+              <VideoPost key={video._id} video={video} professionals={this.state.professionals} user={this.props.user} />
           ))}
         </div>
       </div>

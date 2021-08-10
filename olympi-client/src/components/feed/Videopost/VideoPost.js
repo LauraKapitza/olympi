@@ -1,7 +1,7 @@
 import React from 'react';
 import './VideoPost.css';
 
-import help_icon from './../icons/help-professional-button.svg';
+import help_icon from '../../../assets/icons/help-professional-button.svg';
 import Tags from './Tags.js';
 import Comments from './Comments.js';
 import AskProfessional from './AskProfessional';
@@ -16,10 +16,14 @@ class VideoPost extends React.Component {
     this.setState({askOpen: !this.state.askOpen})
   }
   
-  addComment = (comment) => {
+  addQuestion = (question) => {
     let currentVideoState = this.state.video;
-    currentVideoState.comments.push(comment)
+    currentVideoState.comments.push(question)
     this.setState({videos: currentVideoState})
+  }
+
+  addResponse = () => {
+    
   }
   
   render() {
@@ -42,7 +46,7 @@ class VideoPost extends React.Component {
           {/* <span className='play-btn' role='button'></span> */}
         </div>
         <div className="ask-professional">
-          {this.state.askOpen && <AskProfessional professionals={this.props.professionals} video={this.state.video} addComment={this.addComment} toggle={this.toggle} />}
+          {this.state.askOpen && <AskProfessional professionals={this.props.professionals} video={this.state.video} addQuestion={this.addQuestion} toggle={this.toggle} />}
           <button className="ask-button" onClick={this.toggle}>
             <span>Ask a professional</span>
             <img src={help_icon} alt="Ask a professional"></img>
@@ -55,7 +59,7 @@ class VideoPost extends React.Component {
           <h4>{this.state.video.exercise}</h4>
           <p className="video-description">{this.state.video.description}</p>
 
-          <Comments comments={this.state.video.comments} />
+          <Comments comments={this.state.video.comments} user={this.props.user} addResponse={this.addResponse} />
 
           <Tags tags={this.state.video.tags} exercise={this.state.video.exercise} video_id={this.state.video._id} />
         </footer>

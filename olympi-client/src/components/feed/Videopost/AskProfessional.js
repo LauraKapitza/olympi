@@ -1,7 +1,7 @@
 import React from 'react';
 import './AskProfessional.css';
 
-import close_button from './../icons/close-button.svg';
+import close_button from '../../../assets/icons/close-button.svg';
 import feedService from '../feed-service.js';
 
 class AskProfessional extends React.Component {
@@ -39,8 +39,8 @@ class AskProfessional extends React.Component {
     feedService.addQuestionVideo(data)
     .then((newComment) => {
       this.setState({error: ""});
-      // call the addComment from parent to add the video to the feed
-      this.props.addComment(newComment);
+      // call the addQuestion from parent to add the video to the feed
+      this.props.addQuestion(newComment);
 
       // close the upload form (method from parent)
       this.props.toggle();

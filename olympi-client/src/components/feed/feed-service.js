@@ -48,5 +48,16 @@ export default {
       question
     })
       .then(response => response.data)
+  },
+
+  addResponseVideo(data) {
+    const {video_id, reply, author_id, question} = data;
+    return this.service.post(`/${video_id}/reply`, {
+      reply,
+      author_id,
+      question
+    })
+      .then(response => response.data)
+
   }
 }

@@ -22,23 +22,19 @@ import Notifications from './components/Notifications/Notifications';
 
 class App extends Component {
   state = {
-    user: {}
+    user: null
   }
 
   fetchUser = () => {
-    if (!this.state.user._id) {
-      authService.loggedin()
-        .then(data => {
-          this.setState({user: data})
-          console.log("user: ", this.state.user);
-
-        })
-        .catch(err => {
-          this.setState({user: false})
-        });
-    } else {
-      console.log('user already in the state')
-    }
+    console.log('fetch')
+    authService.loggedin()
+      .then(data => {
+        this.setState({user: data})
+        console.log("user: ", this.state.user);
+      })
+      .catch(err => {
+        this.setState({user: null})
+      });
 
   };
 
@@ -47,17 +43,19 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log('component did mount')
     this.fetchUser();
   }
 
   render() {
+    console.log('render')
     return (
       <Route render={props => (
         <div className="App" data-route={props.location.pathname}> {/* data-route="/" allow us to style pages */}
 
           <Switch>
             <Route exact path="/">
-              {this.state.user ? <Redirect to="/videos" user={this.state.user} /> : <Homepage user={this.state.user} />}
+              {this.state.user === null ? <Homepage user={this.state.user} /> : <Redirect to="/videos" user={this.state.user} />}
             </Route>
 
             <Route exact path="/signup" render={(props) => (
@@ -73,9 +71,9 @@ class App extends Component {
             </Route>
 
             {/* go back an check this Karina */}
-            <Route exact path="/user">
+            {/* <Route exact path="/user">
               {this.state.user.professional ? <ProProfile user={this.state.user} /> : <UserProfile user={this.state.user} />}
-            </Route>
+            </Route> */}
 
             {/* go back an check this Karina */}
             <Route exact path="/videos/explore" render={(props) => (
