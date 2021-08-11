@@ -105,7 +105,7 @@ class Tags extends React.Component {
     for (let tag_key in this.props.tags) {
       const list_user_by_tag = this.props.tags[tag_key];
       if(list_user_by_tag.length > 0){
-        data.push(tag_key)
+        data.push([tag_key,list_user_by_tag.length ])
       }
     }
     return data
@@ -150,9 +150,9 @@ class Tags extends React.Component {
     return (
       <>
       <div className="tags-wrapper">
-        {this.getSelectedTagsList().map(tag => {
+        {this.getSelectedTagsList().map( tag_data => {
           return(
-            <div key={tag} className="tag" data-tag={Slugify(tag, {lower:true})}>{tag}</div>
+            <div key={tag_data[0]} className="tag" data-tag={Slugify(tag_data[0], {lower:true,strict:true})}>{tag_data[0]}<span>{tag_data[1]}</span></div>
           )
         })}
       </div>
@@ -175,9 +175,9 @@ class Tags extends React.Component {
             <div className="tags-checkbox-wrapper">
                 {this.getFeedbackTagsList().map(tag => {
                   return(
-                    <label className="tag" key={Slugify(tag, {lower:true})} htmlFor={Slugify(tag, {lower:true})} data-tag={Slugify(tag, {lower:true})}>
+                    <label className="tag" key={Slugify(tag, {lower:true,strict:true})} htmlFor={Slugify(tag, {lower:true,strict:true})} data-tag={Slugify(tag, {lower:true,strict:true})}>
                       {tag}
-                      <input type="checkbox" id={Slugify(tag, {lower:true})} name={tag} onChange={this.handleChange} />
+                      <input type="checkbox" id={Slugify(tag, {lower:true,strict:true})} name={tag} onChange={this.handleChange} />
                     </label>
                   )
                 })}

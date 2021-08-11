@@ -24,10 +24,12 @@ class Comments extends React.Component {
       <div className="comments-wrapper">
         {this.props.comments.map((comment) => {
           return (
+            <>
             <div key={comment._id} className="comment">
               <h4>{comment.author_id.username}</h4>
               <h5>@{comment.to_id.username}</h5><p>{comment.question}</p>
-              {comment.reply && 
+            </div>
+            {comment.reply && 
                 <div className="reply-wrapper">
                   <h6>{comment.to_id.username}</h6><p>{comment.reply}</p>
                 </div>
@@ -44,10 +46,7 @@ class Comments extends React.Component {
                   </button>
                 }
               </div>
-
-
-            </div>
-
+            </>
           )
         })}
         {this.state.replyOpen && <ReplyComment video={this.state.video} comment={this.state.currentComment} addReply={this.props.addReply} toggle={this.toggle} />}

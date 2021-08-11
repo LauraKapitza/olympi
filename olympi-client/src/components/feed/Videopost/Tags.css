@@ -11,6 +11,23 @@ footer .tag{
   font-size: 13px;
   margin-right: 5px;
 	margin-top: 5px;
+	display: flex;
+}
+
+footer .tag span{
+	background-color: white;
+	padding: 3px;
+	color: black;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: 5px;
+	border-radius: 25px;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
@@ -160,28 +177,28 @@ footer .tag{
   color: white;
 }
 .tag[data-tag="head-back"]{
-	background-color: #ff0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="hips-shoot-up"]{
-	background-color: #ff0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="knee-path"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="legs-bent"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="lets-improve-it!"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="loose-lats"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="neck-angle"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="no-arch"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="no-chest-touch"]{
 	background-color: #FF7D82;
@@ -200,12 +217,15 @@ footer .tag{
 	color: white
 }
 .tag[data-tag="perfect"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 .tag[data-tag="poor-bracing"]{
 	background-color: #FD498A;
 }
 .tag[data-tag="very-good"]{
-	background-color: #FF0000;
+	background-color: #FF7D82;
 }
 
+.tag[data-tag="lets-improve-it"]{
+	background-color: #FF7D82;
+}
