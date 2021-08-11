@@ -205,7 +205,7 @@ class VideoUpload extends React.Component {
           </div>
 
           <p className={`form-submit ${this.state.isUploading ? "is-uploading" : ""}`}>
-            <input type="submit" value="Upload Video" />
+            <input type="submit" value="Upload Video" /><div class="lds-ring"><div></div><div></div><div></div><div></div></div>
           </p>
         
         </form>

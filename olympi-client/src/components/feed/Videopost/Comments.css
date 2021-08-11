@@ -3,11 +3,11 @@
 .comments-wrapper{
   position: relative;
   margin-bottom: 20px;
+  background-color: #FDEFEF;
+  border-radius: 10px;
 }
 
 .comments-wrapper .comment{
-  background-color: #FDEFEF;
-  border-radius: 10px;
   padding: 10px;
 }
 

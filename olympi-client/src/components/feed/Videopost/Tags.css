@@ -30,11 +30,10 @@ footer .tag{
 
 .tags-feedback {
   position:fixed;
-  height: 80vh;
-  top: 20vh;
-  left: 0;
+  height: 90vh;
+  top: 10vh;
   z-index:1;
-  overflow-y: scroll;
+  overflow-y: auto;
   
   padding:1.5em;
   
@@ -45,12 +44,15 @@ footer .tag{
   width: 100%;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
+	max-width: 700px;
+  transform: translateX(-50%);
+  left: 50%;
 
 }
 
 @keyframes appear {
-  0% {opacity:0; transform:translateY(100vh);}
-  100% {opacity:1; transform:translateY(0em);}
+  0% {opacity:0; transform:translateX(-50%) translateY(100vh);}
+  100% {opacity:1; transform:translateX(-50%) translateY(0em);}
 }
 
 .tags-feedback .error{

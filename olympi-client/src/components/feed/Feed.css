@@ -2,7 +2,6 @@
 /* ---- FEEDHEADER ----- */
 /* --------------------- */
 .Feed-header {
-  background: #FAFAFA; /* #FAFAFA */
   display: flex;
   flex-flow: column;
   justify-content: space-between;
