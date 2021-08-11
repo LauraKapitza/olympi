@@ -249,27 +249,17 @@ videosRouter.post('/:videoId/ask', async (req, res, next)=>{
 })
 
 // POST /videos/:videoId/reply
-videosRouter.post('/:videoId/reply', async (req, res, next)=>{
-  const {reply, to_id, author_id, question} = req.body;
-  console.log('answer video id', req.params.videoId)
+videosRouter.post('/:commentId/reply', async (req, res, next)=>{
+  const reply = req.body.reply;
+  const commentId = req.params.commentId
   
-  if (!reply || !author_id || !question || !to_id) {
-    res.status(400).json({message: "Please indicate your answer, the question and the person asking!"});
+  if (!reply) {
+    res.status(400).json({message: "Please indicate your answer!"});
     return;
   };
 
-  if(!mongoose.Types.ObjectId.isValid(req.params.videoId)) { //check if video ID exists
-    res.status(400).json({ message: 'Specified video id is not valid' });
-    return;
-  };
-
-  if(!mongoose.Types.ObjectId.isValid(author_id)) { //check if professional ID exists
-    res.status(400).json({ message: 'Specified user id is not valid' });
-    return;
-  };
-
-  if(!mongoose.Types.ObjectId.isValid(to_id)) { //check if professional ID exists
-    res.status(400).json({ message: 'Specified professional id is not valid' });
+  if(!mongoose.Types.ObjectId.isValid(commentId)) { //check if video ID exists
+    res.status(400).json({ message: 'Specified comment id is not valid' });
     return;
   };
 
@@ -278,14 +268,15 @@ videosRouter.post('/:videoId/reply', async (req, res, next)=>{
     return;
   };
   
+  await Comments.findByIdAndUpdate({_id: commentId}, {reply})
+  
+  let updatedComment = await Comments.findById({_id: commentId})
+  updatedComment = await updatedComment.populate('author_id').execPopulate();
+  updatedComment = await updatedComment.populate('to_id').execPopulate();
+  res.status(201).json(updatedComment);
   try {
-    let comment = await Comments.findOneAndUpdate({$and:[{author_id},{question}, {to_id}]}, {reply})
-    
-    comment = await comment.populate('author_id').execPopulate();
-    comment = await comment.populate('to_id').execPopulate();
-    res.status(201).json(comment);
 
-  }catch{
+  }catch(err){
     res.status(500).json(err);
   };  
   

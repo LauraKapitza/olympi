@@ -15,6 +15,16 @@ class VideoPost extends React.Component {
   toggle = () => {
     this.setState({askOpen: !this.state.askOpen})
   }
+
+  addTags = (tags) => {
+    let currentVideoState = this.state.video;
+
+    tags.forEach((tag, index) => {
+      currentVideoState.tags[tag].push(this.props.user._id)
+    })
+
+    this.setState({videos: currentVideoState})
+  }
   
   addQuestion = (question) => {
     let currentVideoState = this.state.video;
@@ -22,8 +32,15 @@ class VideoPost extends React.Component {
     this.setState({videos: currentVideoState})
   }
 
-  addResponse = () => {
-    
+  addReply = (updatedComment) => {
+    let currentVideoState = {...this.state.video};
+    currentVideoState.comments.map((comment, index) => {
+      if (comment._id === updatedComment._id){
+        currentVideoState.comments[index] = updatedComment;
+        return;
+      }
+    })
+    this.setState({videos: currentVideoState})
   }
   
   render() {
@@ -59,9 +76,9 @@ class VideoPost extends React.Component {
           <h4>{this.state.video.exercise}</h4>
           <p className="video-description">{this.state.video.description}</p>
 
-          <Comments comments={this.state.video.comments} user={this.props.user} addResponse={this.addResponse} />
+          <Comments comments={this.state.video.comments} user={this.props.user} addReply={this.addReply} />
 
-          <Tags tags={this.state.video.tags} exercise={this.state.video.exercise} video_id={this.state.video._id} />
+          <Tags tags={this.state.video.tags} exercise={this.state.video.exercise} video_id={this.state.video._id} addTags={this.addTags} user={this.props.user} />
         </footer>
   
       </article>

@@ -38,7 +38,7 @@ class AskProfessional extends React.Component {
     }
     feedService.addQuestionVideo(data)
     .then((newComment) => {
-      this.setState({error: ""});
+      this.setState({error: "", question:"", to_id: ""});
       // call the addQuestion from parent to add the video to the feed
       this.props.addQuestion(newComment);
 
@@ -46,7 +46,6 @@ class AskProfessional extends React.Component {
       this.props.toggle();
     })
     .catch(err => this.setState({error: err.response.data.message}))
-    .finally(() => this.setState({question: "", to_id: ""}))
   };
 
   handleChange = (event) => {
@@ -94,7 +93,7 @@ class AskProfessional extends React.Component {
           </div>
 
           
-          <p className={`form-submit ${this.state.isUploading ? "is-loading" : ""}`}>
+          <p className={`form-submit ${this.state.isLoading ? "is-loading" : ""}`}>
             <input type="submit" value="Send Request" />
           </p>
         

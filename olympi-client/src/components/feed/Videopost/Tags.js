@@ -87,6 +87,8 @@ class Tags extends React.Component {
     feedService.addTagsVideo(this.state)
       .then((response) => {
         this.setState({error: ""});
+
+        this.props.addTags(this.state.tags)
         // close the tags form
         this.toggle();
       })
@@ -109,8 +111,20 @@ class Tags extends React.Component {
     return data
   }
 
+  hasUserAlreadySetTags = () => {
+    const id = this.props.user._id;
+    for (let tag_key in this.props.tags) {
+      const list_user_by_tag = this.props.tags[tag_key];
+      if(list_user_by_tag.includes(id)){
+        return true;
+      }
+    }
+    return false;
+  }
+
   getFeedbackTagsList = () => {
-    return EXERCISES_TAGS_MAPPING[this.props.exercise];
+    const specificTags = EXERCISES_TAGS_MAPPING[this.props.exercise]
+    return [...FORM, ...specificTags]
   }
 
   handleChange = (event) => {
@@ -132,6 +146,7 @@ class Tags extends React.Component {
 
 
   render() {
+    
     return (
       <>
       <div className="tags-wrapper">
@@ -142,7 +157,9 @@ class Tags extends React.Component {
         })}
       </div>
 
-      <button className="add-tag-button" onClick={this.toggle}>Add feedback</button>
+      {!this.hasUserAlreadySetTags() && 
+        <button className="add-tag-button" onClick={this.toggle}>Add feedback</button>
+      }
 
       {this.state.tagsFeedbackOpen && 
         <div className="tags-feedback">

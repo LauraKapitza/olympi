@@ -25,3 +25,14 @@
   display: inline;
   margin-right: 3px;
 }
+
+.reply-wrapper{
+  padding-left: 20px;
+}
+
+.reply-wrapper h6{
+  font-size: 14px;
+  color: #E41B23;
+  display: inline;
+  margin-right: 3px;
+}

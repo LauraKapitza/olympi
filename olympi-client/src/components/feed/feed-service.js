@@ -50,12 +50,10 @@ export default {
       .then(response => response.data)
   },
 
-  addResponseVideo(data) {
-    const {video_id, reply, author_id, question} = data;
-    return this.service.post(`/${video_id}/reply`, {
+  addReplyVideo(data) {
+    const {comment_id, reply} = data;
+    return this.service.post(`/${comment_id}/reply`, {
       reply,
-      author_id,
-      question
     })
       .then(response => response.data)
 
