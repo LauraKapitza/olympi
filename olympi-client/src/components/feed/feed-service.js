@@ -56,6 +56,5 @@ export default {
       reply,
     })
       .then(response => response.data)
-
   }
 }
