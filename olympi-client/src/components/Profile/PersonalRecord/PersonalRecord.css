@@ -49,7 +49,7 @@ table {
   font-weight: 500;
   margin-left: 10px;
 }
-input[type=text], input[type=date], select {
+.PersonalRecordContainer input[type=text], input[type=date], select {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -57,7 +57,7 @@ input[type=text], input[type=date], select {
   border: none;
   background: #f1f1f1;
 }
-.updateButton{
+.PersonalRecordContainer .updateButton{
 
   background-color: #E41E1E;
   border: none;

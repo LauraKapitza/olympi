@@ -10,6 +10,12 @@ font-weight: bolder;
 z-index: 999;
 }
 
+@media (min-width: 769px) {
+  .navbarContainer {
+    justify-content: center;
+  }
+
+}
 .navbarLeft {
   display: flex;
   margin-left: 10px;
@@ -48,7 +54,7 @@ z-index: 999;
 .button {
   border-style: solid;
   Border-color: #E41E1E;
-  border-radius:15%;
+  border-radius:10px;
   border-width: 2.5px;
   font-weight: normal;
   padding: 1vw 2vw;
