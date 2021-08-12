@@ -158,12 +158,13 @@ videosRouter.post('/:videoId/tags', (req, res, next) => {
 videosRouter.post('/:videoId/upvote', async (req, res, next) => {
   const { votes } = req.body;
   console.log(req.body)
-  console.log("$$$$$", req.params)
-  console.log("$$$$$", req.query)
+
   try {
     let video = await Videos.findById(req.params.videoId)
     video.votes = votes
-    video.save()
+    video = await video.save()
+    video = await Videos.findById(req.params.videoId)
+    console.log(video.votes)
     res.status(200).json(video)
   }
   catch (err) {
@@ -193,6 +194,7 @@ videosRouter.get('/explore', (req, res, next) => {
       }
 
       videosFromDB.forEach(video => videosByCategory[video.category].push(video))
+      console.log('backend', videosByCategory)
       res.status(200).json(videosByCategory);
     })
     .catch(err => {

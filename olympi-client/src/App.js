@@ -84,12 +84,6 @@ class App extends Component {
             <Route exact path="/videos/explore" render={(props) => (
               <Explore user={this.state.user} />
             )} />
-            {/* <Route exact path="/explore/fails" render={(props) => (
-              <Fails user={this.state.user} />
-            )} />
-            <Route exact path="/explore/learn" render={(props) => (
-              <Fails user={this.state.user} />
-            )} /> */}
 
             {/* go back an check this Karina */}
 

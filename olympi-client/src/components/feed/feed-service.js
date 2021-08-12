@@ -56,10 +56,16 @@ export default {
     })
       .then(response => response.data)
   },
-  
-  getExploreVideos() {
-    return this.service.get('/explore')
+
+  getExploreVideos(category) {
+    return this.service.get(`/explore`)
+    .then(response => response.data[category])
+  },
+
+  updateVotes(video) {
+    return this.service.post(`/${video._id}/upvote`, {
+      votes: video.votes ? video.votes + 1 : 1,
+    })
     .then(response => response.data)
   }
 }
-
