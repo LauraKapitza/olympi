@@ -1,6 +1,7 @@
 .ProfileVideosContainer{
   display: flex;
   flex-direction: column;
+  margin: 5px;
 }
 
 
@@ -24,4 +25,38 @@
 .VideosSection{
 margin-left: 35px;
 
+}
+.videoContainer{
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.video{
+  position: relative;
+  margin: 10px;
+}
+.deleteVideoButton{
+  margin-top: 45px !important;
+  margin-left: 174px;
+  position: absolute;
+  color: red;
+  z-index: 1;
+}
+.deleteVideoButton:hover{
+  cursor: pointer;
+}
+@media (max-width:485px)
+{
+  .video{
+    margin: auto;
+  }
+  .video video{
+    width: 300px;
+    height: 300px;
+  }
+  .deleteVideoButton {
+    margin-top: 70px !important;
+    margin-left: 272px;
+  }
 }

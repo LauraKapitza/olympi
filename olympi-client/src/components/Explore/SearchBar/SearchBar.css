@@ -1,11 +1,10 @@
-.SearchBarContainer{
+.SearchBarContainer {
   background-color: #fafafa;
-  display: flex;  
+  display: flex;
   flex-direction: column;
   height: 100%;
   align-items: center;
 }
-
 
 .ExploreTitle {
   color: #e41b23;
@@ -20,18 +19,16 @@
   width: 85%;
 }
 
-.ExploreIcons{
-display: flex;
-width: 16%;
-justify-content: space-between;
-align-items: center;
+.ExploreIcons {
+  display: flex;
+  width: 16%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.ExploreIcons img{
+.ExploreIcons img {
   width: 20px;
-  }
-
-
+}
 
 .SearchBoxContainer {
   display: flex;
@@ -40,10 +37,10 @@ align-items: center;
   border-radius: 5px;
   width: 90%;
   font-size: 12px;
-  color: #B3B3B3;
+  color: #b3b3b3;
   padding: 10px;
   margin-bottom: 10px;
-  box-shadow: -1px -1px  10px #B3B3B330;
+  box-shadow: -1px -1px 10px #b3b3b330;
 }
 
 .PagesContainer {
@@ -61,13 +58,17 @@ align-items: center;
 }
 
 .Trending {
-  color: #e41b23;
-  border-bottom: solid 2px #e41b23;
+  color: #00000030;
   flex: 1;
 }
-
-.Learn {
+.selected-tab {
+  border-bottom: solid 2px #e41b23;
+  color: #e41b23;
+}
+.tab-border {
   border-bottom: solid 2px #00000040;
+}
+.Learn {
   color: #00000030;
   flex: 1;
 }

@@ -9,7 +9,7 @@ import Feed from './components/feed/Feed.js';
 import authService from './components/auth/auth-service.js';
 import ProProfile from './components/Profile/proProfile.js';
 import UserProfile from './components/Profile/userProfile.js';
-import Trending from './components/Explore/Trending.js';
+import Explore from './components/Explore/Explore.js';
 import Terms from './components/home/OtherPages/Terms/Terms';
 import Team from './components/home/OtherPages/Team/Team';
 import TagDefinitions from './components/home/OtherPages/TagDefinitions/TagDefinitions';
@@ -69,16 +69,27 @@ class App extends Component {
             <Route exact path="/videos">
               {this.state.user ? <Feed updateUser={this.updateUser} user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
             </Route>
+ 
+            {/* go back an check this Karina */}
+            <Route exact path="/profile" render={(props) => (
+              this.state.user && <UserProfile user={this.state.user} />
+            )} />
 
             {/* go back an check this Karina */}
-            {/* <Route exact path="/user">
-              {this.state.user.professional ? <ProProfile user={this.state.user} /> : <UserProfile user={this.state.user} />}
-            </Route> */}
+            <Route exact path="/user">
+              {this.state.user?.professional ? <ProProfile user={this.state.user} /> : <UserProfile user={this.state.user} />}
+            </Route>
 
             {/* go back an check this Karina */}
             <Route exact path="/videos/explore" render={(props) => (
-              <Trending user={this.state.user} />
+              <Explore user={this.state.user} />
             )} />
+            {/* <Route exact path="/explore/fails" render={(props) => (
+              <Fails user={this.state.user} />
+            )} />
+            <Route exact path="/explore/learn" render={(props) => (
+              <Fails user={this.state.user} />
+            )} /> */}
 
             {/* go back an check this Karina */}
 

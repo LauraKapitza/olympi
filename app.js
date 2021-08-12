@@ -1,5 +1,3 @@
-
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/olympi-server'
 require('dotenv').config();
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -16,6 +14,7 @@ const MongoStore = require('connect-mongo');
 
 const app_name = require('./package.json').name;
 
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/olympi-server'
 mongoose
 .connect(MONGODB_URI, {
   useNewUrlParser: true,

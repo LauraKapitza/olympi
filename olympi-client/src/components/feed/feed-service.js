@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export default {
   service: axios.create({
     baseURL: `${process.env.REACT_APP_APIURL || ""}/videos`,
@@ -56,5 +55,11 @@ export default {
       reply,
     })
       .then(response => response.data)
+  },
+  
+  getExploreVideos() {
+    return this.service.get('/explore')
+    .then(response => response.data)
   }
 }
+

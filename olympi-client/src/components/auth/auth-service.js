@@ -1,6 +1,5 @@
 // components/auth/auth-service.js
 import axios from 'axios';
-
 export default {
 
   service: axios.create({
@@ -15,7 +14,7 @@ export default {
 
   signup(data) {
     const {professional, username, email, password, city, fav_exercise, career_date, certifications, website, about} = data;
-    return this.service.post('/signup', {
+    return this.service.post(`/signup`, {
       professional,
       username,
       email,
