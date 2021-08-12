@@ -172,9 +172,39 @@ videosRouter.post('/:videoId/upvote', async (req, res, next) => {
 })
 
 
-///////change here
+///////change
 //  GET /videos/explore
-videosRouter.get('/explore', async (req, res, next) => {
+
+videosRouter.get('/explore', (req, res, next) => {
+  if (!req.user) {
+    res.status(401).json({message: "You need to be logged in to upload your video"});
+    return;
+  }
+
+  Videos.find()
+    .populate('creator_id')
+    .populate('comments')
+    .then(videosFromDB => {
+      
+      const videosByCategory = {
+        trending: [],
+        fail: [],
+        learn: []
+      }
+
+      videosFromDB.forEach(video => videosByCategory[video.category].push(video))
+      res.status(200).json(videosByCategory);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    })
+});
+
+
+
+
+
+//videosRouter.get('/explore', async (req, res, next) => {
   // res.send(req.query)
   // return;
   // if (!req.user) {
@@ -182,21 +212,23 @@ videosRouter.get('/explore', async (req, res, next) => {
   //   return;
   // }
   // const {category = 'trending', tags =[]} = req.query;
-  try {
-    const { category, sortBy } = req.query;
-    const allVideos = await Videos.find({ category: category }).sort({ votes: sortBy === 'desc' ? -1 : 1})
-  .populate('creator_id')
-  .populate('comments')
+  //try {
+   // const { category, sortBy } = req.query;
+    //const allVideos = await Videos.find({ category: category }).sort({ votes: sortBy === 'desc' ? -1 : 1})
+  //.populate('creator_id')
+  //.populate('comments')
 
-res.status(200).json(allVideos)
-  }
-  catch (error) {
-  res.status(500).json(error);
-}
-});
+//res.status(200).json(allVideos)
+ // }
+  //catch (error) {
+  //res.status(500).json(error);
+//}
+//});
 
-/// help load user videos 
+
+//hekmat help  load user videos
 videosRouter.get("/loadUserVideos", async (req, res, next) =>{
+  // res.send("dta from server")
   // return;
   try{
     const userVideos = await Videos.find({creator_id: req.query.creator})
@@ -275,27 +307,6 @@ videosRouter.post('/:videoId/ask', async (req, res, next) => {
 })
 
 // POST /videos/:videoId/reply
-videosRouter.post('/:videoId/reply', async (req, res, next) => {
-  const { reply, to_id, author_id, question } = req.body;
-  console.log('answer video id', req.params.videoId)
-
-  if (!reply || !author_id || !question || !to_id) {
-    res.status(400).json({ message: "Please indicate your answer, the question and the person asking!" });
-    return;
-  };
-
-  if (!mongoose.Types.ObjectId.isValid(req.params.videoId)) { //check if video ID exists
-    res.status(400).json({ message: 'Specified video id is not valid' });
-    return;
-  };
-
-  if (!mongoose.Types.ObjectId.isValid(author_id)) { //check if professional ID exists
-    res.status(400).json({ message: 'Specified user id is not valid' });
-    return;
-  };
-
-  if (!mongoose.Types.ObjectId.isValid(to_id)) { //check if professional ID exists
-    res.status(400).json({ message: 'Specified professional id is not valid' });
 videosRouter.post('/:commentId/reply', async (req, res, next)=>{
   const reply = req.body.reply;
   const commentId = req.params.commentId
@@ -314,15 +325,6 @@ videosRouter.post('/:commentId/reply', async (req, res, next)=>{
     res.status(401).json({ message: "You need to be logged in to upload your video" });
     return;
   };
-
-  try {
-    let comment = await Comments.findOneAndUpdate({ $and: [{ author_id }, { question }, { to_id }] }, { reply })
-
-    comment = await comment.populate('author_id').execPopulate();
-    comment = await comment.populate('to_id').execPopulate();
-    res.status(201).json(comment);
-
-  } catch {
   
   await Comments.findByIdAndUpdate({_id: commentId}, {reply})
   

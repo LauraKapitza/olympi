@@ -56,5 +56,10 @@ export default {
     })
       .then(response => response.data)
 
+  },
+  getExploreVideos() {
+    return this.service.get('/explore')
+    .then(response => response.data)
   }
 }
+

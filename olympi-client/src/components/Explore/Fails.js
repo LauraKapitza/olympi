@@ -9,7 +9,7 @@ function Fails() {
     <div>
     <SearchBar/>
     <Filters/>
-    <ExploreVideos category={"fails"} />
+    <ExploreVideos category={"fail"} />
     <ExploreBottomNavBar/>
   </div>
   )

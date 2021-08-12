@@ -3,17 +3,15 @@ import moment from 'moment';
 import React, { useEffect, useState } from "react";
 import "./ExploreVideos.css";
 import axios from "axios"
+import feedService from "../../feed/feed-service.js";
 
 function ExploreVideos({ category, sortBy }) {
   const [videos, setVideos] = useState(null)
   const loadVideos = async () => {
-    const { data } = await axios.get(`http://localhost:5000/videos/explore`, {
-      params: {
-        category,
-        sortBy
-      }
-    }
-    )
+    const { data } = await feedService.getExploreVideos();
+     
+    console.log ('data', data);
+
     setVideos(data);
   }
   useEffect(() => {
