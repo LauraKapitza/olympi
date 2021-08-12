@@ -1,22 +1,13 @@
 import React from 'react'
 import "./Filters.css"
-function Filters() {
+function Filters({changeSortBy}) {
   return (
     <div className="FiltersContainer">
-
-    <div className="FiltersTitle">Filer by : </div>
-    
-    <div className="FilterBtns">
-    <button>All</button>
-    <button>Newest</button>
-    <button>Most Tagged</button>
-    <button>Exercise</button>
-    
-
-    </div>
-    
-    
-    
+      <div className="FiltersTitle">Sort By: </div>
+      <div className="FilterBtns">
+        <button onClick={() => changeSortBy('desc')}>Most Votes</button>
+        <button onClick={() => changeSortBy('asc')}>Less Votes</button>
+      </div>
     </div>
   )
 }

@@ -22,6 +22,11 @@ const videoSchema = new Schema({
     type: Number,
     required: true
   },
+  votes: {
+    type: Number,
+    default: 0,
+    required: false
+  },
   weight_metric: {
     type: String,
     enum: {

@@ -132,12 +132,12 @@ router.get("/loggedin", (req, res, next) => {
 ////////////////////////////////////////////////////////////////////////
 
 router.get('/user', (req, res, next)=> {
-  if (!req.session.currentUser) {
-    res.status(401).json({message: "You need to be logged in to edit your profile"});
-    return;
-  }
-  
-  User.findById(req.session.currentUser._id)
+  // need to be changed
+  // if (!req.session.currentUser) {
+  //   res.status(401).json({message: "You need to be logged in to edit your profile"});
+  //   return;
+  // }
+  User.findById(req.query.id)
   .then(userFromDB => {
     res.status(201).json(userFromDB)
   })
@@ -145,7 +145,31 @@ router.get('/user', (req, res, next)=> {
     res.status(500).json({message: "Something went wrong when enterin the user's profile"});
   })
 })
-
+router.put('/updateUser', (req, res, next)=> {
+  // res.send(req.body)
+  // return;
+  // need to be changed
+  // if (!req.session.currentUser) {
+  //   res.status(401).json({message: "You need to be logged in to edit your profile"});
+  //   return;
+  // }
+  User.findByIdAndUpdate(
+    req.query.id,
+    {
+      username: req.body.username,
+      email: req.body.email,
+      city: req.body.city,
+      fav_exercise: req.body.fav_exercise,
+      about: req.body.about
+    },
+    { new: true })
+    .then(userFromDB => {
+      res.status(201).json(userFromDB)
+    })
+    .catch(error => {
+      res.status(500).json({message: 'Error while saving user into DB.'})
+    });;
+})
 
 router.post('/user', (req, res, next) => {
   // Check user is logged in

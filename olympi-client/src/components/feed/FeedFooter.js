@@ -23,7 +23,7 @@ function FunctionFooter(props) {
 
       <div className={`footer-link profile ${props.activate === "profile" ? "active" : ""}`}> 
       <UserIcon/>
-        <Link to='/user'>Profile</Link>
+        <Link to='/profile'>Profile</Link>
       </div>
 
     </div>

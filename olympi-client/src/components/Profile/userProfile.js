@@ -6,16 +6,14 @@ import ProfileVideos from './ProfileVideos/ProfileVideos'
 import SettingsBar from './SettingsBar/SettingsBar'
 import "./userProfile.css"
 
-function UserProfile() {
+function UserProfile({user}) {
   return (
     <div>
-      <PersonalBio/>
-      <PersonalRecord/>
-      <ProfileVideos/>
+      <PersonalBio user={user}/>
+      <PersonalRecord user={user} />
+      <ProfileVideos user={user}/>
       <SettingsBar/>
       <BottomNavBar/>
-
-
     </div>
   )
 }
