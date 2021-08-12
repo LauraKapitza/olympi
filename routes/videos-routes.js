@@ -172,7 +172,7 @@ videosRouter.post('/:videoId/upvote', async (req, res, next) => {
 })
 
 
-
+///////change here
 //  GET /videos/explore
 videosRouter.get('/explore', async (req, res, next) => {
   // res.send(req.query)
@@ -194,8 +194,9 @@ res.status(200).json(allVideos)
   res.status(500).json(error);
 }
 });
+
+/// help load user videos 
 videosRouter.get("/loadUserVideos", async (req, res, next) =>{
-  // res.send("dta from server")
   // return;
   try{
     const userVideos = await Videos.find({creator_id: req.query.creator})
@@ -295,6 +296,17 @@ videosRouter.post('/:videoId/reply', async (req, res, next) => {
 
   if (!mongoose.Types.ObjectId.isValid(to_id)) { //check if professional ID exists
     res.status(400).json({ message: 'Specified professional id is not valid' });
+videosRouter.post('/:commentId/reply', async (req, res, next)=>{
+  const reply = req.body.reply;
+  const commentId = req.params.commentId
+  
+  if (!reply) {
+    res.status(400).json({message: "Please indicate your answer!"});
+    return;
+  };
+
+  if(!mongoose.Types.ObjectId.isValid(commentId)) { //check if video ID exists
+    res.status(400).json({ message: 'Specified comment id is not valid' });
     return;
   };
 
@@ -311,6 +323,16 @@ videosRouter.post('/:videoId/reply', async (req, res, next) => {
     res.status(201).json(comment);
 
   } catch {
+  
+  await Comments.findByIdAndUpdate({_id: commentId}, {reply})
+  
+  let updatedComment = await Comments.findById({_id: commentId})
+  updatedComment = await updatedComment.populate('author_id').execPopulate();
+  updatedComment = await updatedComment.populate('to_id').execPopulate();
+  res.status(201).json(updatedComment);
+  try {
+
+  }catch(err){
     res.status(500).json(err);
   };
 
