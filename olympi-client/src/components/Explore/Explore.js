@@ -50,6 +50,7 @@ class Explore extends React.Component {
   render() {
     return (
       <div>
+      <SearchBar/>
         <div className="PagesContainer">
           <div className={`Fails ${this.state.categorySelected === 'fails' ? 'selected-tab' : 'tab-border'}`} onClick={() => this.fetchVideos('fail')}>Fails</div>
           <div className={`Trending ${this.state.categorySelected === 'trending' ? 'selected-tab' : 'tab-border'}`} onClick={() => this.fetchVideos("trending")}>Trending</div>
