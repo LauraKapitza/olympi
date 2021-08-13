@@ -9,6 +9,20 @@ const Ul = styled.ul`
   flex-flow: row nowrap;
   li {
     padding: 18px 10px;
+    display: flex;
+    align-items: center;
+    order: 3;
+  }
+
+  .auth-nav-button:first-child{
+      margin-left: 40px;
+    }  
+
+  li.auth-nav-button a{
+    background-color: #E41E1E;
+    padding: 15px 10px;
+    border-radius: 10px;
+    color: white;
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
@@ -25,7 +39,7 @@ const Ul = styled.ul`
       color: #ffff;
     }
 
-    li a {
+    li a{
       color: #ffff;
       hover: black;
       
@@ -33,7 +47,22 @@ const Ul = styled.ul`
 
     li a:hover {
      color: #ec6262;
-  }
+    }
+
+    li.auth-nav-button{
+      order: 1;
+      margin-left: 0;
+    }
+    li.auth-nav-button:nth-child(1){
+      order: 2;
+    }
+
+    li.auth-nav-button a{
+      background-color: transparent;
+      padding: 0;
+      border-radius: none;
+      color: inherit;
+    }
     }
   }
 `;
@@ -41,17 +70,17 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li><Link  to="/signup">Sign up</Link></li>
-      <li><Link to="/login">Log in</Link></li>
       <li><Link to ="/#Features">Features</Link></li>
       <li><Link to ="/#HowItWorks">How it works</Link></li>
       <li><Link to ="/#Reviews">Reviews</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/professionals">For Professionals</Link></li>
-      <li><Link to="/definitions">Tag Definitions</Link></li>
-      <li><Link to="/team">Team</Link></li>
-      <li><Link  to="/faq">FAQ</Link></li>
+      {/* <li><Link to="/about">About</Link></li> */}
+      {/* <li><Link to="/professionals">For Professionals</Link></li> */}
+      {/* <li><Link to="/definitions">Tag Definitions</Link></li> */}
+      {/* <li><Link to="/team">Team</Link></li> */}
+      {/* <li><Link  to="/faq">FAQ</Link></li> */}
       <li><Link to ="/#ContactUs">Contact Us</Link></li>
+      <li className="auth-nav-button"><Link  to="/signup">Sign up</Link></li>
+      <li className="auth-nav-button"><Link to="/login">Log in</Link></li>
       
       
       

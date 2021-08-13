@@ -18,6 +18,24 @@
   font-size: 4vw;
 }
 
+.description h1{
+  font-size: 2rem;
+}
+
+@media (min-width: 767px) {
+  .description h1{
+    font-size: 3rem;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .description h1{
+    font-size: 4rem;
+  }
+
+}
+
 .buttonsHomepage {
   display: flex;
   justify-content: center;

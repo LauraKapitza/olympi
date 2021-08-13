@@ -19,34 +19,20 @@ class VideoUpload extends React.Component {
     this.uploadInputRef = React.createRef();
   }
 
-  // WARNING: REMOVE THIS STATE AND REPLACE WITH COMMENTED ONE BEFORE PRODUCTION
-  // it is use to make testing faster by pre-populate the form with fake data
   state = {
     open: false,
     error: "",
     exercise: EXERCISES[0], //default value
-    weight: "100",
+    weight: "",
     weight_metric: "kg", //default value
-    rounds: "5",
-    reps: "10",
+    rounds: "",
+    reps: "",
     category: "trending", //default value
-    description: "Yolo description",
+    description: "",
     file: null,
     isUploading: false
   }
 
-  // state = {
-  //   open: false,
-  //   error: "",
-  //   exercise: EXERCISES[0], //default value
-  //   weight: "",
-  //   weight_metric: "kg", //default value
-  //   rounds: "",
-  //   reps: "",
-  //   category: "trending", //default value
-  //   description: "",
-  //   file: null,
-  // }
 
 
 
