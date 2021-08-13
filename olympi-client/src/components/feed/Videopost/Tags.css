@@ -1,4 +1,7 @@
+/* --------------------- */
 /* ---- Tags ----- */
+/* --------------------- */
+
 footer .tags-wrapper{
   display: flex;
   margin-bottom: 10px;
@@ -30,8 +33,9 @@ footer .tag span{
 	align-items: center;
 }
 
-
+/* --------------------- */
 /* ---- Tags feedback form ----- */
+/* --------------------- */
 
 .add-tag-button{
 	background-color: #E41B23;
@@ -130,106 +134,178 @@ footer .tag span{
 
 
 
-
-
+/* --------------------- */
 /* ---- Tags Color ----- */
+/* --------------------- */
 
 
-.tag[data-tag="arms-forward"]{
-	background-color: #FD498A;
-}
-.tag[data-tag="arms-too-narrow"]{
-	background-color: #008BF8;
-}
-.tag[data-tag="arms-too-wide"]{
-	background-color: #FFC15E;
-}
-.tag[data-tag="bar-far-from-leg"]{
-	background-color: #00f7ff;
-}
-.tag[data-tag="bar-placement-wrong"]{
-	background-color: #007991;
-}
-.tag[data-tag="benched"]{
+
+
+/* ---- Form Scoring ----- */
+
+.tag[data-tag="perfect"]{
 	background-color: #FF7D82;
 }
-.tag[data-tag="butt-off-bench"]{
+
+.tag[data-tag="very-good"]{
 	background-color: #FDE74C;
 }
-.tag[data-tag="butt-wink"]{
-	background-color: #61E8E1;
-}
-.tag[data-tag="control-descent"]{
-	background-color: #61E8E1;
-}
-.tag[data-tag="curved-back"]{
-	background-color: #E0C1B3;
-}
-.tag[data-tag="fair"]{
-	background-color: #080357;
-  color: white;
-}
-.tag[data-tag="foot-off-floor"]{
-	background-color: #4cf3c9;
-}
+
 .tag[data-tag="good"]{
 	background-color: #7692FF;
   color: white;
 }
-.tag[data-tag="head-back"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="hips-shoot-up"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="knee-path"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="legs-bent"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="lets-improve-it!"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="loose-lats"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="neck-angle"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="no-arch"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="no-chest-touch"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="no-leg-drive"]{
-	background-color: #007991;
-}
-.tag[data-tag="no-lockout"]{
-	background-color: #FFC15E;
-}
-.tag[data-tag="not-parallel"]{
-	background-color: #008BF8;
-}
-.tag[data-tag="other"]{
-	background-color: black;
-	color: white
-}
-.tag[data-tag="perfect"]{
-	background-color: #FF7D82;
-}
-.tag[data-tag="poor-bracing"]{
-	background-color: #FD498A;
-}
-.tag[data-tag="very-good"]{
-	background-color: #FF7D82;
-}
 
-.tag[data-tag="lets-improve-it"]{
-	background-color: #FF7D82;
+.tag[data-tag="fair"]{
+	background-color: #080357;
+  color: white;
 }
 
 .tag[data-tag="well"]{
 	background-color: #007991;
 }
+
+.tag[data-tag="lets-improve-it"]{
+	background-color: #61E8E1;
+}
+
+.tag[data-tag="neck-angle"]{
+	background-color: #E0C1B3;
+}
+
+
+
+/* ---- General feedback tags ----- */
+
+.tag[data-tag="arms-too-narrow"]{
+	background-color: #008BF8;
+}
+
+.tag[data-tag="arms-too-wide"]{
+	background-color: #FDE74C;
+}
+
+.tag[data-tag="other"]{
+	background-color: black;
+	color: white
+}
+
+.tag[data-tag="poor-bracing"]{
+	background-color: #FD498A;
+}
+
+.tag[data-tag="loose-lats"]{
+	background-color: #9F9F92;
+}
+
+.tag[data-tag="no-lockout"]{
+	background-color: #FFC15E;
+}
+
+
+/* ---- Overhead press ----- */
+
+.tag[data-tag="arms-forward"]{
+	background-color: #FD498A;
+}
+
+.tag[data-tag="benched"]{
+	background-color: #E0C1B3;
+}
+
+.tag[data-tag="head-back"]{
+	background-color: #7692FF;
+}
+
+.tag[data-tag="legs-bent"]{
+	background-color: #080357;
+	color: white
+}
+
+
+
+/* ---- Deadlift ----- */
+
+.tag[data-tag="bar-far-from-leg"]{
+	background-color: #00f7ff;
+}
+
+.tag[data-tag="curved-back"]{
+	background-color: #E0C1B3;
+}
+
+.tag[data-tag="hips-shoot-up"]{
+	background-color: #9F9F92;
+}
+
+.tag[data-tag="foot-off-floor"]{
+	background-color: #008BF8;
+}
+
+
+
+/* ---- Squat ----- */
+
+.tag[data-tag="not-parallel"]{
+	background-color: #008BF8;
+}
+
+.tag[data-tag="bar-placement-wrong"]{
+	background-color: #007991;
+}
+
+.tag[data-tag="butt-wink"]{
+	background-color: #FD498A;
+}
+
+.tag[data-tag="control-descent"]{
+	background-color: #61E8E1;
+}
+
+.tag[data-tag="knee-path"]{
+	background-color: #FFC15E;
+}
+
+
+
+/* ---- Bench Press ----- */
+
+.tag[data-tag="butt-off-bench"]{
+	background-color: #FFC15E;
+}
+
+.tag[data-tag="no-arch"]{
+	background-color: #FF7D82;
+}
+.tag[data-tag="no-chest-touch"]{
+	background-color: #E0C1B3;
+}
+.tag[data-tag="no-leg-drive"]{
+	background-color: #007991;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
