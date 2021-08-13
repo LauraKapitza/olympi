@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import ExploreBottomNavBar from './ExploreBottomNavBar/ExploreBottomNavBar'
 import Filters from './Filters/Filters'
-import SearchBar from './SearchBar/SearchBar';
-import MoreIcon from "@material-ui/icons/More";
-import feedService from '../feed/feed-service.js';
+import SearchBar from './SearchBar/SearchBar';import feedService from '../feed/feed-service.js';
 import './Explore.css';
 
 class Explore extends React.Component {
@@ -78,7 +76,7 @@ class Explore extends React.Component {
                   <div onClick={() => this.updateVotes(video)}>
                     <img src="/assets/icons/upvotefull.svg" alt="upvote" />{video.votes ? video.votes : 0}
                   </div>
-                  <MoreIcon />
+    
                 </div>
               </div>
             )

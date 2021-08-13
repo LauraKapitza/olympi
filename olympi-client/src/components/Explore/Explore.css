@@ -1,5 +1,6 @@
 .ExploreVideosContainer {
  background-color: #ffffff;
+
 }
 
 .VideoSpace{
@@ -47,8 +48,8 @@ padding-right: 8px;
   color: #e41b23;
   display: flex;
   justify-content: space-between;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 35px;
+  margin-right: 35px;
   margin-top: 20px;
   margin-bottom: 10px;
   font-weight: 500;
@@ -56,12 +57,7 @@ padding-right: 8px;
   width: 85%;
 }
 
-.ExploreIcons {
-  display: flex;
-  width: 16%;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .ExploreIcons img {
   width: 20px;
