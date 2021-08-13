@@ -14,7 +14,7 @@ function Intro() {
 </div>
 
 
-      <div className="phoneImg"> <img src="/assets/photos/olympiphone.png" className="phonepic" alt="olympiapp"></img> <h3 className="Tagline">"Olympi tagline here""Olympi tagline here" "Olympi tagline here"  </h3> </div>
+      <div className="phoneImg"> <img src="/assets/photos/olympiphone.png" className="phonepic" alt="olympiapp"></img> <h2 className="Tagline"> Improve and help others improve one rep at a time  </h2> </div>
 
 
 

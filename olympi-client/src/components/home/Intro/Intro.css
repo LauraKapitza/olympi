@@ -36,6 +36,10 @@
 
 }
 
+
+
+
+
 .buttonsHomepage {
   display: flex;
   justify-content: center;
@@ -55,8 +59,8 @@
 
 .Tagline {
 text-align: center;
-padding-right: 15px;
-padding-left: 15px;
+padding-right: 20px;
+padding-left: 20px;
 padding-bottom: 20px;
 color: #250505;
 }
