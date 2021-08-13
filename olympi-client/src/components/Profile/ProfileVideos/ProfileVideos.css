@@ -58,5 +58,6 @@ margin-left: 35px;
   .deleteVideoButton {
     margin-top: 70px !important;
     margin-left: 272px;
+    z-index: 2;
   }
 }

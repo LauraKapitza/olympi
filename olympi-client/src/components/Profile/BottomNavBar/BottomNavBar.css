@@ -11,6 +11,9 @@
 
 }
 
+.BottomNavBarContainer a {
+ color:#C7C7C7;
+}
 
 .ExploreNavButton{
   display: flex;
@@ -54,3 +57,4 @@ justify-content: center;
   margin-bottom: -11px;
   margin-top: -11px;
 }
+

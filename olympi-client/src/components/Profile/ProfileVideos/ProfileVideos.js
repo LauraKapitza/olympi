@@ -31,7 +31,6 @@ function ProfileVideos({user}) {
     <div className="ProfileVideosContainer">
 
     <div className="VideosTitle">Videos
-    {/* <div className="EditPr">Edit<img src="/assets/icons/editbutton.svg" alt=""></img></div> */}
     </div>
 
 

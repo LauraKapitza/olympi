@@ -53,20 +53,22 @@ class Reviews extends React.Component {
     <input type="radio" name="slider" title="slide4" value="slide4" onChange={this.handleChange} checked={this.state.slider === "slide4"} className="slider__nav"/>
     <div className="slider__inner">
       <div className="slider__contents">
-        <h2 className="slider__caption">Professional Trainer</h2> <img src="https://via.placeholder.com/200" alt=""></img>
-        <p className="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+        <h2 className="slider__caption">Professional Trainer</h2> <img src="/assets/photos/personaltrainer.jpeg" alt=""></img>
+        <p className="slider__txt">"Olympi has allowed me to help more people and improve my brand in the fitness world. I receive many requests per day all around the world. Eventhough we work out separately I am still able to provide feedback and they keep all the records in one place. It's very convenient!"</p>
       </div>
       <div className="slider__contents">
-        <h2 className="slider__caption">Professional Athlete</h2> <img src="https://via.placeholder.com/200" alt=""></img>
-        <p className="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+        <h2 className="slider__caption">Professional Athlete</h2> <img src="/assets/photos/athlete.png" alt=""></img>
+        <p className="slider__txt">"I love the platform to connect with fans and powerlifting enthusiasts. I have always had tips and "secrets" to share but I had never found the appropriate platform to share them. Olympi is very visual and pragmatic, which I think is what makes it ideal. It's a way to  unite people for fitness." </p>
       </div>
       <div className="slider__contents">
-        <h2 className="slider__caption">Beginner Weightlifter</h2> <img src="https://via.placeholder.com/200" alt=""></img>
-        <p className="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+        <h2 className="slider__caption">Beginner Weightlifter</h2> <img src="/assets/photos/beginner.jpeg" alt=""></img>
+        <p className="slider__txt">"I've learned a lot from using Olympi. I like that I can get an overview of my performance and that I can update my progress. I also constantly check out the Explore Page to learn new workouts from weightlifters that are trusted by the community. There's no judgment here, it's all for the better." </p>
       </div>
       <div className="slider__contents">
-        <h2 className="slider__caption">Weightlifting Enthusiast</h2> <img src="https://via.placeholder.com/200" alt=""></img>
-        <p className="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+        <h2 className="slider__caption">Weightlifting Enthusiast</h2> <img src="/assets/photos/gymbro.png" alt=""></img>
+        <p className="slider__txt">"I've been lifting for a bit over 8 years and where Reddit falls short, Olympi picks it up. I like how I can get feedback from other people who are dedicated to weightlifting and even professionals I admire. I hope in the next version they'll let me create a group and invite all my gym bros." 
+
+</p>
       </div>
     </div>
   </div>
