@@ -229,3 +229,7 @@ footer .tag span{
 .tag[data-tag="lets-improve-it"]{
 	background-color: #FF7D82;
 }
+
+.tag[data-tag="well"]{
+	background-color: #007991;
+}

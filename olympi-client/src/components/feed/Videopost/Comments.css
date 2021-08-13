@@ -11,6 +11,9 @@
   border-radius: 10px;
 
   margin-bottom: 10px;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .comments-wrapper .comment h4{
@@ -42,6 +45,20 @@
   margin-right: 3px;
   font-size: 13px;
   line-height: 14px;
+}
+
+.comments-wrapper .reply-button{
+  color:#E41B23;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+}
+
+.comments-wrapper .reply-button svg{
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
 }
 
 .reply-wrapper{

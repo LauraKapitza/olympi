@@ -26,17 +26,11 @@ class Comments extends React.Component {
           return (
             <>
             <div key={comment._id} className="comment">
-              <h4>{comment.author_id.username}</h4>
-              <h5>@{comment.to_id.username}</h5><p>{comment.question}</p>
-            </div>
-            {comment.reply && 
-                <div className="reply-wrapper">
-                  <h6>{comment.to_id.username}</h6><p>{comment.reply}</p>
-                </div>
-              }
-
-              <div className="reply-comment-wrapper">
-                {this.canReply(comment) && 
+              <div className="comment-content">
+                <h4>{comment.author_id.username}</h4>
+                <h5>@{comment.to_id.username}</h5><p>{comment.question}</p>
+              </div>
+              {this.canReply(comment) && 
                   <button className="reply-button" onClick={()=>{
                     this.toggle();
                     this.setState({currentComment: comment})
@@ -45,7 +39,12 @@ class Comments extends React.Component {
                     <span>Reply</span>
                   </button>
                 }
-              </div>
+            </div>
+            {comment.reply && 
+                <div className="reply-wrapper">
+                  <h6>{comment.to_id.username}</h6><p>{comment.reply}</p>
+                </div>
+              }
             </>
           )
         })}
