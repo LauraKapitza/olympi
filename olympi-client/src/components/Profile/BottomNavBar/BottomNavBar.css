@@ -2,6 +2,7 @@
   z-index: 1;
   display: flex;
   height: 70px;
+  margin-top: 200px;
   background-color: #fafafa;
   bottom: 0px;
   position: fixed;

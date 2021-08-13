@@ -76,9 +76,9 @@ class App extends Component {
             )} />
 
             {/* go back an check this Karina */}
-            <Route exact path="/user">
-              {this.state.user?.professional ? <ProProfile user={this.state.user} /> : <UserProfile user={this.state.user} />}
-            </Route>
+            <Route exact path="/user" render={(props)=> (
+              this.state.user?.professional ? <ProProfile user={this.state.user} /> : <UserProfile user={this.state.user} /> 
+              )} /> 
 
             {/* go back an check this Karina */}
             <Route exact path="/videos/explore" render={(props) => (

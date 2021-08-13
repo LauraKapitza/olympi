@@ -45,7 +45,8 @@ const userSchema = new Schema({
   admin: {
     type: Boolean,
     default: false
-  }
+  },
+  image: String
 }, 
 {
   timestamps: true

@@ -6,15 +6,14 @@ import PersonalRecord from './PersonalRecord/PersonalRecord'
 import "./proProfile.css"
 import SettingsBar from './SettingsBar/SettingsBar'
 
-export default function ProProfile(){
+export default function ProProfile( {user}){
   return (
     <div>
-    <ProfessionalBio/>
-      <PersonalRecord/>
-      <ProfileVideos/>
+    <ProfessionalBio user={user}/>
+      <PersonalRecord user={user}/>
+      <ProfileVideos user={user}/>
       <SettingsBar/>
       <BottomNavBar/>
-
 
     </div>
   )

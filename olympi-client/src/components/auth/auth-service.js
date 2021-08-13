@@ -52,5 +52,11 @@ export default {
       about
     })
       .then(response => response.data)
-  }
+  },
+
+upload(formdata) {
+  return this.service.post('/upload', formdata)
+    .then(response => response.data)
+}
+
 };
