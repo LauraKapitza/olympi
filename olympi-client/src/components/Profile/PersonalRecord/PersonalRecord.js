@@ -43,7 +43,7 @@ useEffect(() => {
   return (
     <div className="PersonalRecordContainer">
       
-      <div className="PRtitle">Personal Record
+      {/* <div className="PRtitle">Personal Record
 
       </div>
 
@@ -68,7 +68,7 @@ useEffect(() => {
                 </tbody>
             </table>
         </div>
-
+ */}
     
 
       </div>

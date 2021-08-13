@@ -5,31 +5,31 @@ import HighlightOff from "@material-ui/icons/HighlightOff";
 const baseUrl = process.env.REACT_APP_APIURL
 
 function ProfileVideos({user}) {  
-    const [videos, setVideos]= useState(null)
-    async function loadUserVideos(creator){
-    const dd = await axios.get(`${baseUrl}/videos/loadUserVideos?creator=${creator}`)
-     .then((response) => {
-       setVideos(response.data);
-     })
-     .catch((e) => console.log("not found", e))
-    }
-  useEffect(() => {
-    user._id && loadUserVideos(user._id)
-  }, []);
+//     const [videos, setVideos]= useState(null)
+//     async function loadUserVideos(creator){
+//     const dd = await axios.get(`${baseUrl}/videos/loadUserVideos?creator=${creator}`)
+//      .then((response) => {
+//        setVideos(response.data);
+//      })
+//      .catch((e) => console.log("not found", e))
+//     }
+//   useEffect(() => {
+//     user._id && loadUserVideos(user._id)
+//   }, []);
   
- async function removeVideo(videoId)
- {
-  const dd = await axios.delete(`${baseUrl}/videos/${videoId}`)
-  .then((response) => {
-    if(response.status == 204)
-    loadUserVideos(user._id)
-  })
-  .catch((e) => console.log("Not Deleted", e))
+//  async function removeVideo(videoId)
+//  {
+//   const dd = await axios.delete(`${baseUrl}/videos/${videoId}`)
+//   .then((response) => {
+//     if(response.status == 204)
+//     loadUserVideos(user._id)
+//   })
+//   .catch((e) => console.log("Not Deleted", e))
  
- }
+//  }
   return ( 
     <div className="ProfileVideosContainer">
-
+{/* 
     <div className="VideosTitle">Videos
     </div>
 
@@ -48,7 +48,7 @@ function ProfileVideos({user}) {
                 </div>
               })}
       </div>
-      </div>
+      </div> */}
 
 </div>
 
