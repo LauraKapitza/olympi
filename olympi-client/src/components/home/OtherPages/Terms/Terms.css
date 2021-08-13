@@ -1,0 +1,22 @@
+.TermsContainer {
+  margin-top: 100px;
+  
+
+}
+
+.TermsContainer h1  {
+ color: #E41E1E;
+ margin-bottom: 20px;
+}
+
+
+.TermsContainer h2  {
+  margin-bottom: 10px;
+  margin-top: 10px;
+ }
+ 
+
+.pagesNavigation {
+  color: #E41E1E;
+  margin-bottom: 20px;
+}
