@@ -5,6 +5,7 @@
   bottom: 0px;
   position: fixed;
   width: 100%;
+  z-index: 99;
 
   box-shadow: 0 -5px 3px -3px #ccc, 0 0;
 

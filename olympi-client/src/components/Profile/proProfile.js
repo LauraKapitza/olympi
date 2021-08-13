@@ -1,5 +1,5 @@
 import React from 'react'
-import BottomNavBar from './BottomNavBar/BottomNavBar'
+import BottomNavBar from '../feed/FeedFooter.js'
 import ProfessionalBio from './ProfessionalBio/ProfessionalBio'
 import ProfileVideos from './ProfileVideos/ProfileVideos'
 import PersonalRecord from './PersonalRecord/PersonalRecord'
@@ -13,7 +13,7 @@ export default function ProProfile( {user}){
       <PersonalRecord user={user}/>
       <ProfileVideos user={user}/>
       <SettingsBar/>
-      <BottomNavBar/>
+      <BottomNavBar activate="profile"/>
 
     </div>
   )
