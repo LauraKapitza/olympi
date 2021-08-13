@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import ExploreBottomNavBar from './ExploreBottomNavBar/ExploreBottomNavBar'
+import ExploreBottomNavBar from '../feed/FeedFooter.js'
 import Filters from './Filters/Filters'
 import SearchBar from './SearchBar/SearchBar';import feedService from '../feed/feed-service.js';
 import './Explore.css';
@@ -57,7 +57,6 @@ class Explore extends React.Component {
 
         <Filters changeSortBy={this.state.changeSortBy} />
         {/* <ExploreVideos category={tab} sortBy={sortBy} /> better to do the map here */}
-        <ExploreBottomNavBar />
 
 
         <div className="ExploreVideosContainer">
@@ -83,7 +82,7 @@ class Explore extends React.Component {
           })}
         </div>
 
-        <ExploreBottomNavBar />
+        <ExploreBottomNavBar activate="explore"/>
 
       </div>
 
