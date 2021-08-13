@@ -3,7 +3,6 @@ import moment from 'moment';
 import ExploreBottomNavBar from './ExploreBottomNavBar/ExploreBottomNavBar'
 import Filters from './Filters/Filters'
 import SearchBar from './SearchBar/SearchBar';
-
 import MoreIcon from "@material-ui/icons/More";
 import feedService from '../feed/feed-service.js';
 import './Explore.css';
@@ -51,7 +50,6 @@ class Explore extends React.Component {
   render() {
     return (
       <div>
-        
         <div className="PagesContainer">
           <div className={`Fails ${this.state.categorySelected === 'fails' ? 'selected-tab' : 'tab-border'}`} onClick={() => this.fetchVideos('fail')}>Fails</div>
           <div className={`Trending ${this.state.categorySelected === 'trending' ? 'selected-tab' : 'tab-border'}`} onClick={() => this.fetchVideos("trending")}>Trending</div>

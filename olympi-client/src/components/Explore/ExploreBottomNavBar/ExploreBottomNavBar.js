@@ -8,7 +8,7 @@ function ExploreBottomNavBar() {
   const history = useHistory()
   return (
     <div className="ExploreBottomNavBarContainer">
-      <div className="ExploreExploreNavButton" onClick={() => history.push('/explore')}>
+      <div className="ExploreExploreNavButton" onClick={() => history.push('/videos/explore')}>
         <SearchRoundedIcon />
         <span>Explore</span>
       </div>
