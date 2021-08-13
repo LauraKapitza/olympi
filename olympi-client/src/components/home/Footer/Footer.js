@@ -35,7 +35,7 @@ function Footer() {
       </div>
 
       <div className="Instagram">
-      <Link to="https://www.instagram.com/olympi_app/" ><InstagramIcon/></Link>
+      <Link to="//www.instagram.com/olympi_app/" ><InstagramIcon/></Link>
 
       </div>
 
