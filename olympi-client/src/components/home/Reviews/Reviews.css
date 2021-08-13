@@ -156,7 +156,7 @@ body {
           justify-content: center;
 }
 .slider img {
-  width: 70%;
+  max-width: 250px;
   clip-path: circle();
 }
 .slider__caption {
@@ -166,7 +166,7 @@ body {
 }
 .slider__txt {
   color: #FDEFEF;
-  margin-bottom: 3rem;
+  margin-bottom: 7rem;
   max-width: 300px;
   margin-top: 1rem;
 }
