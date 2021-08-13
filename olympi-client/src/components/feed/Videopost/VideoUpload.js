@@ -93,6 +93,7 @@ class VideoUpload extends React.Component {
   } 
 
   render() {
+    console.log(this.props.user)
     return (
       <div className="Video-upload">
         <a onClick={this.props.toggle}><img src={close_button} alt="Close upload form"></img></a>
@@ -172,10 +173,13 @@ class VideoUpload extends React.Component {
                     <label htmlFor="fail">Fail</label>
                   </div>
 
-                  <div>
-                    <input type="radio" id="learn" name="category" value="learn" onChange={this.handleChange} checked={this.state.category === "learn"}/>
-                    <label htmlFor="learn">Learn</label>
-                  </div>
+                  {this.props.user.professional === true && (
+                    <div>
+                      <input type="radio" id="learn" name="category" value="learn" onChange={this.handleChange} checked={this.state.category === "learn"}/>
+                      <label htmlFor="learn">Learn</label>
+                    </div>
+                  )}
+
                 </div>
               
               </div>

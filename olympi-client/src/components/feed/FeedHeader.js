@@ -40,7 +40,7 @@ export default class FeedHeader extends React.Component {
         </div>
         <p>Which exercise are you sharing today?</p>
 
-        {this.state.uploadOpen && <VideoUpload toggle={this.toggle} addVideo={this.props.addVideo} />}
+        {this.state.uploadOpen && <VideoUpload toggle={this.toggle} addVideo={this.props.addVideo} user={this.props.user}/>}
 
       </div>
     )
