@@ -47,10 +47,7 @@ class UserProfile extends React.Component {
 <div>
       <PersonalBio updateUser={this.props.updateUser} user={this.props.user}/>
       <PersonalRecord user={this.props.user} />
-      <div>
-      {this.state.videos.map((video) => (
-              <ProfileVideos key={video._id} video={video} professionals={this.state.professionals} user={this.props.user} />
-          ))}</div>
+      <ProfileVideos  professionals={this.state.professionals} user={this.props.user}/>
       <SettingsBar user={this.props.user}/>
       <BottomNavBar user={this.props.user} activate="profile"/>
     </div>

@@ -25,7 +25,7 @@ class Settings extends React.Component {
     return(
       <>
 
-<div>
+<div className="SettingsBigContainer">
 
     <PictureTop user={this.props.user}/>
      <SettingsBtns user={this.props.user} />

@@ -43,7 +43,7 @@ export default class PersonalBio extends React.Component {
 
           <div className="PersonalBioContainer">
           <div className="BioTitle"> <span>  Profile</span> </div>
-          <div className="editImage" ><img  src="/assets/icons/editbutton.svg" alt=""></img>Edit </div>
+          
             <img className="avatar" src={this.props.user.image || "/assets/photos/lyaphoto.jpeg"} />
             <div className="UsersName">{this.props.user.username}</div>
             <div className="UsersCity">{this.props.user.city}</div>

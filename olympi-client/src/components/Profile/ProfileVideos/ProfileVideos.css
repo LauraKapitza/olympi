@@ -24,7 +24,10 @@
 
 .VideosSection{
 margin-left: 35px;
-
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 .videoContainer{
   display: flex;
