@@ -10,7 +10,7 @@ export default function ProProfile( {user}){
   return (
     <div>
     <ProfessionalBio user={user}/>
-      <PersonalRecord user={user}/>
+      {/* <PersonalRecord user={user}/> */}
       <ProfileVideos user={user}/>
       <SettingsBar/>
       <BottomNavBar activate="profile"/>

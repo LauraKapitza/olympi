@@ -63,18 +63,6 @@ padding-right: 8px;
   width: 20px;
 }
 
-.SearchBoxContainer {
-  display: flex;
-  background-color: #ffffff;
-  align-items: center;
-  border-radius: 5px;
-  width: 90%;
-  font-size: 12px;
-  color: #b3b3b3;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-shadow: -1px -1px 10px #b3b3b330;
-}
 
 .PagesContainer {
   display: flex;
@@ -84,24 +72,14 @@ padding-right: 8px;
   text-align: center;
 }
 
-.Fails {
-  border-bottom: solid 2px #00000040;
-  color: #00000030;
-  flex: 1;
-}
 
-.Trending {
-  color: #00000030;
-  flex: 1;
-}
+
 .selected-tab {
   border-bottom: solid 2px #e41b23;
-  color: #e41b23;
+  color: black;
 }
 .tab-border {
-  border-bottom: solid 2px #00000040;
+  border-bottom: solid 2px #e41b23;
+  color: black;
 }
-.Learn {
-  color: #00000030;
-  flex: 1;
-}
+

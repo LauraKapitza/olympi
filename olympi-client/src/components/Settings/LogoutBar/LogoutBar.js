@@ -2,10 +2,28 @@ import React from 'react'
 import "./LogoutBar.css"
 import DeleteIcon from '@material-ui/icons/Delete';
 import ToggleOnRoundedIcon from '@material-ui/icons/ToggleOnRounded';
+import authService from '../../auth/auth-service';
+import { Redirect } from 'react-router';
 
-function LogoutBar() {
-  return (
-    <div>
+
+
+class LogoutBar extends React.Component {
+
+
+logout = (event) => {
+  authService.logout()
+    .then(response => {
+      this.props.updateUser(null);
+    })
+  ;
+}
+
+ 
+  render() {
+    if (this.props.user === false) return <Redirect to="/"/>
+    
+    return(
+      <>
 
 
 <div className="LogoutBarContainer">
@@ -27,7 +45,8 @@ function LogoutBar() {
 
       <div className="LogoutTitle">
       Logout
-      <div className="Setbtn Door"><img src="/assets/icons/logoutbtn.svg" alt=""></img></div>
+      <div className="Setbtn Door" onClick={this.logout}><img src="/assets/icons/logoutbtn.svg" alt=""></img></div>
+
 
       </div>
 
@@ -49,8 +68,16 @@ function LogoutBar() {
 
 
       
-    </div>
-  )
-}
+      </>
+    )
+  }
+};
 
-export default LogoutBar
+export default LogoutBar;
+
+
+
+
+
+
+

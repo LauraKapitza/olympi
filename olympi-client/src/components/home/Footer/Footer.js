@@ -14,17 +14,16 @@ function Footer() {
 
       <div className="FooterCenterLeft"> 
       <h3>Company</h3>
-      <Link to="/about" >About</Link>
-      <Link to="/team" >Team</Link>
-      <Link to="/faq" >FAQ</Link>
-      <Link to="/terms" >Terms & Conditions</Link>
+      <Link to="/team" >Olympi Team</Link>
+      
+      
       </div>
  
       <div className="FooterCenterRight"> 
       <h3>Resources</h3>
-      <Link to="/professionals" >For Professionals</Link>
-      <Link to="/definitions" >Tag Definitions</Link>
+      <Link to="/faq" >FAQ</Link>
       <Link to="/blog" >Blog</Link>
+      <Link to="/terms" >Terms & Conditions</Link>
       </div>
 
 

@@ -73,9 +73,9 @@ class Explore extends React.Component {
                 </video>
                 <div className="VidOptions">
                   <div onClick={() => this.updateVotes(video)}>
-                    <img src="/assets/icons/upvotefull.svg" alt="upvote" />{video.votes ? video.votes : 0}
+                    <img src="/assets/icons/upvotefull.svg" alt="upvote" />{video.votes ? video.votes : 0} 
                   </div>
-    
+                  {video.category}
                 </div>
               </div>
             )

@@ -87,9 +87,14 @@ class App extends Component {
 
             {/* go back an check this Karina */}
 
-            <Route exact path="/settings" render={(props) => (
-              <Settings user={this.state.user} />
-            )} />
+
+            {/* <Route exact path="/settings" render={(props) => (
+              this.state.user && <Settings user={this.state.user} updateUser={this.updateUser}/>
+            )} /> */}
+
+            <Route exact path="/settings">
+              {this.state.user ? <Settings updateUser={this.updateUser} user={this.state.user} /> : <Redirect to="/" user={this.state.user} />}
+            </Route>
 
             {/* go back an check this Karina */}
 

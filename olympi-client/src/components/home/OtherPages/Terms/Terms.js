@@ -2,6 +2,7 @@ import React from 'react'
 import NavbarTop from '../../navbarTop/NavbarTop'
 import "./Terms.css"
 import {Link} from "react-router-dom"
+import Footer from '../../Footer/Footer'
 
 function Terms() {
   return (
@@ -63,7 +64,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat sa
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat sapien. Suspendisse potenti. Vestibulum mattis, mauris id convallis auctor, dolor justo dapibus odio, ut placerat justo lacus viverra sem. Ut at cursus lorem, vitae egestas quam. Praesent tempus, orci eget interdum aliquet, est sapien pretium lorem, id dapibus ipsum purus eget tellus. Aenean lorem nulla, auctor non condimentum ac, scelerisque sed metus. Nam luctus mollis ex, in efficitur nisl porta ac. Sed magna nisi, efficitur et gravida sed, eleifend eu nisi. Sed posuere, elit quis cursus rhoncus, quam velit consequat purus, id laoreet ante mauris ac ante. Aliquam imperdiet, velit tempus mollis rutrum, massa est volutpat justo, vitae finibus mauris metus id arcu. Nunc commodo dapibus accumsan. Maecenas nec accumsan tellus. Quisque vitae tortor laoreet, hendrerit ante eget, rhoncus nisl. Nam eleifend tortor non rhoncus lobortis. Maecenas sed auctor nulla.
 
 
-     
+     <Footer/>
     </div>
     
   )
