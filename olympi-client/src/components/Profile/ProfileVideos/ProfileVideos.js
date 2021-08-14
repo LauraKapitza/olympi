@@ -4,6 +4,16 @@ import axios from "axios"
 import HighlightOff from "@material-ui/icons/HighlightOff";
 const baseUrl = process.env.REACT_APP_APIURL
 
+
+
+
+
+
+
+
+
+
+
 function ProfileVideos({user}) {  
 //     const [videos, setVideos]= useState(null)
 //     async function loadUserVideos(creator){
@@ -29,12 +39,12 @@ function ProfileVideos({user}) {
 //  }
   return ( 
     <div className="ProfileVideosContainer">
-{/* 
+{/*  
     <div className="VideosTitle">Videos
     </div>
 
 
-      <div className="VideosSection">
+       <div className="VideosSection">
             <div className={"videoContainer"}>
                 {videos && videos.map((video, index) => {
                 return <div className={"video"} key={index}>
@@ -46,9 +56,9 @@ function ProfileVideos({user}) {
                     Your browser does not support the video tag.
                   </video>
                 </div>
-              })}
-      </div>
-      </div> */}
+              })} 
+      </div>  
+      </div>  */}
 
 </div>
 

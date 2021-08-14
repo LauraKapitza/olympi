@@ -87,3 +87,6 @@ cursor: pointer;
   
 }
 
+.avatar {
+  clip-path: circle();
+}

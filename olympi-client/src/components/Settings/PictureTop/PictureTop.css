@@ -5,10 +5,10 @@
   align-items: center;
 }
 
-.arrow{
+.arrow a{
   display: flex;
   width: 100%;
-  padding-left: 25px;
+  padding-left: 15px;
   padding-top: 10px;
   color: #E41B23;
 }
@@ -21,7 +21,7 @@
 
 
 .PictureTopContainer img {
-  max-width: 150px;
+  clip-path: circle;
 }
 
 /*the css for user name and user city is in the profile css*/
