@@ -14,8 +14,8 @@ function Footer() {
 
       <div className="FooterCenterLeft"> 
       <h3>Company</h3>
-      <Link to="/about" >About</Link>
-      <Link to="/team" >Team</Link>
+      <Link to="/team" >Olympi Team</Link>
+      
       
       </div>
  
@@ -24,7 +24,6 @@ function Footer() {
       <Link to="/faq" >FAQ</Link>
       <Link to="/blog" >Blog</Link>
       <Link to="/terms" >Terms & Conditions</Link>
-
       </div>
 
 

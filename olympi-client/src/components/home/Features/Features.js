@@ -15,16 +15,16 @@ export default function Features() {
 
     <div className="title"> <h3>Features</h3></div>
     <div className="FeaturesList">
-    <div className="feature 1"><img src="https://via.placeholder.com/250" alt=""></img>
+    <div className="feature 1"><img src="/assets/photos/Tagsphoto.png" alt=""></img>
      <h3 className="featureTitle">Get Feedback</h3> 
      <span className="featureDesc">Crowdsource feedback from thousands of ofther weightlifters by uploading your workouts</span> </div>
 
 
-    <div className="feature 2"><img src="https://via.placeholder.com/250" alt=""></img> 
+    <div className="feature 2"><img src="/assets/photos/commentsscreenshot.png" alt=""></img> 
     <h3 className="featureTitle">Improve your form</h3> 
     <span className="featureDesc">Ask the professional community for advice and document your progression</span> </div>
 
-    <div className="feature 3"><img src="https://via.placeholder.com/250" alt=""></img> 
+    <div className="feature 3"><img src="/assets/photos/userprofilescreenshot.png" alt=""></img> 
     <h3 className="featureTitle">Stay Motivated</h3> 
     <span className="featureDesc">Find an inclusive, motivated, and helpful community to reach your goals and learn from setbacks</span> </div>
     

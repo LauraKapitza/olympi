@@ -1,5 +1,32 @@
 .Titlefaq {
-  margin-top: 100px;
   font-weight: 500;
   font-size: 62px;
+  background-color: black;
+}
+
+
+
+.FAQContainer {
+  
+  padding-top: 100px;
+
+  
+
+}
+
+.FAQContainer h1  {
+ color: #E41E1E;
+ margin-bottom: 20px;
+}
+
+
+.FAQContainer h2  {
+  margin-bottom: 10px;
+  margin-top: 10px;
+ }
+ 
+
+.FAQNavigation {
+  color: #E41E1E;
+  margin-bottom: 20px;
 }

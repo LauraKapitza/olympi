@@ -63,3 +63,7 @@ text-align: center;
   color: rgb(242, 232, 232);
 }
 
+.FeaturesList img {
+  width: 90%;
+  border-radius: 22px;
+}

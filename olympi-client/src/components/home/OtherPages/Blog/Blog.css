@@ -1,0 +1,39 @@
+.Titlefaq {
+  font-weight: 500;
+  font-size: 62px;
+  background-color: black;
+}
+
+
+
+.BlogContainer {
+  
+  padding-top: 100px;
+display: flex;
+flex-direction: column;
+text-align: center;  
+
+}
+
+.BlogContainer h1  {
+ color: #E41E1E;
+ margin-bottom: 20px;
+}
+
+
+.BlogContainer h2  {
+  margin-bottom: 10px;
+  margin-top: 10px;
+ }
+ 
+
+.BlogNavigation {
+  color: #E41E1E;
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
+
+}
+.BlogContainer img {
+  width: 50%;
+}
