@@ -1,60 +1,63 @@
 .IntroContainer{
-  width:100%;
-  display: flex;
-  color: #E41E1E;
+  align-items: center;
   background-color: white;
-  flex-direction: column;
+  color: #E41E1E;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 120px; padding-bottom: 60px;
+  width: 50%;
 }
 
 .description {
-  padding-top: 100px;
-  padding-right: 15px;
-  padding-left: 15px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
   width: 100%;
-  font-size: 4vw;
+  /* font-size: 4vw; */
 }
 
 .description h1{
   font-size: 2rem;
 }
 
-@media (min-width: 767px) {
-  .description h1{
-    font-size: 3rem;
-  }
-
-}
-
-@media (min-width: 1024px) {
-  .description h1{
-    font-size: 4rem;
-  }
-
-}
-
-
-
-
 
 .buttonsHomepage {
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-  padding: 20px;
-  font-size: 1vw;
+  padding-top: 40px;
+  /* font-size: 1vw; */
 }
 
-.phoneImg{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  
+.buttonsHomepage .button {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+
+.buttonsHomepage .button:first-child {
+  margin-right: 50px;
+}
+
+.buttonsHomepage .signup-btn {color: white;}
+
+.buttonsHomepage .signup-btn:hover {
+  background-color: #FDEFEF;
+  color: #E41E1E;
+}
+
+.buttonsHomepage .signup-btn:active {
+  background-color: white;
+  color: #E41E1E;
+}
+
+.buttonsHomepage .login-btn {
+  color: #E41E1E;
+  background-color: white;
+}
+
+
+.buttonsHomepage .login-btn:hover {background-color: #FDEFEF;}
+
+.buttonsHomepage .login-btn:active {
+  background-color: #E41E1E;
+  color: white
 }
 
 .Tagline {
@@ -73,4 +76,47 @@ color: #250505;
 
 }
 
+@media (max-width: 340px) {
+  .buttonsHomepage .button {
+    padding: 7px 14px;
+  }
 
+  .buttonsHomepage .button{
+    font-size: 1.3rem;
+  }
+
+  .buttonsHomepage .button:first-child {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  .phoneImg {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .IntroContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .IntroContainer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 767px) {
+  .description h1{
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .description h1{
+    padding: 0 40px;
+  }
+}

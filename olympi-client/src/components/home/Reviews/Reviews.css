@@ -24,47 +24,21 @@
   fill: #fafafa;
 }
 
-/** For tablet devices **/
-@media (min-width: 768px) and (max-width: 1023px) {
-  .custom-shape-divider-top-1627932661 svg {
-      width: calc(100% + 1.3px);
-      height: 218px;
-  }
-}
-
 
 .titleReviews{
-  padding-top: 130px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 5.5vw;
-  text-align: center;
+  color:white;
   justify-content: center;
-  color:#FDEFEF;
+  padding: 130px 20px 20px;
+  text-align: center;
 }
+
+.titleReviews h3 {font-size: 3.5em;}
 
 
 /* THIS IS WHERE THE SLIDER BEGINS*/
 
-
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  
-  line-height: 1.5;
-}
-
 .slider {
-  padding-top: 500px;
-  height: 100%;
+  padding-top: 530px;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -162,12 +136,12 @@ body {
 .slider__caption {
   font-weight: 500;
   margin: 2rem 0 1rem;
-  font-size: 6vw;
+  font-size: 1.5em;
 }
 .slider__txt {
   color: #FDEFEF;
   margin-bottom: 7rem;
-  max-width: 300px;
+  max-width: 480px;
   margin-top: 1rem;
 }
 
@@ -192,3 +166,25 @@ body {
     box-shadow: 0 0 0 0 #E41E1E, 0 0 0 0 #f08585;
   }
 }
+
+
+@media (max-width: 340px) {
+  .slider {
+    padding-top: 600px;
+  } 
+}
+
+@media (max-width: 400px) {
+  .titleReviews h3 {
+    font-size: 2em;
+  }
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-top-1627932661 svg {
+      width: calc(100% + 1.3px);
+      height: 218px;
+  }
+}
+

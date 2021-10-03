@@ -4,25 +4,22 @@ import "./Intro.css"
 
 function Intro() {
   return (
-    <div className="IntroContainer">
-    <div className="description">
+  <div className="IntroContainer">
+
+    <div className="description home-fixed-size">
       <h1>Level up your exercise routine with your weighlifting community</h1>
       <div className="buttonsHomepage">
         <Link className="signup-btn button" to="/signup">Sign up</Link>
-        <Link className="button" to="/login">Log in</Link>
+        <Link className="login-btn button" to="/login">Log in</Link>
       </div>
-</div>
+    </div>
 
+    <div className="phoneImg"> 
+      <img src="/assets/photos/olympiphone.png" className="phonepic" alt="olympiapp" /> 
+    </div>
 
-      <div className="phoneImg"> <img src="/assets/photos/olympiphone.png" className="phonepic" alt="olympiapp"></img> <h2 className="Tagline"> Improve and help others improve one rep at a time  </h2> </div>
-
-
-
-</div>
-
-
-
+  </div>
   )
 }
 
-export default Intro
+export default Intro;

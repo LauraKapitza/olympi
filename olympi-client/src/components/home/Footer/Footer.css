@@ -1,66 +1,73 @@
 .FooterContainer{
   background-color: #FDEFEF;
-  width:100%;
+  width:100%;  
+}
+
+.FooterContainer .home-fixed-size {
   display: flex;
-  flex-direction: column;
-  align-items:center;
-  
+  align-items:flex-start;
+  justify-content: space-evenly;
+  padding-top: 40px; padding-bottom: 20px;;
 }
 
 .FooterLeft {
-  padding-top: 30px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
   
     
-  .FooterCenterLeft{
-    padding-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.FooterCenterLeft{
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  }
+}
 
- 
-  
-  .FooterCenterRight{
-    padding-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-  }
 
-  #ContactUs {
-    padding-top: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2vh;
-   
+.FooterCenterRight{
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  }
+}
 
-  .FooterContainer h3{
-    color: #E41E1E;
-  }
+#ContactUs {
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2vh;
+}
+
+.FooterContainer h3{
+  color: #E41E1E;
+}
 
 .Instagram a{
   color: #E41E1E;
 }
 
-  a {
-    color: black;
-  }
-  a:hover {
-     color: #E41E1E;
-  }
+a {
+  color: black;
+}
 
+a:hover {
+  color: #E41E1E;
+}
+
+@media (max-width: 425px) {
+  .FooterContainer .home-fixed-size {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
     
     
     

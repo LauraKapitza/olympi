@@ -22,7 +22,64 @@
 }
 
 .custom-shape-divider-top-1627919333 .shape-fill {
-  fill: #E41E1E;
+  fill: #ec6262;
+}
+
+.titleHowitWorks{
+  padding-top: 100px;
+  padding-bottom: 20px;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.titleHowitWorks {
+  color: #E41E1E;
+}
+
+.StepsList {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 60%;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+
+.StepTitle{
+  align-items: center;
+  color: #E41E1E;
+  display: flex;
+  font-size: 1.3em;
+  font-weight: normal;
+  line-height: 1.3;
+  padding: 30px;
+}
+
+.StepTitle svg {
+  height: 2em;
+  width: 2em; 
+}
+
+.arrowIcon{
+  padding-top: 20px;
+
+}
+
+.stepPhoto {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.stepPhoto img{
+width: 45%;
+}
+
+
+@media (max-width: 340px) {
+  .titleHowitWorks {
+    font-size: 2em;
+  }
 }
 
 /** For tablet devices **/
@@ -33,35 +90,24 @@
   }
 } 
 
-.titleHowitWorks{
-  padding-top: 100px;
-  padding-bottom: 20px;
-  font-size: 6vw;
-  text-align: center;
+@media (max-width: 1024px) {
+  .StepsList {
+    max-width: 90%;
+  }
 }
 
-.StepsList {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: space-around;
+@media (max-width: 768px) {
+  .StepsList {
+    flex-direction: column;
+    max-width: 100%;
+  }
 
-
-}
-
-
-
-
-.StepTitle{
-  font-size: 5vw;
-  padding: 30px;
-color: #E41E1E;}
-
-.arrowIcon{
-  padding-top: 20px;
-
-}
-
-.stepPhoto img{
-width: 45%;
+  .stepPhoto {
+    max-width: 50%;
+  }
+  
+  .StepTitle {
+    font-size: 1.1em;
+    justify-content: center;
+  }
 }

@@ -1,0 +1,9 @@
+.homeContainer {
+  background: white;
+  width:100%;
+}
+
+.home-fixed-size {
+  max-width: 1024px;
+  margin: 0 auto;
+}
