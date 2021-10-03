@@ -53,7 +53,7 @@ import feedService from '../../feed/feed-service'
                      <tr>
                       <td> Squat</td>
                     <td>0 kg</td>
-                    <td>August 14, 2021</td>
+                    <td>September 13, 2021</td>
                      </tr>
                   
                  </tbody>
