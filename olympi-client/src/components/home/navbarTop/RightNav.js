@@ -8,10 +8,11 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   li {
-    padding: 18px 10px;
-    display: flex;
     align-items: center;
+    display: flex;
+    font-weight: normal;
     order: 3;
+    padding: 20px;
   }
 
   .auth-nav-button:first-child{
@@ -19,12 +20,22 @@ const Ul = styled.ul`
     }  
 
   li.auth-nav-button a{
-    background-color: #E41E1E;
-    padding: 15px 10px;
+    background-color: none;
+    border: 2px solid #E41E1E;
     border-radius: 10px;
+    color: #E41E1E;
+    font-weight: 500;
+    padding: 10px 20px;
+  }
+
+  li.auth-nav-button a:hover {background-color: white;}
+  
+  li.auth-nav-button a:active {
+    background-color: #E41E1E;
     color: white;
   }
-  @media (max-width: 768px) {
+
+  @media (max-width: 849px) {
     flex-flow: column nowrap;
     background-color: #E41E1E;
     position: fixed;
@@ -63,6 +74,11 @@ const Ul = styled.ul`
       border-radius: none;
       color: inherit;
     }
+  }
+
+  @media (min-width: 850px) and (max-width: 980px) {
+    li {
+      padding: 20px 10px;
     }
   }
 `;

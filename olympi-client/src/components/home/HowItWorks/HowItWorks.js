@@ -6,8 +6,6 @@ import Looks3RoundedIcon from '@material-ui/icons/Looks3Rounded';
 import Looks4RoundedIcon from '@material-ui/icons/Looks4Rounded';
 import Looks5RoundedIcon from '@material-ui/icons/Looks5Rounded';
 import Looks6RoundedIcon from '@material-ui/icons/Looks6Rounded';
-import ArrowDownwardRoundedIcon from '@material-ui/icons/ArrowDownwardRounded';
-import ReplayRoundedIcon from '@material-ui/icons/ReplayRounded';
 
 function HowItWorks() {
   return (

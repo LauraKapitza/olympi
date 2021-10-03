@@ -12,9 +12,9 @@ function Team() {
   <div className="pagesNavigation"><Link to="/">Home</Link> {'>'} <Link to="/team">Team</Link>  </div>    
   <div className="TeamTitle"><h1>Meet Team Olympi</h1></div>
   <div className="Teammates">
-  <div className="Karina"><span>Karina Gonzalez</span><img src="/assets/photos/karinaphoto.jpeg"></img></div>
-  <div className="Laura"><span> Laura Kapitza</span><img src="/assets/photos/lauraphoto.jpeg"></img></div>
-  <div className="Sandra"><span>Sandra Gonzalez</span><img src="/assets/photos/sandraphoto.jpeg"></img></div>
+  <div className="Karina"><span>Karina Gonzalez</span><img src="/assets/photos/karinaphoto.jpeg" alt="" /></div>
+  <div className="Laura"><span> Laura Kapitza</span><img src="/assets/photos/lauraphoto.jpeg" alt=""/></div>
+  <div className="Sandra"><span>Sandra Gonzalez</span><img src="/assets/photos/sandraphoto.jpeg" alt=""/></div>
   </div>
   <div className="Description">
 This project began during the <Link to="//www.ironhack.com/en">Ironhack Part-Time Web Development Bootcamp</Link> in Paris 2021.

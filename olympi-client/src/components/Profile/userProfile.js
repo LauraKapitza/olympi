@@ -6,23 +6,6 @@ import ProfileVideos from './ProfileVideos/ProfileVideos'
 import SettingsBar from './SettingsBar/SettingsBar'
 import "./userProfile.css"
 import feedService from '../feed/feed-service.js'
-import VideoPost from '../feed/Videopost/VideoPost.js'
-
-// function UserProfile({user}) {
-//   return (
-//     <div>
-//       <PersonalBio user={user}/>
-//       <PersonalRecord user={user} />
-//       <ProfileVideos user={user}/>
-//       <SettingsBar user={user}/>
-//       <BottomNavBar activate="profile"/>
-//     </div>
-//   )
-// }
-
-// export default UserProfile
-
-
 
 class UserProfile extends React.Component {
   state = {

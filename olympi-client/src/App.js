@@ -26,11 +26,9 @@ class App extends Component {
   }
 
   fetchUser = () => {
-    console.log('fetch')
     authService.loggedin()
       .then(data => {
         this.setState({user: data})
-        console.log("user: ", this.state.user);
       })
       .catch(err => {
         this.setState({user: null})
@@ -43,12 +41,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log('component did mount')
     this.fetchUser();
   }
 
   render() {
-    console.log('render')
     return (
       <Route render={props => (
         <div className="App" data-route={props.location.pathname}> {/* data-route="/" allow us to style pages */}

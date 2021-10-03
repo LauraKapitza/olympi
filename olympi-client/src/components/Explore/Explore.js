@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import moment from 'moment';
 import ExploreBottomNavBar from '../feed/FeedFooter.js'
 import Filters from './Filters/Filters'
@@ -21,10 +21,6 @@ class Explore extends React.Component {
     })
     .catch(err => this.setState({videos: false}))
   }
-
-  // useEffect(() => {
-  //   loadVideos()
-  // }, [category, sortBy]);
 
   updateVotes(video) {
     feedService.updateVotes(video)
